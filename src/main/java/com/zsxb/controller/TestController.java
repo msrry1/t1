@@ -20,4 +20,9 @@ public class TestController {
     public JsonResult<String> test(){
         return new JsonResult<>(200,"sucess");
     }
+
+    @GetMapping("/skt")
+    public JsonResult<String> skt(){
+        return new JsonResult<>(200,"t1");
+    }
 }
