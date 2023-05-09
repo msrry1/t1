@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsxb.mapper.PlayMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zsxb.entity.Play">
+        <id column="play_id" property="playId" />
+        <result column="dict_type_id" property="dictTypeId" />
+        <result column="dict_lang_id" property="dictLangId" />
+        <result column="play_name" property="playName" />
+        <result column="play_introduction" property="playIntroduction" />
+        <result column="play_image" property="playImage" />
+        <result column="play_video" property="playVideo" />
+        <result column="play_length" property="playLength" />
+        <result column="play_ticket_price" property="playTicketPrice" />
+        <result column="play_status" property="playStatus" />
+    </resultMap>
+
+</mapper>
