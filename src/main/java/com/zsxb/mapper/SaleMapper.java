@@ -1,6 +1,6 @@
 package com.zsxb.mapper;
 
-import com.zsxb.entity.Sale;
+import com.zsxb.po.Sale;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

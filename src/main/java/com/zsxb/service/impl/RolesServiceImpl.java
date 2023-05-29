@@ -1,6 +1,6 @@
 package com.zsxb.service.impl;
 
-import com.zsxb.entity.Roles;
+import com.zsxb.po.Roles;
 import com.zsxb.mapper.RolesMapper;
 import com.zsxb.service.IRolesService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

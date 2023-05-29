@@ -1,22 +1,18 @@
 package com.zsxb.interceptor;
 import com.zsxb.common.CommonDict;
-import com.zsxb.entity.Customer;
-import com.zsxb.entity.Employee;
-import com.zsxb.exception.EmployeeException;
+import com.zsxb.po.Customer;
+import com.zsxb.po.Employee;
 import com.zsxb.util.JwtUtil;
 import com.zsxb.util.RedisCache;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -26,22 +22,25 @@ public class JWTInterceptor implements HandlerInterceptor {
     private RedisCache redisCache;
 
     // 保存允许经理、售票员、顾客的权限
-    private static List<String> allowAuthManager;
-    private static List<String> allowAuthConductor;
+    private static List<String> noAllowAuthManager;
+    private static List<String> noAllowAuthConductor;
     private static List<String> allowAuthCustomer;
 
     // 请求的路径
     private String requestUri;
 
     static {
-        // 经理权限
-//        allowAuthManager.addAll(Arrays.asList(
-//                "",
-//                "",
-//                ""));
         // 售票员权限
+        // 不能访问 /employee
+        noAllowAuthConductor.addAll(Arrays.asList(
+                "/employee"));
 
         // 顾客权限
+        allowAuthCustomer.addAll(Arrays.asList(
+                "/play/page",
+                "/schedule/page",
+                "/studio/page",
+                "/seat/page"));
     }
 
     @Override
@@ -64,7 +63,10 @@ public class JWTInterceptor implements HandlerInterceptor {
         Claims claims = JwtUtil.parseJWT(token);
         // 1.3 获取key（tokenKey和redisKey）（用户类型:id）
         String key = claims.getSubject();
-
+        if (key.equals("root")) {
+            // 是root用户
+            return true;
+        }
         Object user = redisCache.getCacheObject(key);
         if (user == null) {
             // redis保存的用户信息为空，说明该用户已经退出登录，携带的token已经从redis删除
@@ -106,19 +108,22 @@ public class JWTInterceptor implements HandlerInterceptor {
     }
 
     /**
-     *
-     */
-    @PostMapping("/dd")
-    public static void sd() {
-        System.out.println("hh");
-    }
-
-    /**
      * 校验顾客权限
      * @return
      */
     private boolean authCustomer() {
-        return true;
+
+        if (requestUri.startsWith("customer") && requestUri.endsWith("html")) {
+            // 顾客访问顾客页面，允许
+            return true;
+        }
+        for (String prefix : allowAuthCustomer) {
+            // 如果请求路径以允许前缀访问，就通过
+            if (requestUri.startsWith(prefix)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -126,6 +131,11 @@ public class JWTInterceptor implements HandlerInterceptor {
      * @return
      */
     private boolean authConductor() {
+
+        // 售票员不能操作管理员信息
+        if (requestUri.startsWith("/employee")) {
+            return false;
+        }
         return true;
     }
 }

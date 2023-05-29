@@ -1,6 +1,6 @@
 package com.zsxb.service.impl;
 
-import com.zsxb.entity.Resource;
+import com.zsxb.po.Resource;
 import com.zsxb.mapper.ResourceMapper;
 import com.zsxb.service.IResourceService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

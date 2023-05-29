@@ -1,13 +1,9 @@
 package com.zsxb.common;
 
 import com.zsxb.exception.*;
-import io.jsonwebtoken.JwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.lang.reflect.Member;
-import java.sql.SQLIntegrityConstraintViolationException;
 
 /**
  * 全局异常处理
@@ -74,6 +70,16 @@ public class GlobalExceptionHandler {
     public JsonResult<Void> scheduleException(ScheduleException ex){
         log.error("演出计划异常！原因：{}", ex.getMessage());
         return JsonResult.error(CommonDict.SCHEDULE_EXCEPTION, ex.getMessage());
+    }
+
+    /**
+     * 票务异常处理
+     * @return 异常状态码和异常原因
+     */
+    @ExceptionHandler(TicketException.class)
+    public JsonResult<Void> ticketException(TicketException ex){
+        log.error("票务异常！原因：{}", ex.getMessage());
+        return JsonResult.error(CommonDict.TICKET_EXCEPTION, ex.getMessage());
     }
 
 

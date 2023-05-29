@@ -2,10 +2,9 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Studio;
+import com.zsxb.po.Studio;
 import com.zsxb.exception.StudioException;
 import com.zsxb.mapper.StudioMapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zsxb.service.StudioService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

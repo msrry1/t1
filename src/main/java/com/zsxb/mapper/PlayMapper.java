@@ -1,6 +1,6 @@
 package com.zsxb.mapper;
 
-import com.zsxb.entity.Play;
+import com.zsxb.po.Play;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

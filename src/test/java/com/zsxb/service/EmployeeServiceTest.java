@@ -1,7 +1,5 @@
 package com.zsxb.service;
 
-import com.zsxb.entity.Employee;
-import com.zsxb.mapper.EmployeeMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +22,6 @@ public class EmployeeServiceTest {
 
     @Test
     public void login() {
-        Employee lyh = employeeService.login("001", "rj2103lyh");
 
     }
 

@@ -1,6 +1,6 @@
 package com.zsxb.service;
 
-import com.zsxb.entity.SaleItem;
+import com.zsxb.po.SaleItem;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

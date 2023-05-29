@@ -1,6 +1,6 @@
 package com.zsxb.mapper;
 
-import com.zsxb.entity.Customer;
+import com.zsxb.po.Customer;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

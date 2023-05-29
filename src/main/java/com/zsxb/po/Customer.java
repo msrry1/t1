@@ -1,4 +1,4 @@
-package com.zsxb.entity;
+package com.zsxb.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import com.baomidou.mybatisplus.annotation.TableLogic;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +22,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;

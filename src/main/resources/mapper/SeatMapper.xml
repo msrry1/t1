@@ -3,7 +3,7 @@
 <mapper namespace="com.zsxb.mapper.SeatMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.Seat">
+    <resultMap id="BaseResultMap" type="com.zsxb.po.Seat">
         <id column="seat_id" property="seatId" />
         <result column="studio_id" property="studioId" />
         <result column="seat_row" property="seatRow" />

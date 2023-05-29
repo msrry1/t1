@@ -2,7 +2,7 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.zsxb.common.CommonDict;
-import com.zsxb.entity.Employee;
+import com.zsxb.po.Employee;
 import com.zsxb.exception.EmployeeException;
 import com.zsxb.mapper.EmployeeMapper;
 import com.zsxb.service.EmployeeService;
@@ -28,6 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee login(String username, String password) {
+
         // 1. 根据用户名去数据库查询雇员
         LambdaQueryWrapper<Employee> query = new LambdaQueryWrapper<>();
         query.eq(Employee::getEmpUid, username);

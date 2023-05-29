@@ -1,10 +1,7 @@
 package com.zsxb.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Studio;
-import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
+import com.zsxb.po.Studio;
 
 /**
  * 

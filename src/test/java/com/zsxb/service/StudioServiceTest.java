@@ -1,9 +1,7 @@
 package com.zsxb.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Employee;
-import com.zsxb.entity.Studio;
-import com.zsxb.service.impl.StudioServiceImpl;
+import com.zsxb.po.Studio;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
 package com.zsxb.service;
 
-import com.zsxb.entity.RoleResource;
+import com.zsxb.po.RoleResource;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

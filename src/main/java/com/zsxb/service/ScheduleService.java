@@ -1,8 +1,7 @@
 package com.zsxb.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Schedule;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.zsxb.po.Schedule;
 
 /**
  * 

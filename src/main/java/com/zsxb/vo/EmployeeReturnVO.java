@@ -1,6 +1,6 @@
 package com.zsxb.vo;
 
-import com.zsxb.entity.Employee;
+import com.zsxb.po.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

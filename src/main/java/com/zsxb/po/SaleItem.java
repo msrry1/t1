@@ -1,4 +1,4 @@
-package com.zsxb.entity;
+package com.zsxb.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

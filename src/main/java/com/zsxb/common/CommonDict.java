@@ -17,17 +17,19 @@ public class CommonDict {
     // 返回成功状态码
     public static final int SUCCESS = 200;
     // 管理员操作异常状态码
-    public static final int EMPLOYEE_EXCEPTION = 4001;
+    public static final int EMPLOYEE_EXCEPTION = 1001;
     // 顾客操作异常状态码
-    public static final int CUSTOMER_EXCEPTION = 5001;
+    public static final int CUSTOMER_EXCEPTION = 2001;
     // 演出厅操作异常状态码
-    public static final int STUDIO_EXCEPTION = 6001;
+    public static final int STUDIO_EXCEPTION = 3001;
     // 文件操作异常状态码
-    public static final int FILE_EXCEPTION = 7001;
+    public static final int FILE_EXCEPTION = 4001;
     // 剧目操作异常状态码
-    public static final int PLAY_EXCEPTION = 8001;
+    public static final int PLAY_EXCEPTION = 5001;
     // 演出计划操作异常状态码
-    public static final int SCHEDULE_EXCEPTION = 8001;
+    public static final int SCHEDULE_EXCEPTION = 6001;
+    // 票务操作异常状态码
+    public static final int TICKET_EXCEPTION = 7001;
     // 未知异常状态码
     public static final int UNKNOWN_EXCEPTION = 9999;
 

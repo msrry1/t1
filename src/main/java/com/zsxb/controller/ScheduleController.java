@@ -2,10 +2,8 @@ package com.zsxb.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.common.JsonResult;
-import com.zsxb.entity.Schedule;
-import com.zsxb.exception.ScheduleException;
+import com.zsxb.po.Schedule;
 import com.zsxb.service.ScheduleService;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,9 +44,9 @@ public class ScheduleController {
     public JsonResult<Page> page(@PathVariable int current,
                                  @PathVariable int size,
                                  @RequestParam(required = false) Integer schedId) {
-        Page page = new Page(current, size);
-        scheduleService.queryPage(page, schedId);
 
+        Page page = new Page(current - 1, size);
+        scheduleService.queryPage(page, schedId);
         return JsonResult.ok(page);
     }
 

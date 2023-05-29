@@ -3,7 +3,7 @@
 <mapper namespace="com.zsxb.mapper.SaleItemMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.SaleItem">
+    <resultMap id="BaseResultMap" type="com.zsxb.po.SaleItem">
         <id column="sale_item_id" property="saleItemId" />
         <result column="ticket_id" property="ticketId" />
         <result column="sale_id" property="saleId" />

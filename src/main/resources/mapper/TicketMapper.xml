@@ -3,7 +3,7 @@
 <mapper namespace="com.zsxb.mapper.TicketMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.Ticket">
+    <resultMap id="BaseResultMap" type="com.zsxb.po.Ticket">
         <id column="ticket_id" property="ticketId" />
         <result column="seat_id" property="seatId" />
         <result column="sched_id" property="schedId" />

@@ -1,6 +1,6 @@
 package com.zsxb.mapper;
 
-import com.zsxb.entity.RoleResource;
+import com.zsxb.po.RoleResource;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

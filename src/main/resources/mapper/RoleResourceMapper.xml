@@ -3,7 +3,7 @@
 <mapper namespace="com.zsxb.mapper.RoleResourceMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.RoleResource">
+    <resultMap id="BaseResultMap" type="com.zsxb.po.RoleResource">
         <id column="role_res_id" property="roleResId" />
         <result column="role_id" property="roleId" />
         <result column="res_id" property="resId" />

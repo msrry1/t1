@@ -3,7 +3,7 @@
 <mapper namespace="com.zsxb.mapper.ResourceMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.Resource">
+    <resultMap id="BaseResultMap" type="com.zsxb.po.Resource">
         <id column="res_id" property="resId" />
         <result column="res_parent" property="resParent" />
         <result column="res_name" property="resName" />

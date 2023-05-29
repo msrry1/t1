@@ -2,8 +2,7 @@ package com.zsxb.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.common.JsonResult;
-import com.zsxb.entity.Play;
-import com.zsxb.entity.Studio;
+import com.zsxb.po.Play;
 import com.zsxb.exception.FileException;
 import com.zsxb.service.PlayService;
 import com.zsxb.service.impl.FileUploadService;

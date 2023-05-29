@@ -1,6 +1,6 @@
 package com.zsxb.service.impl;
 
-import com.zsxb.entity.Seat;
+import com.zsxb.po.Seat;
 import com.zsxb.mapper.SeatMapper;
 import com.zsxb.service.ISeatService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

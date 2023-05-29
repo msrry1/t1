@@ -1,6 +1,6 @@
 package com.zsxb.mapper;
 
-import com.zsxb.entity.Ticket;
+import com.zsxb.po.Ticket;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

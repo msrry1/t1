@@ -1,16 +1,11 @@
 package com.zsxb.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Studio;
+import com.zsxb.po.Studio;
 import com.zsxb.common.JsonResult;
 import com.zsxb.service.StudioService;
-import io.swagger.annotations.Api;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * 

@@ -1,6 +1,6 @@
-package com.zsxb.po;
+package com.zsxb.vo;
 
-import com.zsxb.entity.Schedule;
+import com.zsxb.po.Schedule;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

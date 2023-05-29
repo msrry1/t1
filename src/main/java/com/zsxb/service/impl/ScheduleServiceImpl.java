@@ -2,14 +2,16 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Schedule;
+import com.zsxb.po.Schedule;
 import com.zsxb.exception.ScheduleException;
 import com.zsxb.mapper.ScheduleMapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zsxb.po.SchedulePO;
+import com.zsxb.vo.SchedulePO;
 import com.zsxb.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -33,6 +35,25 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
     public void queryPage(Page page, Integer schedId) {
+        List<SchedulePO> records = null;
+
         LambdaQueryWrapper<SchedulePO> schedulePOLambdaQueryWrapper = new LambdaQueryWrapper<>();
+
+        if (schedId == null) {
+            // 查询所有演出计划
+            records = scheduleMapper.selectpByPage(page.getCurrent(), page.getSize());
+        } else {
+            // 查询单个演出计划
+            SchedulePO schedulePO = scheduleMapper.selectPOByScheduleId(schedId);
+            records = new ArrayList<>(1);
+            records.add(schedulePO);
+        }
+        // 查询总记录数
+        Long count = scheduleMapper.selectCount(null);
+        // 设置分页的records和count
+        page.setCountId(String.valueOf(count));
+        page.setRecords(records);
+
+        System.out.println(records);
     }
 }

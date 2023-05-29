@@ -2,12 +2,10 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.entity.Play;
-import com.zsxb.entity.Studio;
+import com.zsxb.po.Play;
 import com.zsxb.exception.PlayException;
 import com.zsxb.exception.StudioException;
 import com.zsxb.mapper.PlayMapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zsxb.service.PlayService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +41,16 @@ public class PlayServiceImpl implements PlayService {
 
     @Override
     public void add(Play play) {
+
+        String playName = play.getPlayName();
+        // 1. 判断剧目名称是否重复
+        LambdaQueryWrapper<Play> playNameQueryWrapper = new LambdaQueryWrapper<>();
+        playNameQueryWrapper.eq(Play::getPlayName, playName);
+        Play queryPlay = playMapper.selectOne(playNameQueryWrapper);
+        if (queryPlay != null) {
+            // 剧目名称重复
+            throw new PlayException("剧目已存在，请重新添加！");
+        }
 
         int result = playMapper.insert(play);
 

@@ -1,13 +1,17 @@
-package com.zsxb.entity;
+package com.zsxb.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * 
@@ -16,7 +20,10 @@ import lombok.Data;
  * @date 2023-05-09
  */
 @Data
-@ApiModel(value = "", description = "")
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Ticket implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,23 +32,19 @@ public class Ticket implements Serializable {
     private Long ticketId;
 
     /** 座位id **/
-    @ApiModelProperty("座位id")
     private Integer seatId;
 
     /** 演出计划id **/
-    @ApiModelProperty("演出计划id")
     private Integer schedId;
 
     /** 票价 **/
-    @ApiModelProperty("票价")
     private BigDecimal ticketPrice;
 
     /** 含义如下：	            0：待销售	            1：锁定	            9：卖出 **/
-    @ApiModelProperty("含义如下：	            0：待销售	            1：锁定	            9：卖出")
     private Integer ticketStatus;
 
     /** 加锁时间(下单后加锁) **/
-    @ApiModelProperty("加锁时间(下单后加锁)")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date ticketLocktime;
 
 
