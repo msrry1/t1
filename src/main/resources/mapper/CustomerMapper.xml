@@ -2,18 +2,5 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zsxb.mapper.CustomerMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.Customer">
-        <id column="cus_id" property="cusId" />
-        <result column="cus_name" property="cusName" />
-        <result column="cus_gender" property="cusGender" />
-        <result column="cus_telnum" property="cusTelnum" />
-        <result column="cus_email" property="cusEmail" />
-        <result column="cus_uid" property="cusUid" />
-        <result column="cus_pwd" property="cusPwd" />
-        <result column="cus_status" property="cusStatus" />
-        <result column="cus_balance" property="cusBalance" />
-        <result column="cus_paypwd" property="cusPaypwd" />
-    </resultMap>
 
 </mapper>

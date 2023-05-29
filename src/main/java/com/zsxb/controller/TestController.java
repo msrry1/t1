@@ -1,7 +1,6 @@
 package com.zsxb.controller;
 
-import com.zsxb.util.JsonResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import com.zsxb.common.JsonResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

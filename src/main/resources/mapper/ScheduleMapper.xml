@@ -2,14 +2,5 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zsxb.mapper.ScheduleMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.Schedule">
-        <id column="sched_id" property="schedId" />
-        <result column="studio_id" property="studioId" />
-        <result column="play_id" property="playId" />
-        <result column="sched_time" property="schedTime" />
-        <result column="sched_ticket_price" property="schedTicketPrice" />
-        <result column="sched_status" property="schedStatus" />
-    </resultMap>
 
 </mapper>

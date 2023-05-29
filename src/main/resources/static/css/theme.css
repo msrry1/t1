@@ -36,7 +36,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url("images/arrow.png") 96% 50% no-repeat;
+  background: url("static/imagesges/arrow.png") 96% 50% no-repeat;
   padding-right: 25px;
 }
 .contact-template {

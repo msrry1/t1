@@ -11,4 +11,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PlayMapper extends BaseMapper<Play> {
 
+    /**
+     * 根据剧目id将剧目状态设置为下线
+     * @param playId
+     * @return
+     */
+    int delete(int playId);
+
 }

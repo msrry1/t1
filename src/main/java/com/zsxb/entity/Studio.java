@@ -3,9 +3,14 @@ package com.zsxb.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * 
@@ -14,7 +19,9 @@ import lombok.Data;
  * @date 2023-05-09
  */
 @Data
-@ApiModel(value = "", description = "")
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 public class Studio implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,24 +30,20 @@ public class Studio implements Serializable {
     private Integer studioId;
 
     /** 演出厅名称 **/
-    @ApiModelProperty("演出厅名称")
     private String studioName;
 
     /** 座位行数 **/
-    @ApiModelProperty("座位行数")
     private Integer studioRowCount;
 
     /** 座位列数 **/
-    @ApiModelProperty("座位列数")
     private Integer studioColCount;
 
     /** 演出厅简介 **/
-    @ApiModelProperty("演出厅简介")
     private String studioIntroduction;
 
-    /** 说明：	   0：禁用	   1：启用 **/
-    @ApiModelProperty("说明：	   0：禁用	   1：启用")
-    private Integer studioStatus;
+    @TableLogic
+    /** 说明：	            0：未删除	            1：删除 **/
+    private Integer isDelete;
 
 
 }

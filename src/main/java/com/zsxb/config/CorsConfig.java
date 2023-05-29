@@ -7,16 +7,16 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /**
- * ClassName: GlobalCorsConfig
+ * ClassName: CorsConfig
  * Package: com.xuecheng.system.config
  * Description:
- *
+ * 全局跨域配置
  * @Author lyh
  * @Create 2023/5/7 17:56
  * @Version 1.0
  */
 @Configuration
-public class GlobalCorsConfig {
+public class CorsConfig {
 
     @Bean
     public CorsFilter corsFilter() {

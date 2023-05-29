@@ -1,30 +1,45 @@
-package com.zsxb.util;
+package com.zsxb;
 
-import java.io.Serializable;
+import com.zsxb.common.JsonResult;
+import lombok.ToString;
 
 /**
- * Json 格式的数据响应
- * @ClassName:JsonResult
- * @Auther: Lyh
- * @Date: 2022/8/8 16:02
- * @Version: v1.0
+ * ClassName: Aplication
+ * Package: com.zsxb
+ * Description:
+ *
+ * @Author lyh
+ * @Create 2023/5/24 18:53
+ * @Version 1.0
  */
-public class JsonResult<E> implements Serializable {
+public class Aplication {
+    public static void main(String[] args) {
 
+
+    }
+}
+
+@ToString
+class Re<E>{
     private Integer state; //状态码
     private String message; //描述信息
     private E data; //数据
 
-    public JsonResult(Integer state) {
+    public Re(Integer state) {
         this.state = state;
     }
 
-    public JsonResult(Integer state, E data) {
+    public Re(Integer state, E data) {
         this.state = state;
         this.data = data;
     }
 
-    public JsonResult() {
+    public Re(Integer state, String message) {
+        this.state = state;
+        this.message = message;
+    }
+
+    public Re() {
     }
 
     public Integer getState() {
@@ -51,7 +66,7 @@ public class JsonResult<E> implements Serializable {
         this.data = data;
     }
 
-    public JsonResult(Throwable e){
+    public Re(Throwable e){
         this.message = e.getMessage();
     }
 }

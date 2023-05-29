@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/data-dict")
-@Api(value = "",tags = "")
 public class DataDictController {
 
 }

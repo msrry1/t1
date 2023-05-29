@@ -1,18 +1,14 @@
 package com.zsxb.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.entity.Studio;
-import com.zsxb.service.IStudioService;
-import com.zsxb.service.impl.StudioServiceImpl;
-import com.zsxb.util.JsonResult;
+import com.zsxb.common.JsonResult;
+import com.zsxb.service.StudioService;
 import io.swagger.annotations.Api;
-import io.swagger.util.Json;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,25 +20,66 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/studio")
-@Api(value = "",tags = "")
 public class StudioController {
 
     @Autowired
-    private IStudioService studioService;
+    private StudioService studioService;
 
-    @PostMapping("/search")
-    public JsonResult<List<Studio>> search(String name) {
+    /**
+     * 分页查询演出厅
+     * @param current   当前页
+     * @param size  每页显示个数
+     * @param studioName    演出厅名称（可为null）
+     * @return
+     */
+    @PostMapping("/page/{current}/{size}")
+    public JsonResult<Page> page(@PathVariable int current,
+                                 @PathVariable int size,
+                                 @RequestParam(required = false) String studioName) {
+        Page page = new Page(current, size);
+        studioService.queryPage(page, studioName);
 
-        List<Studio> studioList;
-        if (StringUtils.isEmpty(name)) {
-            studioList = studioService.list();
-        } else {
-            LambdaQueryWrapper<Studio> query = new LambdaQueryWrapper<>();
-            query.eq(Studio::getStudioName, name);
-            query.eq(Studio::getStudioStatus, 1);
-            studioList = studioService.list(query);
-        }
-        return new JsonResult<>(200, studioList);
+        return JsonResult.ok(page);
+    }
+
+
+    /**
+     * 添加演出厅
+     * @return
+     */
+    @PostMapping("/add")
+    public JsonResult<Void> add(@RequestBody Studio studio) {
+
+        studioService.add(studio);
+
+        return JsonResult.ok();
+    }
+
+
+    /**
+     * 删除演出厅
+     * @param studioId
+     * @return
+     */
+    @PostMapping("/delete")
+    public JsonResult<Void> delete(int studioId) {
+
+        studioService.delete(studioId);
+
+        return JsonResult.ok();
+    }
+
+
+    /**
+     * 修改演出厅
+     * @param studio 演出厅信息
+     * @return
+     */
+    @PostMapping("/update")
+    public JsonResult<Void> update(@RequestBody Studio studio) {
+        studioService.update(studio);
+
+        return JsonResult.ok();
     }
 
 }

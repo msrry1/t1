@@ -11234,7 +11234,7 @@ tr.detail-row>td {
 }
 
 .light-login {
-    background: url(images/pattern.jpg) #DFE0E2;
+    background: url(static/images/pattern.jpg) #DFE0E2;
 }
 
 .light-login .widget-box {
@@ -11264,7 +11264,7 @@ tr.detail-row>td {
 }
 
 .blur-login {
-    background: url(images/meteorshower2.jpg) #394557;
+    background: url(static/images/meteorshower2.jpg) #394557;
 }
 
 .invoice-info {

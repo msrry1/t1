@@ -2,17 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zsxb.mapper.EmployeeMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.entity.Employee">
-        <id column="emp_id" property="empId" />
-        <result column="dict_id" property="dictId" />
-        <result column="emp_no" property="empNo" />
-        <result column="emp_name" property="empName" />
-        <result column="emp_gender" property="empGender" />
-        <result column="emp_telnum" property="empTelnum" />
-        <result column="emp_email" property="empEmail" />
-        <result column="emp_pwd" property="empPwd" />
-        <result column="emp_status" property="empStatus" />
-    </resultMap>
+
 
 </mapper>
