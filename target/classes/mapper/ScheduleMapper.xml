@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsxb.mapper.ScheduleMapper">
+
+
+    <select id="selectpByPage" resultType="com.zsxb.vo.SchedulePO">
+        select
+            st.studio_name,
+            p.play_name,
+            sc.sched_time,
+            sc.sched_ticket_price
+        from
+            schedule sc
+            left join studio st on sc.studio_id=st.studio_id
+            left join play p on sc.play_id=p.play_id
+        where sc.is_delete=0
+        order by sc.sched_id
+        limit #{current},#{size}
+    </select>
+
+    <select id="selectPOByScheduleId" resultType="com.zsxb.vo.SchedulePO">
+        select
+            st.studio_name,
+            p.play_name,
+            sc.sched_time,
+            sc.sched_ticket_price
+        from
+            schedule sc
+            left join studio st on sc.studio_id=st.studio_id
+            left join play p on sc.play_id=p.play_id
+        where sc.is_delete=0 and sc.sched_id=#{schedId}
+    </select>
+</mapper>
