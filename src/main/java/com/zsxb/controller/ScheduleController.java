@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 演出计划操作controller
+ *
+ * 演出计划操作控制层
  *
  * @author dz
  * @date 2023-05-09
@@ -45,7 +46,7 @@ public class ScheduleController {
                                  @PathVariable int size,
                                  @RequestParam(required = false) Integer schedId) {
 
-        Page page = new Page(current - 1, size);
+        Page page = new Page(current, size);
         scheduleService.queryPage(page, schedId);
         return JsonResult.ok(page);
     }

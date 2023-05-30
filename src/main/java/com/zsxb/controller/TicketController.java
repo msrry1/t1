@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 票务操作controller
+ *
+ * 票务操作控制层
  *
  * @author dz
  * @date 2023-05-09

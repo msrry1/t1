@@ -41,7 +41,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 
         if (schedId == null) {
             // 查询所有演出计划
-            records = scheduleMapper.selectpByPage(page.getCurrent(), page.getSize());
+            records = scheduleMapper.selectpByPage(page.getCurrent() - 1, page.getSize());
         } else {
             // 查询单个演出计划
             SchedulePO schedulePO = scheduleMapper.selectPOByScheduleId(schedId);

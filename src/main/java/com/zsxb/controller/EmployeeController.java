@@ -13,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 管理员Controller
+ *
+ * 管理员操作控制层
  *
  * @author dz
  * @date 2023-05-09

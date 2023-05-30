@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  *
- * 顾客操作controller
+ * 顾客操作控制层
  *
  * @author dz
  * @date 2023-05-09

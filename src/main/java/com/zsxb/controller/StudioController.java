@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 
+ *
+ * 演出厅操作控制层
  *
  * @author dz
  * @date 2023-05-09

@@ -11,18 +11,21 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * 剧目操作controller
+ *
+ * 剧目操作控制层
  *
  * @author dz
  * @date 2023-05-09
  */
-@RestController
-@RequestMapping("/play")
+@RestController  // 标识控制层、返回格式json
+@RequestMapping("/play")    // 请求路径/play
 public class PlayController {
 
+    // 自动注入playService，可以直接使用这个对象
     @Autowired
     private PlayService playService;
 
+    // 自动注入fileUploadService，可以直接使用这个对象
     @Autowired
     private FileUploadService fileUploadService;
 
@@ -37,7 +40,9 @@ public class PlayController {
     public JsonResult<Page> page(@PathVariable int current,
                                  @PathVariable int size,
                                  @RequestParam(required = false) String playName) {
+        // 创建分页对象
         Page page = new Page(current, size);
+        // 查询分页对象
         playService.queryPage(page, playName);
 
         return JsonResult.ok(page);
@@ -55,13 +60,14 @@ public class PlayController {
         String imageUrl;
 
         if (file != null) {
-            // 得到 aliyun图片路径
+            // 传过来的图片不为空时调用upload方法得到 aliyun图片路径
             imageUrl = fileUploadService.upload(file);
         } else {
             throw new FileException("文件上传失败！");
         }
         // 设置路径，空就用数据库默认
         play.setPlayImage(imageUrl);
+        // 调用add方法，添加剧目
         playService.add(play);
         return JsonResult.ok();
     }

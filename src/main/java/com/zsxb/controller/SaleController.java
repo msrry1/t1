@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 
+ * 订单操作控制层
  *
  * @author dz
  * @date 2023-05-09
  */
 @RestController
 @RequestMapping("/sale")
-@Api(value = "",tags = "")
 public class SaleController {
 
 }
