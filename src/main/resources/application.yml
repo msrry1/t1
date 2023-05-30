@@ -1,5 +1,5 @@
 server:
-  port: 9091
+  port: 9090
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource      # 数据源的类型，可以更改为其他的数据源配置，比如druid
