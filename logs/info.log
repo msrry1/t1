@@ -1,0 +1,740 @@
+2023-05-24 19:23:29,235 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 24808 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:23:29,235 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 24808 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:23:29,261 DEBUG [main][StartupInfoLogger.java:56] - Running with Spring Boot v2.5.6, Spring v5.3.12
+2023-05-24 19:23:29,261 DEBUG [main][StartupInfoLogger.java:56] - Running with Spring Boot v2.5.6, Spring v5.3.12
+2023-05-24 19:23:29,262 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:23:29,262 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:23:30,206 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:23:30,206 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:23:30,210 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:23:30,210 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:23:30,253 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:23:30,253 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:23:30,428 DEBUG [main][LogFactory.java:109] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-05-24 19:23:30,428 DEBUG [main][LogFactory.java:109] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-05-24 19:23:30,899 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:23:30,899 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:23:30,908 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:23:30,908 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:23:30,908 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:23:30,908 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:23:30,908 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:23:30,908 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:23:31,055 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:23:31,055 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:23:31,055 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1711 ms
+2023-05-24 19:23:31,055 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1711 ms
+2023-05-24 19:23:31,258 DEBUG [main][HikariConfig.java:971] - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
+2023-05-24 19:23:31,258 DEBUG [main][HikariConfig.java:971] - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
+2023-05-24 19:23:31,282 DEBUG [main][Logger.java:49] - Registered plugin: 'com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor@3811510'
+2023-05-24 19:23:31,282 DEBUG [main][Logger.java:49] - Registered plugin: 'com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor@3811510'
+2023-05-24 19:23:31,449 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\CustomerMapper.xml]'
+2023-05-24 19:23:31,449 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\CustomerMapper.xml]'
+2023-05-24 19:23:31,490 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\DataDictMapper.xml]'
+2023-05-24 19:23:31,490 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\DataDictMapper.xml]'
+2023-05-24 19:23:31,522 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\EmployeeMapper.xml]'
+2023-05-24 19:23:31,522 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\EmployeeMapper.xml]'
+2023-05-24 19:23:31,550 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\PlayMapper.xml]'
+2023-05-24 19:23:31,550 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\PlayMapper.xml]'
+2023-05-24 19:23:31,576 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ResourceMapper.xml]'
+2023-05-24 19:23:31,576 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ResourceMapper.xml]'
+2023-05-24 19:23:31,601 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RoleResourceMapper.xml]'
+2023-05-24 19:23:31,601 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RoleResourceMapper.xml]'
+2023-05-24 19:23:31,632 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RolesMapper.xml]'
+2023-05-24 19:23:31,632 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RolesMapper.xml]'
+2023-05-24 19:23:31,663 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleItemMapper.xml]'
+2023-05-24 19:23:31,663 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleItemMapper.xml]'
+2023-05-24 19:23:31,703 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleMapper.xml]'
+2023-05-24 19:23:31,703 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleMapper.xml]'
+2023-05-24 19:23:31,745 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ScheduleMapper.xml]'
+2023-05-24 19:23:31,745 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ScheduleMapper.xml]'
+2023-05-24 19:23:31,786 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SeatMapper.xml]'
+2023-05-24 19:23:31,786 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SeatMapper.xml]'
+2023-05-24 19:23:31,823 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\StudioMapper.xml]'
+2023-05-24 19:23:31,823 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\StudioMapper.xml]'
+2023-05-24 19:23:31,858 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\TicketMapper.xml]'
+2023-05-24 19:23:31,858 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\TicketMapper.xml]'
+2023-05-24 19:23:34,322 DEBUG [main][InternalLoggerFactory.java:63] - Using SLF4J as the default logging framework
+2023-05-24 19:23:34,322 DEBUG [main][InternalLoggerFactory.java:63] - Using SLF4J as the default logging framework
+2023-05-24 19:23:34,325 DEBUG [main][AddressResolverGroupProvider.java:37] - Starting without optional netty's non-blocking DNS resolver library
+2023-05-24 19:23:34,325 DEBUG [main][AddressResolverGroupProvider.java:37] - Starting without optional netty's non-blocking DNS resolver library
+2023-05-24 19:23:34,328 DEBUG [main][DefaultClientResources.java:122] - -Dio.netty.eventLoopThreads: 12
+2023-05-24 19:23:34,328 DEBUG [main][DefaultClientResources.java:122] - -Dio.netty.eventLoopThreads: 12
+2023-05-24 19:23:34,341 DEBUG [main][DefaultEventLoopGroupProvider.java:231] - Creating executor io.netty.util.concurrent.DefaultEventExecutorGroup
+2023-05-24 19:23:34,341 DEBUG [main][DefaultEventLoopGroupProvider.java:231] - Creating executor io.netty.util.concurrent.DefaultEventExecutorGroup
+2023-05-24 19:23:34,363 DEBUG [main][InternalThreadLocalMap.java:83] - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2023-05-24 19:23:34,363 DEBUG [main][InternalThreadLocalMap.java:83] - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2023-05-24 19:23:34,364 DEBUG [main][InternalThreadLocalMap.java:86] - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2023-05-24 19:23:34,364 DEBUG [main][InternalThreadLocalMap.java:86] - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2023-05-24 19:23:34,371 DEBUG [main][ResourceLeakDetector.java:129] - -Dio.netty.leakDetection.level: simple
+2023-05-24 19:23:34,371 DEBUG [main][ResourceLeakDetector.java:129] - -Dio.netty.leakDetection.level: simple
+2023-05-24 19:23:34,372 DEBUG [main][ResourceLeakDetector.java:130] - -Dio.netty.leakDetection.targetRecords: 4
+2023-05-24 19:23:34,372 DEBUG [main][ResourceLeakDetector.java:130] - -Dio.netty.leakDetection.targetRecords: 4
+2023-05-24 19:23:34,376 DEBUG [main][ResourceLeakDetectorFactory.java:196] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@161dd92a
+2023-05-24 19:23:34,376 DEBUG [main][ResourceLeakDetectorFactory.java:196] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@161dd92a
+2023-05-24 19:23:34,382 DEBUG [main][PlatformDependent0.java:460] - -Dio.netty.noUnsafe: false
+2023-05-24 19:23:34,382 DEBUG [main][PlatformDependent0.java:460] - -Dio.netty.noUnsafe: false
+2023-05-24 19:23:34,383 DEBUG [main][PlatformDependent0.java:954] - Java version: 8
+2023-05-24 19:23:34,383 DEBUG [main][PlatformDependent0.java:954] - Java version: 8
+2023-05-24 19:23:34,384 DEBUG [main][PlatformDependent0.java:135] - sun.misc.Unsafe.theUnsafe: available
+2023-05-24 19:23:34,384 DEBUG [main][PlatformDependent0.java:135] - sun.misc.Unsafe.theUnsafe: available
+2023-05-24 19:23:34,385 DEBUG [main][PlatformDependent0.java:159] - sun.misc.Unsafe.copyMemory: available
+2023-05-24 19:23:34,385 DEBUG [main][PlatformDependent0.java:159] - sun.misc.Unsafe.copyMemory: available
+2023-05-24 19:23:34,386 DEBUG [main][PlatformDependent0.java:202] - java.nio.Buffer.address: available
+2023-05-24 19:23:34,386 DEBUG [main][PlatformDependent0.java:202] - java.nio.Buffer.address: available
+2023-05-24 19:23:34,387 DEBUG [main][PlatformDependent0.java:272] - direct buffer constructor: available
+2023-05-24 19:23:34,387 DEBUG [main][PlatformDependent0.java:272] - direct buffer constructor: available
+2023-05-24 19:23:34,389 DEBUG [main][PlatformDependent0.java:350] - java.nio.Bits.unaligned: available, true
+2023-05-24 19:23:34,389 DEBUG [main][PlatformDependent0.java:350] - java.nio.Bits.unaligned: available, true
+2023-05-24 19:23:34,389 DEBUG [main][PlatformDependent0.java:424] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2023-05-24 19:23:34,389 DEBUG [main][PlatformDependent0.java:424] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2023-05-24 19:23:34,390 DEBUG [main][PlatformDependent0.java:446] - java.nio.DirectByteBuffer.<init>(long, int): available
+2023-05-24 19:23:34,390 DEBUG [main][PlatformDependent0.java:446] - java.nio.DirectByteBuffer.<init>(long, int): available
+2023-05-24 19:23:34,390 DEBUG [main][PlatformDependent.java:1103] - sun.misc.Unsafe: available
+2023-05-24 19:23:34,390 DEBUG [main][PlatformDependent.java:1103] - sun.misc.Unsafe: available
+2023-05-24 19:23:34,391 DEBUG [main][PlatformDependent.java:1224] - -Dio.netty.tmpdir: C:\Users\shang\AppData\Local\Temp (java.io.tmpdir)
+2023-05-24 19:23:34,391 DEBUG [main][PlatformDependent.java:1224] - -Dio.netty.tmpdir: C:\Users\shang\AppData\Local\Temp (java.io.tmpdir)
+2023-05-24 19:23:34,391 DEBUG [main][PlatformDependent.java:1303] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2023-05-24 19:23:34,391 DEBUG [main][PlatformDependent.java:1303] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2023-05-24 19:23:34,392 DEBUG [main][PlatformDependent.java:1063] - Platform: Windows
+2023-05-24 19:23:34,392 DEBUG [main][PlatformDependent.java:1063] - Platform: Windows
+2023-05-24 19:23:34,393 DEBUG [main][PlatformDependent.java:178] - -Dio.netty.maxDirectMemory: 3655860224 bytes
+2023-05-24 19:23:34,393 DEBUG [main][PlatformDependent.java:178] - -Dio.netty.maxDirectMemory: 3655860224 bytes
+2023-05-24 19:23:34,394 DEBUG [main][PlatformDependent.java:185] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2023-05-24 19:23:34,394 DEBUG [main][PlatformDependent.java:185] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2023-05-24 19:23:34,396 DEBUG [main][CleanerJava6.java:92] - java.nio.ByteBuffer.cleaner(): available
+2023-05-24 19:23:34,396 DEBUG [main][CleanerJava6.java:92] - java.nio.ByteBuffer.cleaner(): available
+2023-05-24 19:23:34,396 DEBUG [main][PlatformDependent.java:205] - -Dio.netty.noPreferDirect: false
+2023-05-24 19:23:34,396 DEBUG [main][PlatformDependent.java:205] - -Dio.netty.noPreferDirect: false
+2023-05-24 19:23:34,399 DEBUG [main][PlatformDependent.java:967] - org.jctools-core.MpscChunkedArrayQueue: available
+2023-05-24 19:23:34,399 DEBUG [main][PlatformDependent.java:967] - org.jctools-core.MpscChunkedArrayQueue: available
+2023-05-24 19:23:34,416 DEBUG [main][Loggers.java:245] - Using Slf4j logging framework
+2023-05-24 19:23:34,416 DEBUG [main][Loggers.java:245] - Using Slf4j logging framework
+2023-05-24 19:23:34,420 DEBUG [main][EventRecorderHolder.java:55] - Starting without optional JFR support. JFR unavailable.
+2023-05-24 19:23:34,420 DEBUG [main][EventRecorderHolder.java:55] - Starting without optional JFR support. JFR unavailable.
+2023-05-24 19:23:34,446 DEBUG [main][DefaultClientResources.java:225] - LatencyUtils/HdrUtils are not available, metrics are disabled
+2023-05-24 19:23:34,446 DEBUG [main][DefaultClientResources.java:225] - LatencyUtils/HdrUtils are not available, metrics are disabled
+2023-05-24 19:23:34,778 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.CustomerController:
+	
+2023-05-24 19:23:34,778 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.CustomerController:
+	
+2023-05-24 19:23:34,778 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.DataDictController:
+	
+2023-05-24 19:23:34,778 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.DataDictController:
+	
+2023-05-24 19:23:34,785 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.EmployeeController:
+	{GET [/employee/test]}: test()
+2023-05-24 19:23:34,785 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.EmployeeController:
+	{GET [/employee/test]}: test()
+2023-05-24 19:23:34,786 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.PlayController:
+	
+2023-05-24 19:23:34,786 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.PlayController:
+	
+2023-05-24 19:23:34,786 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ResourceController:
+	
+2023-05-24 19:23:34,786 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ResourceController:
+	
+2023-05-24 19:23:34,787 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RoleResourceController:
+	
+2023-05-24 19:23:34,787 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RoleResourceController:
+	
+2023-05-24 19:23:34,787 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RolesController:
+	
+2023-05-24 19:23:34,787 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RolesController:
+	
+2023-05-24 19:23:34,787 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleController:
+	
+2023-05-24 19:23:34,787 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleController:
+	
+2023-05-24 19:23:34,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleItemController:
+	
+2023-05-24 19:23:34,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleItemController:
+	
+2023-05-24 19:23:34,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ScheduleController:
+	
+2023-05-24 19:23:34,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ScheduleController:
+	
+2023-05-24 19:23:34,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SeatController:
+	
+2023-05-24 19:23:34,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SeatController:
+	
+2023-05-24 19:23:34,789 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.StudioController:
+	{POST [/studio/search]}: search(String)
+2023-05-24 19:23:34,789 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.StudioController:
+	{POST [/studio/search]}: search(String)
+2023-05-24 19:23:34,792 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TestController:
+	{GET [/test]}: test()
+	{GET [/skt]}: skt()
+2023-05-24 19:23:34,792 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TestController:
+	{GET [/test]}: test()
+	{GET [/skt]}: skt()
+2023-05-24 19:23:34,792 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TicketController:
+	
+2023-05-24 19:23:34,792 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TicketController:
+	
+2023-05-24 19:23:34,794 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:23:34,794 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:23:34,796 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+2023-05-24 19:23:34,796 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+2023-05-24 19:23:34,797 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:23:34,797 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:23:34,800 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2023-05-24 19:23:34,800 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2023-05-24 19:23:34,874 DEBUG [main][AbstractDetectingUrlHandlerMapping.java:86] - 'beanNameHandlerMapping' {}
+2023-05-24 19:23:34,874 DEBUG [main][AbstractDetectingUrlHandlerMapping.java:86] - 'beanNameHandlerMapping' {}
+2023-05-24 19:23:35,160 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:23:35,160 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:23:35,176 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:23:35,176 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:23:35,383 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 6.669 seconds (JVM running for 8.552)
+2023-05-24 19:23:35,383 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 6.669 seconds (JVM running for 8.552)
+2023-05-24 19:28:21,944 DEBUG [SpringApplicationShutdownHook][AbstractRedisClient.java:539] - Initiate shutdown (100, 100, MILLISECONDS)
+2023-05-24 19:28:21,944 DEBUG [SpringApplicationShutdownHook][AbstractRedisClient.java:539] - Initiate shutdown (100, 100, MILLISECONDS)
+2023-05-24 19:28:21,951 DEBUG [SpringApplicationShutdownHook][DefaultClientResources.java:710] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:21,951 DEBUG [SpringApplicationShutdownHook][DefaultClientResources.java:710] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:21,953 DEBUG [SpringApplicationShutdownHook][DefaultEventLoopGroupProvider.java:317] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:21,953 DEBUG [SpringApplicationShutdownHook][DefaultEventLoopGroupProvider.java:317] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:25,359 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 11304 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:28:25,359 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 11304 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:28:25,366 DEBUG [main][StartupInfoLogger.java:56] - Running with Spring Boot v2.5.6, Spring v5.3.12
+2023-05-24 19:28:25,366 DEBUG [main][StartupInfoLogger.java:56] - Running with Spring Boot v2.5.6, Spring v5.3.12
+2023-05-24 19:28:25,386 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:28:25,386 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:28:25,962 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:28:25,962 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:28:25,964 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:28:25,964 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:28:25,987 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:28:25,987 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:28:26,088 DEBUG [main][LogFactory.java:109] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-05-24 19:28:26,088 DEBUG [main][LogFactory.java:109] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-05-24 19:28:26,403 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:28:26,403 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:28:26,409 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:26,409 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:26,410 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:28:26,410 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:28:26,410 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:28:26,410 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:28:26,512 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:28:26,512 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:28:26,513 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1097 ms
+2023-05-24 19:28:26,513 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1097 ms
+2023-05-24 19:28:26,641 DEBUG [main][HikariConfig.java:971] - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
+2023-05-24 19:28:26,641 DEBUG [main][HikariConfig.java:971] - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
+2023-05-24 19:28:26,658 DEBUG [main][Logger.java:49] - Registered plugin: 'com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor@62d1dc3c'
+2023-05-24 19:28:26,658 DEBUG [main][Logger.java:49] - Registered plugin: 'com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor@62d1dc3c'
+2023-05-24 19:28:26,767 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\CustomerMapper.xml]'
+2023-05-24 19:28:26,767 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\CustomerMapper.xml]'
+2023-05-24 19:28:26,788 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\DataDictMapper.xml]'
+2023-05-24 19:28:26,788 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\DataDictMapper.xml]'
+2023-05-24 19:28:26,807 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\EmployeeMapper.xml]'
+2023-05-24 19:28:26,807 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\EmployeeMapper.xml]'
+2023-05-24 19:28:26,825 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\PlayMapper.xml]'
+2023-05-24 19:28:26,825 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\PlayMapper.xml]'
+2023-05-24 19:28:26,839 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ResourceMapper.xml]'
+2023-05-24 19:28:26,839 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ResourceMapper.xml]'
+2023-05-24 19:28:26,853 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RoleResourceMapper.xml]'
+2023-05-24 19:28:26,853 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RoleResourceMapper.xml]'
+2023-05-24 19:28:26,870 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RolesMapper.xml]'
+2023-05-24 19:28:26,870 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\RolesMapper.xml]'
+2023-05-24 19:28:26,885 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleItemMapper.xml]'
+2023-05-24 19:28:26,885 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleItemMapper.xml]'
+2023-05-24 19:28:26,901 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleMapper.xml]'
+2023-05-24 19:28:26,901 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SaleMapper.xml]'
+2023-05-24 19:28:26,919 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ScheduleMapper.xml]'
+2023-05-24 19:28:26,919 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ScheduleMapper.xml]'
+2023-05-24 19:28:26,937 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SeatMapper.xml]'
+2023-05-24 19:28:26,937 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\SeatMapper.xml]'
+2023-05-24 19:28:26,955 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\StudioMapper.xml]'
+2023-05-24 19:28:26,955 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\StudioMapper.xml]'
+2023-05-24 19:28:26,973 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\TicketMapper.xml]'
+2023-05-24 19:28:26,973 DEBUG [main][Logger.java:49] - Parsed mapper file: 'file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\TicketMapper.xml]'
+2023-05-24 19:28:28,507 DEBUG [main][InternalLoggerFactory.java:63] - Using SLF4J as the default logging framework
+2023-05-24 19:28:28,507 DEBUG [main][InternalLoggerFactory.java:63] - Using SLF4J as the default logging framework
+2023-05-24 19:28:28,509 DEBUG [main][AddressResolverGroupProvider.java:37] - Starting without optional netty's non-blocking DNS resolver library
+2023-05-24 19:28:28,509 DEBUG [main][AddressResolverGroupProvider.java:37] - Starting without optional netty's non-blocking DNS resolver library
+2023-05-24 19:28:28,511 DEBUG [main][DefaultClientResources.java:122] - -Dio.netty.eventLoopThreads: 12
+2023-05-24 19:28:28,511 DEBUG [main][DefaultClientResources.java:122] - -Dio.netty.eventLoopThreads: 12
+2023-05-24 19:28:28,517 DEBUG [main][DefaultEventLoopGroupProvider.java:231] - Creating executor io.netty.util.concurrent.DefaultEventExecutorGroup
+2023-05-24 19:28:28,517 DEBUG [main][DefaultEventLoopGroupProvider.java:231] - Creating executor io.netty.util.concurrent.DefaultEventExecutorGroup
+2023-05-24 19:28:28,529 DEBUG [main][InternalThreadLocalMap.java:83] - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2023-05-24 19:28:28,529 DEBUG [main][InternalThreadLocalMap.java:83] - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2023-05-24 19:28:28,529 DEBUG [main][InternalThreadLocalMap.java:86] - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2023-05-24 19:28:28,529 DEBUG [main][InternalThreadLocalMap.java:86] - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2023-05-24 19:28:28,533 DEBUG [main][ResourceLeakDetector.java:129] - -Dio.netty.leakDetection.level: simple
+2023-05-24 19:28:28,533 DEBUG [main][ResourceLeakDetector.java:129] - -Dio.netty.leakDetection.level: simple
+2023-05-24 19:28:28,533 DEBUG [main][ResourceLeakDetector.java:130] - -Dio.netty.leakDetection.targetRecords: 4
+2023-05-24 19:28:28,533 DEBUG [main][ResourceLeakDetector.java:130] - -Dio.netty.leakDetection.targetRecords: 4
+2023-05-24 19:28:28,536 DEBUG [main][ResourceLeakDetectorFactory.java:196] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@29f38091
+2023-05-24 19:28:28,536 DEBUG [main][ResourceLeakDetectorFactory.java:196] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@29f38091
+2023-05-24 19:28:28,539 DEBUG [main][PlatformDependent0.java:460] - -Dio.netty.noUnsafe: false
+2023-05-24 19:28:28,539 DEBUG [main][PlatformDependent0.java:460] - -Dio.netty.noUnsafe: false
+2023-05-24 19:28:28,539 DEBUG [main][PlatformDependent0.java:954] - Java version: 8
+2023-05-24 19:28:28,539 DEBUG [main][PlatformDependent0.java:954] - Java version: 8
+2023-05-24 19:28:28,540 DEBUG [main][PlatformDependent0.java:135] - sun.misc.Unsafe.theUnsafe: available
+2023-05-24 19:28:28,540 DEBUG [main][PlatformDependent0.java:135] - sun.misc.Unsafe.theUnsafe: available
+2023-05-24 19:28:28,540 DEBUG [main][PlatformDependent0.java:159] - sun.misc.Unsafe.copyMemory: available
+2023-05-24 19:28:28,540 DEBUG [main][PlatformDependent0.java:159] - sun.misc.Unsafe.copyMemory: available
+2023-05-24 19:28:28,541 DEBUG [main][PlatformDependent0.java:202] - java.nio.Buffer.address: available
+2023-05-24 19:28:28,541 DEBUG [main][PlatformDependent0.java:202] - java.nio.Buffer.address: available
+2023-05-24 19:28:28,541 DEBUG [main][PlatformDependent0.java:272] - direct buffer constructor: available
+2023-05-24 19:28:28,541 DEBUG [main][PlatformDependent0.java:272] - direct buffer constructor: available
+2023-05-24 19:28:28,542 DEBUG [main][PlatformDependent0.java:350] - java.nio.Bits.unaligned: available, true
+2023-05-24 19:28:28,542 DEBUG [main][PlatformDependent0.java:350] - java.nio.Bits.unaligned: available, true
+2023-05-24 19:28:28,542 DEBUG [main][PlatformDependent0.java:424] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2023-05-24 19:28:28,542 DEBUG [main][PlatformDependent0.java:424] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2023-05-24 19:28:28,542 DEBUG [main][PlatformDependent0.java:446] - java.nio.DirectByteBuffer.<init>(long, int): available
+2023-05-24 19:28:28,542 DEBUG [main][PlatformDependent0.java:446] - java.nio.DirectByteBuffer.<init>(long, int): available
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1103] - sun.misc.Unsafe: available
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1103] - sun.misc.Unsafe: available
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1224] - -Dio.netty.tmpdir: C:\Users\shang\AppData\Local\Temp (java.io.tmpdir)
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1224] - -Dio.netty.tmpdir: C:\Users\shang\AppData\Local\Temp (java.io.tmpdir)
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1303] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1303] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1063] - Platform: Windows
+2023-05-24 19:28:28,543 DEBUG [main][PlatformDependent.java:1063] - Platform: Windows
+2023-05-24 19:28:28,544 DEBUG [main][PlatformDependent.java:178] - -Dio.netty.maxDirectMemory: 3655860224 bytes
+2023-05-24 19:28:28,544 DEBUG [main][PlatformDependent.java:178] - -Dio.netty.maxDirectMemory: 3655860224 bytes
+2023-05-24 19:28:28,544 DEBUG [main][PlatformDependent.java:185] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2023-05-24 19:28:28,544 DEBUG [main][PlatformDependent.java:185] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2023-05-24 19:28:28,545 DEBUG [main][CleanerJava6.java:92] - java.nio.ByteBuffer.cleaner(): available
+2023-05-24 19:28:28,545 DEBUG [main][CleanerJava6.java:92] - java.nio.ByteBuffer.cleaner(): available
+2023-05-24 19:28:28,546 DEBUG [main][PlatformDependent.java:205] - -Dio.netty.noPreferDirect: false
+2023-05-24 19:28:28,546 DEBUG [main][PlatformDependent.java:205] - -Dio.netty.noPreferDirect: false
+2023-05-24 19:28:28,547 DEBUG [main][PlatformDependent.java:967] - org.jctools-core.MpscChunkedArrayQueue: available
+2023-05-24 19:28:28,547 DEBUG [main][PlatformDependent.java:967] - org.jctools-core.MpscChunkedArrayQueue: available
+2023-05-24 19:28:28,555 DEBUG [main][Loggers.java:245] - Using Slf4j logging framework
+2023-05-24 19:28:28,555 DEBUG [main][Loggers.java:245] - Using Slf4j logging framework
+2023-05-24 19:28:28,558 DEBUG [main][EventRecorderHolder.java:55] - Starting without optional JFR support. JFR unavailable.
+2023-05-24 19:28:28,558 DEBUG [main][EventRecorderHolder.java:55] - Starting without optional JFR support. JFR unavailable.
+2023-05-24 19:28:28,572 DEBUG [main][DefaultClientResources.java:225] - LatencyUtils/HdrUtils are not available, metrics are disabled
+2023-05-24 19:28:28,572 DEBUG [main][DefaultClientResources.java:225] - LatencyUtils/HdrUtils are not available, metrics are disabled
+2023-05-24 19:28:28,783 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.CustomerController:
+	
+2023-05-24 19:28:28,783 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.CustomerController:
+	
+2023-05-24 19:28:28,783 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.DataDictController:
+	
+2023-05-24 19:28:28,783 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.DataDictController:
+	
+2023-05-24 19:28:28,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.EmployeeController:
+	{GET [/employee/test]}: test()
+2023-05-24 19:28:28,788 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.EmployeeController:
+	{GET [/employee/test]}: test()
+2023-05-24 19:28:28,789 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.PlayController:
+	
+2023-05-24 19:28:28,789 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.PlayController:
+	
+2023-05-24 19:28:28,789 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ResourceController:
+	
+2023-05-24 19:28:28,789 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ResourceController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RoleResourceController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RoleResourceController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RolesController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.RolesController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleItemController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SaleItemController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ScheduleController:
+	
+2023-05-24 19:28:28,790 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.ScheduleController:
+	
+2023-05-24 19:28:28,791 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SeatController:
+	
+2023-05-24 19:28:28,791 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.SeatController:
+	
+2023-05-24 19:28:28,791 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.StudioController:
+	{POST [/studio/search]}: search(String)
+2023-05-24 19:28:28,791 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.StudioController:
+	{POST [/studio/search]}: search(String)
+2023-05-24 19:28:28,793 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TestController:
+	{GET [/skt]}: skt()
+	{GET [/test]}: test()
+2023-05-24 19:28:28,793 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TestController:
+	{GET [/skt]}: skt()
+	{GET [/test]}: test()
+2023-05-24 19:28:28,793 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TicketController:
+	
+2023-05-24 19:28:28,793 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	c.z.c.TicketController:
+	
+2023-05-24 19:28:28,794 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:28:28,794 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:28:28,796 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+2023-05-24 19:28:28,796 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+2023-05-24 19:28:28,796 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:28:28,796 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2023-05-24 19:28:28,798 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+	{ [/error]}: error(HttpServletRequest)
+2023-05-24 19:28:28,798 DEBUG [main][AbstractHandlerMethodMapping.java:295] - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+	{ [/error]}: error(HttpServletRequest)
+2023-05-24 19:28:28,850 DEBUG [main][AbstractDetectingUrlHandlerMapping.java:86] - 'beanNameHandlerMapping' {}
+2023-05-24 19:28:28,850 DEBUG [main][AbstractDetectingUrlHandlerMapping.java:86] - 'beanNameHandlerMapping' {}
+2023-05-24 19:28:29,054 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:29,054 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:29,066 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:28:29,066 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:28:29,229 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.216 seconds (JVM running for 5.631)
+2023-05-24 19:28:29,229 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.216 seconds (JVM running for 5.631)
+2023-05-24 19:28:46,956 DEBUG [SpringApplicationShutdownHook][AbstractRedisClient.java:539] - Initiate shutdown (100, 100, MILLISECONDS)
+2023-05-24 19:28:46,956 DEBUG [SpringApplicationShutdownHook][AbstractRedisClient.java:539] - Initiate shutdown (100, 100, MILLISECONDS)
+2023-05-24 19:28:46,961 DEBUG [SpringApplicationShutdownHook][DefaultClientResources.java:710] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:46,961 DEBUG [SpringApplicationShutdownHook][DefaultClientResources.java:710] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:46,963 DEBUG [SpringApplicationShutdownHook][DefaultEventLoopGroupProvider.java:317] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:46,963 DEBUG [SpringApplicationShutdownHook][DefaultEventLoopGroupProvider.java:317] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:28:50,362 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 9400 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:28:50,362 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 9400 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:28:50,407 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:28:50,407 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:28:51,131 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:28:51,131 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:28:51,133 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:28:51,133 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:28:51,156 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:28:51,156 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:28:51,577 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:28:51,577 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:28:51,583 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:51,583 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:51,584 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:28:51,584 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:28:51,584 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:28:51,584 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:28:51,689 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:28:51,689 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:28:51,689 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1241 ms
+2023-05-24 19:28:51,689 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1241 ms
+2023-05-24 19:28:54,113 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:54,113 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:28:54,126 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:28:54,126 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:28:54,284 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.392 seconds (JVM running for 6.045)
+2023-05-24 19:28:54,284 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.392 seconds (JVM running for 6.045)
+2023-05-24 19:29:20,275 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:29:20,275 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:29:20,275 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:29:20,275 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:29:20,277 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 2 ms
+2023-05-24 19:29:20,277 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 2 ms
+2023-05-24 19:29:20,288 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:29:20,288 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:29:20,311 INFO [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:29:20,311 INFO [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:29:20,379 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:29:20,379 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:29:20,380 INFO [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:29:20,380 INFO [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:29:20,434 WARN [http-nio-9090-exec-3][DispatcherServlet.java:1278] - No mapping for GET /favicon.ico
+2023-05-24 19:29:20,434 WARN [http-nio-9090-exec-3][DispatcherServlet.java:1278] - No mapping for GET /favicon.ico
+2023-05-24 19:29:20,435 INFO [http-nio-9090-exec-3][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:29:20,435 INFO [http-nio-9090-exec-3][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:02,316 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 4324 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:30:02,316 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 4324 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:30:02,324 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:30:02,324 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:30:02,996 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:30:02,996 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:30:02,998 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:30:02,998 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:30:03,024 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:30:03,024 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:30:03,469 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:30:03,469 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:30:03,476 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:03,476 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:03,477 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:30:03,477 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:30:03,477 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:30:03,477 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:30:03,590 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:30:03,590 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:30:03,591 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1212 ms
+2023-05-24 19:30:03,591 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1212 ms
+2023-05-24 19:30:06,082 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:06,082 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:06,092 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:30:06,092 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:30:06,270 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.329 seconds (JVM running for 5.866)
+2023-05-24 19:30:06,270 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.329 seconds (JVM running for 5.866)
+2023-05-24 19:30:09,789 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:30:09,789 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:30:09,789 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:30:09,789 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:30:09,792 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 3 ms
+2023-05-24 19:30:09,792 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 3 ms
+2023-05-24 19:30:09,802 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:09,802 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:09,823 ERROR [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:09,823 ERROR [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:09,868 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:09,868 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:09,869 ERROR [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:09,869 ERROR [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:48,781 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 17832 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:30:48,781 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 17832 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:30:48,794 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:30:48,794 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:30:49,782 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:30:49,782 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:30:49,786 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:30:49,786 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:30:49,854 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:30:49,854 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:30:50,637 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:30:50,637 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:30:50,648 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:50,648 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:50,649 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:30:50,649 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:30:50,649 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:30:50,649 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:30:50,760 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:30:50,760 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:30:50,761 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1916 ms
+2023-05-24 19:30:50,761 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1916 ms
+2023-05-24 19:30:53,911 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:53,911 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:30:53,936 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:30:53,936 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:30:54,180 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 6.096 seconds (JVM running for 11.376)
+2023-05-24 19:30:54,180 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 6.096 seconds (JVM running for 11.376)
+2023-05-24 19:30:59,218 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:30:59,218 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:30:59,218 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:30:59,218 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:30:59,221 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 3 ms
+2023-05-24 19:30:59,221 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 3 ms
+2023-05-24 19:30:59,237 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:59,237 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:59,286 ERROR [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:59,286 ERROR [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:59,409 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:59,409 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:30:59,412 ERROR [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:30:59,412 ERROR [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:36:17,077 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 28796 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:36:17,077 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 28796 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:36:17,094 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:36:17,094 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:36:17,794 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:36:17,794 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:36:17,795 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:36:17,795 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:36:17,827 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:36:17,827 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:36:18,268 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:36:18,268 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:36:18,275 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:36:18,275 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:36:18,276 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:36:18,276 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:36:18,276 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:36:18,276 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:36:18,361 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:36:18,361 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:36:18,361 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1206 ms
+2023-05-24 19:36:18,361 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1206 ms
+2023-05-24 19:36:21,036 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:36:21,036 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:36:21,049 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:36:21,049 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:36:21,211 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.548 seconds (JVM running for 6.215)
+2023-05-24 19:36:21,211 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.548 seconds (JVM running for 6.215)
+2023-05-24 19:41:53,471 DEBUG [SpringApplicationShutdownHook][AbstractRedisClient.java:539] - Initiate shutdown (100, 100, MILLISECONDS)
+2023-05-24 19:41:53,471 DEBUG [SpringApplicationShutdownHook][AbstractRedisClient.java:539] - Initiate shutdown (100, 100, MILLISECONDS)
+2023-05-24 19:41:53,476 DEBUG [SpringApplicationShutdownHook][DefaultClientResources.java:710] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:41:53,476 DEBUG [SpringApplicationShutdownHook][DefaultClientResources.java:710] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:41:53,478 DEBUG [SpringApplicationShutdownHook][DefaultEventLoopGroupProvider.java:317] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24 19:41:53,478 DEBUG [SpringApplicationShutdownHook][DefaultEventLoopGroupProvider.java:317] - Initiate shutdown (0, 2, SECONDS)
+2023-05-24T19:44:16,903 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 17204 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24T19:44:16,903 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 17204 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24T19:44:16,940 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2023-05-24T19:44:16,940 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2023-05-24T19:44:17,577 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24T19:44:17,577 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24T19:44:17,578 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24T19:44:17,578 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24T19:44:17,614 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2023-05-24T19:44:17,614 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2023-05-24T19:44:18,087 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9090 (http)
+2023-05-24T19:44:18,087 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9090 (http)
+2023-05-24T19:44:18,095 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24T19:44:18,095 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24T19:44:18,095 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-05-24T19:44:18,095 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-05-24T19:44:18,096 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24T19:44:18,096 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24T19:44:18,201 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-05-24T19:44:18,201 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-05-24T19:44:18,202 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1229 ms
+2023-05-24T19:44:18,202 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1229 ms
+2023-05-24T19:44:21,169 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24T19:44:21,169 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24T19:44:21,181 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24T19:44:21,181 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24T19:44:21,349 INFO  [main] org.springframework.boot.StartupInfoLogger: Started ZsxbMainApplication in 4.903 seconds (JVM running for 6.616)
+2023-05-24T19:44:21,349 INFO  [main] org.springframework.boot.StartupInfoLogger: Started ZsxbMainApplication in 4.903 seconds (JVM running for 6.616)
+2023-05-24T19:44:39,450 INFO  [http-nio-9090-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24T19:44:39,450 INFO  [http-nio-9090-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24T19:44:39,450 INFO  [http-nio-9090-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2023-05-24T19:44:39,450 INFO  [http-nio-9090-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2023-05-24T19:44:39,452 INFO  [http-nio-9090-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 2 ms
+2023-05-24T19:44:39,452 INFO  [http-nio-9090-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 2 ms
+2023-05-24T19:44:39,463 WARN  [http-nio-9090-exec-1] org.springframework.web.servlet.DispatcherServlet: No mapping for GET /admin/test
+2023-05-24T19:44:39,463 WARN  [http-nio-9090-exec-1] org.springframework.web.servlet.DispatcherServlet: No mapping for GET /admin/test
+2023-05-24T19:44:39,480 ERROR [http-nio-9090-exec-1] com.zsxb.common.GlobalExceptionHandler: 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24T19:44:39,480 ERROR [http-nio-9090-exec-1] com.zsxb.common.GlobalExceptionHandler: 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24T19:44:39,521 WARN  [http-nio-9090-exec-2] org.springframework.web.servlet.DispatcherServlet: No mapping for GET /admin/test
+2023-05-24T19:44:39,521 WARN  [http-nio-9090-exec-2] org.springframework.web.servlet.DispatcherServlet: No mapping for GET /admin/test
+2023-05-24T19:44:39,522 ERROR [http-nio-9090-exec-2] com.zsxb.common.GlobalExceptionHandler: 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24T19:44:39,522 ERROR [http-nio-9090-exec-2] com.zsxb.common.GlobalExceptionHandler: 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:46:06,220 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 23772 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:46:06,220 INFO [main][StartupInfoLogger.java:55] - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 23772 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+2023-05-24 19:46:06,228 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:46:06,228 INFO [main][SpringApplication.java:659] - No active profile set, falling back to default profiles: default
+2023-05-24 19:46:06,826 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:46:06,826 INFO [main][RepositoryConfigurationDelegate.java:262] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-05-24 19:46:06,827 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:46:06,827 INFO [main][RepositoryConfigurationDelegate.java:132] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-05-24 19:46:06,850 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:46:06,850 INFO [main][RepositoryConfigurationDelegate.java:201] - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-05-24 19:46:07,273 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:46:07,273 INFO [main][TomcatWebServer.java:108] - Tomcat initialized with port(s): 9090 (http)
+2023-05-24 19:46:07,280 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:46:07,280 INFO [main][DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:46:07,281 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:46:07,281 INFO [main][DirectJDKLog.java:173] - Starting service [Tomcat]
+2023-05-24 19:46:07,281 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:46:07,281 INFO [main][DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2023-05-24 19:46:07,392 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:46:07,392 INFO [main][DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+2023-05-24 19:46:07,392 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1116 ms
+2023-05-24 19:46:07,392 INFO [main][ServletWebServerApplicationContext.java:290] - Root WebApplicationContext: initialization completed in 1116 ms
+2023-05-24 19:46:09,922 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:46:09,922 INFO [main][DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-9090"]
+2023-05-24 19:46:09,936 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:46:09,936 INFO [main][TomcatWebServer.java:220] - Tomcat started on port(s): 9090 (http) with context path ''
+2023-05-24 19:46:10,104 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.261 seconds (JVM running for 5.727)
+2023-05-24 19:46:10,104 INFO [main][StartupInfoLogger.java:61] - Started ZsxbMainApplication in 4.261 seconds (JVM running for 5.727)
+2023-05-24 19:46:16,597 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:46:16,597 INFO [http-nio-9090-exec-1][DirectJDKLog.java:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-24 19:46:16,598 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:46:16,598 INFO [http-nio-9090-exec-1][FrameworkServlet.java:525] - Initializing Servlet 'dispatcherServlet'
+2023-05-24 19:46:16,600 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 2 ms
+2023-05-24 19:46:16,600 INFO [http-nio-9090-exec-1][FrameworkServlet.java:547] - Completed initialization in 2 ms
+2023-05-24 19:46:16,611 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:46:16,611 WARN [http-nio-9090-exec-1][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:46:16,630 ERROR [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:46:16,630 ERROR [http-nio-9090-exec-1][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:46:16,673 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:46:16,673 WARN [http-nio-9090-exec-2][DispatcherServlet.java:1278] - No mapping for GET /admin/test
+2023-05-24 19:46:16,674 ERROR [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
+2023-05-24 19:46:16,674 ERROR [http-nio-9090-exec-2][GlobalExceptionHandler.java:49] - 未知异常！原因：JWT String argument cannot be null or empty.
