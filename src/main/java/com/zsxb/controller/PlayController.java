@@ -81,6 +81,7 @@ public class PlayController {
     @PostMapping("/delete")
     public JsonResult<Void> delete(int playId) {
 
+        // 调用delete方法，删除剧目
         playService.delete(playId);
 
         return JsonResult.ok();
@@ -94,6 +95,7 @@ public class PlayController {
     @PostMapping
     public JsonResult<Void> update(@RequestBody Play play) {
 
+        // 调用update方法，修改剧目
         playService.update(play);
 
         return JsonResult.ok();
