@@ -9,6 +9,46 @@
 <script src="../../js/jquery-2.1.3.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <style type="text/css">
+	.pagination-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 10px 0;
+	}
+
+	.pagination-button {
+		padding: 5px 10px;
+		margin: 0 5px;
+		background-color: #e0e0e0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.current-page {
+		font-weight: bold;
+		margin: 0 5px;
+	}
+
+	.total-pages {
+		margin: 0 5px;
+	}
+
+	.page-input {
+		width: 50px;
+		padding: 2px;
+		margin: 0 5px;
+	}
+
+	.go-button {
+		padding: 4px 8px;
+		background-color: #e0e0e0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+
 	/*设置链接文字颜色，取消下划线*/
 	a, a:hover, a:focus{
 	    color: #FFFFFF;
@@ -48,93 +88,161 @@
 
 <script type="text/javascript">
 
-	function searchOne() {
-		var roomNumber = document.getElementById("roomNumber").value;
-		if (roomNumber.length == 0) {
-			search();
-			return;
-		}
-		var url = "/studio/query/" + roomNumber;
-		$.ajax({
-			url: url,
-			type: "GET",
-			success: function (response) {
-				searchComplete(response);
-			}
-		});
-	}
+
+	var currentPage = 1;
+	var pageSize = 5;
 	/*查找所有演出厅或指定演出厅*/
-	function search(){
-		var url = "http://127.0.0.1:9090/studio/page/1/5";
-		var data =
-				{
-					"name": $("#studioname").val()
-				};
+	function search() {
+		var studioName = $("#studioname").val();
+
+		// 构造分页URL
+		var url = "../../studio/page/" + currentPage + "/" + pageSize;
+
 		$.ajax({
 			url: url,
 			type: "POST",
-			contentType: "application/json",
-			dataType: "json",
-			data: JSON.stringify(data),
+			data: { studioName: studioName },
 			success: function (response) {
 				searchComplete(response);
-			}
+			},
+			error: function (error) {
+				console.error(error);
+			},
 		});
 	}
+
 	/*查找完成，执行显示*/
 	function searchComplete(response) {
-      var theTable = document.getElementById("table");//table的id
-      var num=theTable.rows.length;
-	  //清空表格内容
-      while(num>1) {
-        theTable.deleteRow(num-1);
-        num=theTable.rows.length;
-      }
-      var json =  response.data.records;//转换为json对象
+      	var theTable = document.getElementById("table");//table的id
+      	var num=theTable.rows.length;
+	  	//清空表格内容
+      	while(num>1) {
+        	theTable.deleteRow(num-1);
+        	num=theTable.rows.length;
+      	}
+      	var json =  response.data.records;//转换为json对象
 		console.log(json);
 		for(i=0; i<json.length; i++) {
-        var rowCount = theTable.rows.length; //获得当前表格的行数
-        var row = theTable.insertRow(rowCount);//在tale里动态的增加tr
-        row.insertCell(0).innerHTML = json[i].studioId;
-        row.insertCell(1).innerHTML = json[i].studioName;
-        row.insertCell(2).innerHTML = json[i].studioRowCount;
-        row.insertCell(3).innerHTML = json[i].studioColCount;
-        row.insertCell(4).innerHTML = json[i].studioIntroduction;
-        var tmp = json[i].studioId + ",\'" + json[i].studioName + "\'," + json[i].studioRowCount + "," + json[i].studioColCount + ",\'" + json[i].studioIntroduction +"\'";
-        row.insertCell(5).innerHTML = '<input type="button" class="btn btn-xs btn-primary" value="修改" onclick="modify('+ tmp +')" />&nbsp;&nbsp;<input type="button" class="btn btn-xs btn-danger" value="删除" onclick="del('+json[i].studioId+')" />';
-    	}
-  }
+			var rowCount = theTable.rows.length; //获得当前表格的行数
+			var row = theTable.insertRow(rowCount);//在tale里动态的增加tr
+			row.insertCell(0).innerHTML = json[i].studioId;
+			row.insertCell(1).innerHTML = json[i].studioName;
+			row.insertCell(2).innerHTML = json[i].studioRowCount;
+			row.insertCell(3).innerHTML = json[i].studioColCount;
+			row.insertCell(4).innerHTML = json[i].studioIntroduction;
+			var tmp = json[i].studioId + ",\'" + json[i].studioName + "\'," + json[i].studioRowCount + "," + json[i].studioColCount + ",\'" + json[i].studioIntroduction +"\'";
+			row.insertCell(5).innerHTML = '<input type="button" class="btn btn-xs btn-primary" value="修改" onclick="modify('+ tmp +')" />&nbsp;&nbsp;<input type="button" class="btn btn-xs btn-danger" value="删除" onclick="del('+json[i].studioId+')" />';
+		}
+		// 显示分页信息
+		var totalPages = Math.ceil(response.data.total / pageSize);
+
+		if (totalPages < currentPage) {
+			currentPage = 1;
+			search();
+		}
+
+		var paginationDiv = $("#pagination");
+		paginationDiv.empty();
+
+// 首页按钮
+		if (currentPage > 1) {
+			var firstPageButton = $("<button>").addClass("pagination-button first-page-button").text("首页");
+			firstPageButton.on("click", function () {
+				currentPage = 1;
+				search();
+			});
+			paginationDiv.append(firstPageButton);
+		}
+
+// 上一页按钮
+		if (currentPage > 1) {
+			var prevPageButton = $("<button>").addClass("pagination-button prev-page-button").text("上一页");
+			prevPageButton.on("click", function () {
+				currentPage--;
+				search();
+			});
+			paginationDiv.append(prevPageButton);
+		}
+
+		// 当前页
+		var currentPageSpan = $("<span>").addClass("current-page").text("当前页: " + currentPage);
+		paginationDiv.append(currentPageSpan);
+
+		// 下一页按钮
+		if (currentPage < totalPages) {
+			var nextPageButton = $("<button>").addClass("pagination-button next-page-button").text("下一页");
+			nextPageButton.on("click", function () {
+				currentPage++;
+				search();
+			});
+			paginationDiv.append(nextPageButton);
+		}
+
+		// 尾页按钮
+		if (currentPage < totalPages) {
+			var lastPageButton = $("<button>").addClass("pagination-button last-page-button").text("尾页");
+			lastPageButton.on("click", function () {
+				currentPage = totalPages;
+				search();
+			});
+			paginationDiv.append(lastPageButton);
+		}
+
+		// 总页数
+		var totalPagesSpan = $("<span>").addClass("total-pages").text("总页数: " + totalPages);
+		paginationDiv.append(totalPagesSpan);
+
+		var goButton = $("<button>").addClass("pagination-button go-button").text("跳转");
+		// 跳转按钮点击事件
+		goButton.on("click", function () {
+			var inputPage = parseInt($(".page-input").val());
+			if (inputPage > totalPages) {
+				alert("输入的页码超过总页数！");
+				return;
+			}
+			currentPage = inputPage;
+			search();
+		});
+		var pageInput = $("<input>").addClass("page-input");
+		paginationDiv.append(pageInput);
+		paginationDiv.append(goButton);
+
+	}
   function modify(a,b,c,d,e){
     window.location="detail.html?type=update&id="+a+"&name="+encodeURIComponent(b)+"&rowCount="+c+"&colCount="+d+"&introduction="+encodeURIComponent(e);
   }
 
-  function del(id){
-    if(confirm("确定删除？")) {
+	function del(id) {
+		if (confirm("确定删除？")) {
+			var url = "../../studio/delete";
+			// 构建JSON对象
+			$.ajax({
+				url: url,
+				type: "POST",
+				data: {
+					studioId: id
+				},
+				success: function (response) {
+					console.log(response);
+					delComplete(response);
+				},
+				error: function (error) {
+					console.error(error);
+				}
+			});
+		}
+	}
 
-    var url = "../../StudioServlet";
-      if (window.XMLHttpRequest)
-          req = new XMLHttpRequest();
-      else if (window.ActiveXObject)
-          req = new ActiveXObject("Microsoft.XMLHTTP");
-    if (req) {
-      //采用POST方式，异步传输
-      req.open("post", url, true);
-      //POST方式，必须加入如下头信息设定
-      req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      req.onreadystatechange = delComplete;
-      req.send("type=delete&id="+id);
-    }
-    }
-  }
-  function delComplete() {
-    if (req.readyState == 4 && req.status == 200) {
-      if(req.responseText==1)
-        search();
-      else
-        alert("数据删除失败，请重试");
-    }
-  }
-    function init(){
+	function delComplete(response) {
+		if (response.state == 200) {
+			alert("删除成功！");
+			search();
+		} else {
+			alert(response.message);
+		}
+	}
+
+	function init(){
       search();
       //不同页面修改这里默认选中样式
       $("#linkstudio").css("background-color","#336699");
@@ -359,7 +467,17 @@
 				  </tr>
 				  <tbody id="table-body"></tbody> <!-- 添加一个<tbody>元素用于显示数据 -->
 			  </table>
-			  <ul class="pagination"></ul> <!-- 添加一个分页的<ul>元素 -->
+			  <div id="pagination" class="pagination-container">
+				  <button class="pagination-button first-page-button">首页</button>
+				  <button class="pagination-button prev-page-button">上一页</button>
+				  <span class="current-page">当前页: 1</span>
+				  <button class="pagination-button next-page-button">下一页</button>
+				  <button class="pagination-button last-page-button">尾页</button>
+				  <span class="total-pages">总页数: </span>
+				  <input type="text" class="page-input" placeholder="跳转页码">
+				  <button class="pagination-button go-button">跳转</button>
+			  </div>
+
 		  </div>
 	  </div>
 
