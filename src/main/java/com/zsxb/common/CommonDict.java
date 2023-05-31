@@ -65,5 +65,7 @@ public class CommonDict {
     public static final String MANAGER = "manager";
     // 售票员字典id
     public static final String CONDUCTOR = "conductor";
+    // 剧目下线状态
+    public static final Integer PLAY_STATUS_DOWN = -1;
 
 }

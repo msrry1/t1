@@ -21,11 +21,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/play")    // 请求路径/play
 public class PlayController {
 
-    // 自动注入playService，可以直接使用这个对象
+    // 自动注入剧目的service，可以直接使用这个对象
     @Autowired
     private PlayService playService;
 
-    // 自动注入fileUploadService，可以直接使用这个对象
+    // 自动注入fileUploadService，可以直接使用这个对象对剧目的图片进行上传
     @Autowired
     private FileUploadService fileUploadService;
 
@@ -42,9 +42,10 @@ public class PlayController {
                                  @RequestParam(required = false) String playName) {
         // 创建分页对象
         Page page = new Page(current, size);
-        // 查询分页对象
+        // 查询分页对象，查询完成后play集合会放在page.records属性里
         playService.queryPage(page, playName);
 
+        // 返回page对象
         return JsonResult.ok(page);
     }
 
@@ -60,7 +61,7 @@ public class PlayController {
         String imageUrl;
 
         if (file != null) {
-            // 传过来的图片不为空时调用upload方法得到 aliyun图片路径
+            // 传过来的图片不为空时调用upload方法得到 aliyun图片路径，上传图片
             imageUrl = fileUploadService.upload(file);
         } else {
             throw new FileException("文件上传失败！");

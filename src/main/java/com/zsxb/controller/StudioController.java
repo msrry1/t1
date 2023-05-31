@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.*;
  * @author dz
  * @date 2023-05-09
  */
-@RestController
-@RequestMapping("/studio")
+@RestController // 标识控制层和返回json格式数据
+@RequestMapping("/studio") // 演出厅请求前缀
 public class StudioController {
 
+    // 注入演出厅service，可以直接使用
     @Autowired
     private StudioService studioService;
 
@@ -32,20 +33,25 @@ public class StudioController {
     public JsonResult<Page> page(@PathVariable int current,
                                  @PathVariable int size,
                                  @RequestParam(required = false) String studioName) {
+        // 根据当前页和每页显示个数构建分页page对象
         Page page = new Page(current, size);
+        // 调用service的queryPage方法，查询分页演出厅数据，放在page.records属性里
         studioService.queryPage(page, studioName);
 
+        // 返回page对象
         return JsonResult.ok(page);
     }
 
 
     /**
      * 添加演出厅
+     * @param studio    添加的演出厅信息 @RequestBody 表示传过来的数据是json数据
      * @return
      */
     @PostMapping("/add")
     public JsonResult<Void> add(@RequestBody Studio studio) {
 
+        // 添加演出厅
         studioService.add(studio);
 
         return JsonResult.ok();
@@ -54,12 +60,13 @@ public class StudioController {
 
     /**
      * 删除演出厅
-     * @param studioId
+     * @param studioId  删除的演出厅id
      * @return
      */
     @PostMapping("/delete")
     public JsonResult<Void> delete(int studioId) {
 
+        // 删除演出厅
         studioService.delete(studioId);
 
         return JsonResult.ok();
@@ -73,6 +80,8 @@ public class StudioController {
      */
     @PostMapping("/update")
     public JsonResult<Void> update(@RequestBody Studio studio) {
+
+        // 修改演出厅信息
         studioService.update(studio);
 
         return JsonResult.ok();

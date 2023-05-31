@@ -126,37 +126,62 @@
 	}
 
 	function check() {
+		console.log("hhh");
 		var form = document.getElementById("myform");
-		if(form.studioname.value=="" || form.rowcount.value=="" || form.colcount.value=="" || form.intro.value=="") {
+		console.log(form.studioid.value);
+		console.log(form.studioname.value);
+		console.log(form.rowcount.value);
+		console.log(form.colcount.value);
+		console.log(form.intro.value);
+		if (form.studioname.value == "" || form.rowcount.value == "" || form.colcount.value == "" || form.intro.value == "") {
 			alert("请填写完整信息");
 			return;
 		}
-		if(isNaN(form.rowcount.value) || isNaN(form.colcount.value)){
+		if (isNaN(form.rowcount.value) || isNaN(form.colcount.value)) {
 			alert("座位行数和座位列数不是数字");
 			return;
 		}
-		var url = "../../StudioServlet";
-	    if (window.XMLHttpRequest)
-	        req = new XMLHttpRequest();
-	    else if (window.ActiveXObject)
-	        req = new ActiveXObject("Microsoft.XMLHTTP");
-		if (req) {
-			//采用POST方式，异步传输
-			req.open("post", url, true);
-			req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			req.onreadystatechange = checkComplete;
-			var data = "type=" + form.type.value + "&studioid="
-					+ form.studioid.value + "&studioname="
-					+ encodeURIComponent(form.studioname.value) + "&rowcount="
-					+ form.rowcount.value + "&colcount=" + form.colcount.value
-					+ "&intro=" + encodeURIComponent(form.intro.value);
-			req.send(data);
-		}
-	}
 
-	function checkComplete() {
-		if (req.readyState == 4 && req.status == 200) {
-			alert(req.responseText);
+		var url = "../../studio";
+		var data;
+		if (form.studioid.value !== "") {
+			// 发送更新请求
+			url += "/update";
+			data = {
+				"studioId": form.studioid.value,
+				"studioName": form.studioname.value,
+				"studioRowCount": form.rowcount.value,
+				"studioColCount": form.colcount.value,
+				"studioIntroduction": form.intro.value
+			};
+		} else {
+			// 发送添加请求
+			url += "/add";
+			data = {
+				"studioName": form.studioname.value,
+				"studioRowCount": form.rowcount.value,
+				"studioColCount": form.colcount.value,
+				"studioIntroduction": form.intro.value
+			};
+		}
+		$.ajax({
+			url: url,
+			type: "POST",
+			contentType: "application/json",
+			data: JSON.stringify(data),
+			success: function(response) {
+				checkComplete(response);
+			},
+			error: function(error) {
+				console.error(error);
+			}
+		});
+	}
+	function checkComplete(response) {
+		if (response.state == 200) {
+			alert("操作成功！")
+		} else {
+			alert(response.message);
 		}
 	}
 </script>

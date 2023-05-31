@@ -112,27 +112,27 @@
 		//alert(type);
 		document.getElementById("type").value = type;
 		if(type=="update"){
-			var studioid = UrlParm.parm("id");
-			var studioname = UrlParm.parm("name");
-			var rowcount = UrlParm.parm("rowCount");
-			var colcount = UrlParm.parm("colCount");
-			var intro = UrlParm.parm("introduction");
-			document.getElementById("studioid").value = studioid;
-			document.getElementById("studioname").value = studioname;
-			document.getElementById("rowcount").value = rowcount;
-			document.getElementById("colcount").value = colcount;
-			document.getElementById("intro").value = intro;
+			var playId = UrlParm.parm("playId");
+			var playName = UrlParm.parm("playName");
+			var playLength = UrlParm.parm("playLength");
+			var type = UrlParm.parm("type");
+			var language = UrlParm.parm("language");
+			var playTicketPrice = UrlParm.parm("playTicketPrice");
+			var playIntroduction = UrlParm.parm("playIntroduction");
+			var playStatus = UrlParm.parm("playStatus");
+			document.getElementById("playId").value = playId;
+			document.getElementById("playName").value = playName;
+			document.getElementById("playLength").value = playLength;
+			document.getElementById("type").value = type;
+			document.getElementById("language").value = language;
+			document.getElementById("playTicketPrice").value = playTicketPrice;
+			document.getElementById("playIntroduction").value = playIntroduction;
+			document.getElementById("playStatus").value = playStatus;
 		}
 	}
 
 	function check() {
-		console.log("hhh");
 		var form = document.getElementById("myform");
-		console.log(form.studioid.value);
-		console.log(form.studioname.value);
-		console.log(form.rowcount.value);
-		console.log(form.colcount.value);
-		console.log(form.intro.value);
 		if (form.studioname.value == "" || form.rowcount.value == "" || form.colcount.value == "" || form.intro.value == "") {
 			alert("请填写完整信息");
 			return;
@@ -376,7 +376,7 @@
 
 		<!--右侧内容部分-->
 		<div class="col-md-9" style="margin-left:5px;">
-			<div style="margin:5px 0px 10px 0px;">剧院管理 > 演出厅管理</div>
+			<div style="margin:5px 0px 10px 0px;">剧院管理 > 剧目管理</div>
 			<!-- 增加员工信息 -->
 			<form id="myform" class="form-horizontal" role="form" action="#"
 				method="post">
