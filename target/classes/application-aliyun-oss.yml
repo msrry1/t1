@@ -8,7 +8,7 @@ aliyun:
   # accessKey Secret
   accessKeySecret: cXW87wLue0bvEH1on8L3jsLD01ZzhU
   # 你的Bucket名称
-  bucketName: lyh-test-xupt
+  bucketName: zsxb-ttms
   # 目标文件夹
-  fileHost: \
+  fileHost: play
 

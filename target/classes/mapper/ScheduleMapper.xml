@@ -3,8 +3,9 @@
 <mapper namespace="com.zsxb.mapper.ScheduleMapper">
 
 
-    <select id="selectpByPage" resultType="com.zsxb.vo.SchedulePO">
+    <select id="selectpByPage" resultType="com.zsxb.vo.ScheduleVO">
         select
+            sc.sched_id,
             st.studio_name,
             p.play_name,
             sc.sched_time,
@@ -18,8 +19,9 @@
         limit #{current},#{size}
     </select>
 
-    <select id="selectPOByScheduleId" resultType="com.zsxb.vo.SchedulePO">
+    <select id="selectPOByScheduleId" resultType="com.zsxb.vo.ScheduleVO">
         select
+            sc.sched_id,
             st.studio_name,
             p.play_name,
             sc.sched_time,

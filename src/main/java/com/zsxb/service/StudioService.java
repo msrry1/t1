@@ -3,6 +3,8 @@ package com.zsxb.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.po.Studio;
 
+import java.util.List;
+
 /**
  * 
  * 演出厅业务层接口
@@ -36,4 +38,17 @@ public interface StudioService {
      * @param studio    演出厅信息
      */
     void update(Studio studio);
+
+    /**
+     * 查询所有演出厅
+     * @return
+     */
+    List<Studio> list();
+
+    /**
+     * 根据演出厅id查询演出厅
+     * @param studioId
+     * @return
+     */
+    Studio selectById(Integer studioId);
 }

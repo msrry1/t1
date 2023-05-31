@@ -6,9 +6,12 @@ import com.zsxb.po.Play;
 import com.zsxb.exception.FileException;
 import com.zsxb.service.PlayService;
 import com.zsxb.service.impl.FileUploadService;
+import io.swagger.util.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  *
@@ -93,7 +96,7 @@ public class PlayController {
      * @param play 剧目信息
      * @return
      */
-    @PostMapping
+    @PostMapping("/update")
     public JsonResult<Void> update(@RequestBody Play play) {
 
         // 调用update方法，修改剧目
@@ -102,4 +105,16 @@ public class PlayController {
         return JsonResult.ok();
     }
 
+
+    /**
+     * 查询所有剧目
+     * @return
+     */
+    @PostMapping("/list")
+    public JsonResult<List<Play>> list() {
+
+        // 查询所有剧目
+        List<Play> playList = playService.list();
+        return JsonResult.ok(playList);
+    }
 }

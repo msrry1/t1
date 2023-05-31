@@ -7,6 +7,8 @@ import com.zsxb.service.StudioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  *
  * 演出厅操作控制层
@@ -71,6 +73,22 @@ public class StudioController {
 
         return JsonResult.ok();
     }
+
+
+    /**
+     * 查询所有演出厅
+     * @return
+     */
+    @PostMapping("/list")
+    public JsonResult<List<Studio>> list() {
+
+        // 调用list方法，查询所有演出厅
+        List<Studio> studioList = studioService.list();
+
+        return JsonResult.ok(studioList);
+    }
+
+
 
 
     /**

@@ -1,6 +1,7 @@
 package com.zsxb.common;
 
 import com.zsxb.exception.*;
+import io.jsonwebtoken.JwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -80,6 +81,16 @@ public class GlobalExceptionHandler {
     public JsonResult<Void> ticketException(TicketException ex){
         log.error("票务异常！原因：{}", ex.getMessage());
         return JsonResult.error(CommonDict.TICKET_EXCEPTION, ex.getMessage());
+    }
+
+    /**
+     * token异常处理
+     * @return 异常状态码和异常原因
+     */
+    @ExceptionHandler(JwtException.class)
+    public JsonResult<Void> ticketException(JwtException ex){
+        log.error("token异常！原因：{}", ex.getMessage());
+        return JsonResult.error(CommonDict.TOKEN_EXCEPTION, ex.getMessage());
     }
 
 

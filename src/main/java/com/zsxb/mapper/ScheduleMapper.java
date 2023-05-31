@@ -2,7 +2,7 @@ package com.zsxb.mapper;
 
 import com.zsxb.po.Schedule;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zsxb.vo.SchedulePO;
+import com.zsxb.vo.ScheduleVO;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public interface ScheduleMapper extends BaseMapper<Schedule> {
      * 根据演出计划id和分页数据查询演出计划集合
      * @return
      */
-    List<SchedulePO> selectpByPage(long current,
+    List<ScheduleVO> selectpByPage(long current,
                                    long size);
 
     /**
@@ -27,6 +27,6 @@ public interface ScheduleMapper extends BaseMapper<Schedule> {
      * @param schedId
      * @return
      */
-    SchedulePO selectPOByScheduleId(int schedId);
+    ScheduleVO selectPOByScheduleId(int schedId);
 
 }

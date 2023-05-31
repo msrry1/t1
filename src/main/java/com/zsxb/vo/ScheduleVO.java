@@ -19,7 +19,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class SchedulePO extends Schedule {
+public class ScheduleVO extends Schedule {
 
     // 演出厅名
     private String studioName;

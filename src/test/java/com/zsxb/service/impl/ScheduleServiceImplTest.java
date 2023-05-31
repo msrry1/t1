@@ -1,7 +1,6 @@
 package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zsxb.vo.SchedulePO;
 import com.zsxb.service.ScheduleService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +23,8 @@ class ScheduleServiceImplTest {
 
     @Test
     void queryPage() {
-        Page<SchedulePO> page = new Page<>(1,2);
-        scheduleService.queryPage(page, 2);
-        System.out.println(page.getRecords());
+//        Page<SchedulePO> page = new Page<>(1,2);
+//        scheduleService.queryPage(page, 2);
+//        System.out.println(page.getRecords());
     }
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>汉唐剧院管理系统-影厅管理</title>
+<title>知识学爆剧院管理系统-影厅管理</title>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 <link rel="stylesheet" href="../../css/font-awesome.min.css" />
@@ -111,77 +111,128 @@
 		var type = UrlParm.parm("type");
 		//alert(type);
 		document.getElementById("type").value = type;
+		var playImageInput = document.getElementById("playImageInput");
 		if(type=="update"){
+			// 是修改，隐藏图片展示
+			playImageInput.style.display = "none";
+
 			var playId = UrlParm.parm("playId");
 			var playName = UrlParm.parm("playName");
 			var playLength = UrlParm.parm("playLength");
-			var type = UrlParm.parm("type");
+			var playType = UrlParm.parm("playType");
 			var language = UrlParm.parm("language");
 			var playTicketPrice = UrlParm.parm("playTicketPrice");
 			var playIntroduction = UrlParm.parm("playIntroduction");
-			var playStatus = UrlParm.parm("playStatus");
 			document.getElementById("playId").value = playId;
 			document.getElementById("playName").value = playName;
 			document.getElementById("playLength").value = playLength;
-			document.getElementById("type").value = type;
-			document.getElementById("language").value = language;
+			document.getElementById("playType").value = playType;
+			document.getElementById("playLanguage").value = language;
 			document.getElementById("playTicketPrice").value = playTicketPrice;
 			document.getElementById("playIntroduction").value = playIntroduction;
-			document.getElementById("playStatus").value = playStatus;
+		} else {
+			// 展示图片显示
+			playImageInput.style.display = "block";
 		}
 	}
 
 	function check() {
-		var form = document.getElementById("myform");
-		if (form.studioname.value == "" || form.rowcount.value == "" || form.colcount.value == "" || form.intro.value == "") {
+		console.log("check");
+
+		var formData = document.getElementById("myform");
+		if (formData.playName.value == "" ||
+				formData.playLength.value == "" ||
+				formData.playTicketPrice.value == "") {
 			alert("请填写完整信息");
 			return;
 		}
-		if (isNaN(form.rowcount.value) || isNaN(form.colcount.value)) {
-			alert("座位行数和座位列数不是数字");
+		if (isNaN(formData.playTicketPrice.value) || isNaN(formData.playLength.value)) {
+			alert("剧目票价或剧目时长不是数字");
 			return;
 		}
+		console.log("演出厅id" + formData.playId.value);
 
-		var url = "../../studio";
-		var data;
-		if (form.studioid.value !== "") {
+		if (formData.playId.value !== "") {
 			// 发送更新请求
-			url += "/update";
-			data = {
-				"studioId": form.studioid.value,
-				"studioName": form.studioname.value,
-				"studioRowCount": form.rowcount.value,
-				"studioColCount": form.colcount.value,
-				"studioIntroduction": form.intro.value
-			};
+			url = "../../play/update";
+			var json = JSON.stringify({
+				"playId": formData.playId.value,
+				"playName": formData.playName.value,
+				"playLength": formData.playLength.value,
+				"type": formData.playType.value,
+				"language": formData.playLanguage.value,
+				"playTicketPrice": formData.playTicketPrice.value,
+				"playIntroduction": formData.playIntroduction.value,
+			});
+
+			$.ajax({
+				url: url,
+				type: "POST",
+				contentType: "application/json",
+				data: json,
+				success: function (response) {
+					checkComplete(response);
+				},
+				error: function (error) {
+					console.error(error);
+				}
+			});
+
+
 		} else {
-			// 发送添加请求
-			url += "/add";
-			data = {
-				"studioName": form.studioname.value,
-				"studioRowCount": form.rowcount.value,
-				"studioColCount": form.colcount.value,
-				"studioIntroduction": form.intro.value
-			};
+
+			//构建formData
+			var newFormData = new FormData();
+			console.log("添加剧目");
+			console.log("playName:", formData.playName.value);
+			console.log("playLength:", formData.playLength.value);
+			console.log("playType:", formData.playType.value);
+			console.log("playLanguage:", formData.playLanguage.value);
+			console.log("playTicketPrice:", formData.playTicketPrice.value);
+			console.log("playIntroduction:", formData.playIntroduction.value);
+			console.log("playStatus:", formData.playStatus.value);
+
+			// 添加剧目
+			//文件部分
+			var file = document.getElementById("playImage").files[0];
+			newFormData.append("file", file);
+			//json部分
+			var json = JSON.stringify({
+				"playName": formData.playName.value,
+				"playLength": formData.playLength.value,
+				"type": formData.playType.value,
+				"language": formData.playLanguage.value,
+				"playTicketPrice": formData.playTicketPrice.value,
+				"playIntroduction": formData.playIntroduction.value,
+			});
+			//这里包装 可以直接转换成对象
+			newFormData.append('play', new Blob([json], {type: "application/json"}));
+
+			$.ajax({
+				url: "../../play/add",
+				type: "post",
+				//忽略contentType
+				contentType: false,
+				//取消序列换 formData本来就是序列化好的
+				processData: false,
+				dataType: "json",
+				data: newFormData,
+				success: function (response) {
+					checkComplete(response);
+				},
+				error: function () {
+					console.error(error);
+				}
+			});
+
 		}
-		$.ajax({
-			url: url,
-			type: "POST",
-			contentType: "application/json",
-			data: JSON.stringify(data),
-			success: function(response) {
-				checkComplete(response);
-			},
-			error: function(error) {
-				console.error(error);
+
+		function checkComplete(response) {
+			if (response.state == 200) {
+				alert("操作成功！")
+			} else {
+				alert(response.message);
 			}
-		});
-	}
-	function checkComplete(response) {
-		if (response.state == 200) {
-			alert("操作成功！")
-		} else {
-			alert(response.message);
 		}
 	}
 </script>
@@ -237,17 +288,17 @@
 					<div class="panel-body">
 						<ul class="nav">
 							<li>
-								<a id="linkstudio" href="index.html" style="padding-left:30px;">
+								<a id="linkstudio" href="../studio/index.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>演出厅管理
 								</a>
 							</li>
 							<li>
-								<a id="linkplay" href="#" style="padding-left:30px;">
+								<a id="linkplay" href="../play/index.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>剧目管理
 								</a>
 							</li>
 							<li>
-								<a id="linksched" href="#" style="padding-left:30px;">
+								<a id="linksched" href="../schedule/index.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>演出计划
 								</a>
 							</li>
@@ -378,58 +429,88 @@
 		<div class="col-md-9" style="margin-left:5px;">
 			<div style="margin:5px 0px 10px 0px;">剧院管理 > 剧目管理</div>
 			<!-- 增加员工信息 -->
-			<form id="myform" class="form-horizontal" role="form" action="#"
-				method="post">
+
+			<form id="myform" class="form-horizontal" role="form" action="#" method="post">
 				<input type="hidden" id="type" name="type">
 				<div class="form-group">
-					<label class="col-sm-2 control-label">演出厅编号</label>
+					<label class="col-sm-2 control-label">剧目编号</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" name="studioid"
-							id="studioid" disabled="disabled">
+						<input type="text" class="form-control" name="playId" id="playId" disabled="disabled">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">演出厅名称</label>
+					<label class="col-sm-2 control-label">剧目名称</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" name="studioname"
-							id="studioname" placeholder="请输入演出厅名称">
+						<input type="text" class="form-control" name="playName" id="playName" placeholder="请输入剧目名称">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">座位行数</label>
+					<label class="col-sm-2 control-label">剧目类型</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" name="rowcount"
-							id="rowcount" placeholder="请输入座位行数">
+						<select class="form-control" name="playType" id="playType">
+							<option value="喜剧">喜剧</option>
+							<option value="恐怖">恐怖</option>
+							<option value="科幻">科幻</option>
+							<option value="悬疑">悬疑</option>
+							<option value="都市">都市</option>
+							<option value="爱情">爱情</option>
+							<option value="动作">动作</option>
+							<option value="历史">历史</option>
+							<option value="战争">战争</option>
+							<!-- 根据实际需要添加更多选项 -->
+						</select>
+
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">座位列数</label>
+					<label class="col-sm-2 control-label">剧目语言</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" name="colcount"
-							id="colcount" placeholder="请输入座位列数">
+						<select class="form-control" name="playLanguage" id="playLanguage">
+							<option value="中文">中文</option>
+							<option value="英文">英文</option>
+							<option value="德语">德语</option>
+							<option value="日语">日语</option>
+							<option value="法语">法语</option>
+							<!-- 根据实际需要添加更多选项 -->
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目简介</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playIntroduction" id="playIntroduction" placeholder="请输入剧目简介">
+					</div>
+				</div>
+				<div class="form-group" id="playImageInput">
+					<label class="col-sm-2 control-label">剧目图片</label>
+					<div class="col-sm-6">
+						<input type="file" class="form-control" name="playImage" id="playImage" accept="image/*">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目时长（分钟）</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playLength" id="playLength" placeholder="请输入剧目时长">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">演出厅描述</label>
+					<label class="col-sm-2 control-label">剧目票价（元）</label>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" name="intro"
-							id="intro" placeholder="请输演出厅描述">
+						<input type="text" class="form-control" name="playTicketPrice" id="playTicketPrice" placeholder="请输入剧目票价">
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-2 control-label"
-						style="color: red; font-weight: bold;"></div>
+					<div class="col-sm-2 control-label" style="color: red; font-weight: bold;"></div>
 					<div class="col-sm-6">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button type="button" class="btn btn-primary" onclick="check()">提
-							交</button>
+						<button type="button" class="btn btn-primary" onclick="check()">提交</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button type="button" class="btn btn-warning"
-							onclick="javascript:window.location='index.html'">返 回</button>
+						<button type="button" class="btn btn-warning" onclick="javascript:window.location='index.html'">返回</button>
 					</div>
 				</div>
 			</form>
-
 		</div>
 	</div>
 </body>

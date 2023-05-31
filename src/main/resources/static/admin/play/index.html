@@ -163,8 +163,7 @@
 						json[i].type + "\',\'" +
 						json[i].language + "\'," +
 						json[i].playTicketPrice + ",\'" +
-						json[i].playIntroduction + "\'," +
-						json[i].playStatus;
+						json[i].playIntroduction + "\'";
 
 				row.insertCell(9).innerHTML = '<input type="button" class="btn btn-xs btn-primary" value="修改" onclick="modify('+ tmp +')" />&nbsp;&nbsp;<input type="button" class="btn btn-xs btn-danger" value="删除" onclick="del('+json[i].playId+')" />';
 
@@ -244,8 +243,8 @@
 			paginationDiv.append(goButton);
 
 		}
-		function modify(a,b,c,d,e,f,g,h){
-			window.location="detail.html?type=update&playId="+a+"&playName="+encodeURIComponent(b)+"&playLength="+c+"&type="+encodeURIComponent(d)+"&language="+encodeURIComponent(e)+"&playTicketPrice="+f+"&playIntroduction="+encodeURIComponent(g)+"&playStatus="+h;
+		function modify(a,b,c,d,e,f,g){
+			window.location="detail.html?type=update&playId="+a+"&playName="+encodeURIComponent(b)+"&playLength="+c+"&playType="+encodeURIComponent(d)+"&language="+encodeURIComponent(e)+"&playTicketPrice="+f+"&playIntroduction="+encodeURIComponent(g);
 		}
 
 		function del(id) {
