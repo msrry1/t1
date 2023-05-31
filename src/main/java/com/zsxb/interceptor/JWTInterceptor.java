@@ -61,7 +61,7 @@ public class JWTInterceptor implements HandlerInterceptor {
         String key = claims.getSubject();
         if (key.equals("root")) {
             // 是root用户
-            return false;
+            return true;
         }
         Object user = redisCache.getCacheObject(key);
         if (user == null) {
