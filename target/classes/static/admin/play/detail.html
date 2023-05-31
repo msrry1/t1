@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>知识学爆剧院管理系统-影厅管理</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+<link rel="stylesheet" href="../../css/font-awesome.min.css" />
+<script src="../../js/jquery-2.1.3.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<style type="text/css">
+	a, a:hover, a:focus{
+	    color: #FFFFFF;
+	    text-decoration: none;
+	}
+	.panel-group {
+	    background-color: #438EB9;
+	    margin-top:5px;
+	    /*
+	    width: 250px;
+	    height: 100%;
+	    position: fixed;
+	    overflow-y: auto;
+	    */
+	}
+	.panel-group .panel {
+	    background-color: #438EB9;
+	    border: none;
+	}
+	.panel-default>.panel-heading {
+	    border: none;
+	    color: #FFFFFF;
+	    background-color: #62A8D1;
+	}
+	.panel-group .panel-heading+.panel-collapse>.panel-body {
+	    border: none;
+	}
+	.panel-body {
+	    padding: 0px 0px;
+	}
+	.nav {
+	    margin-left: 0px;
+	}
+	.nav>li>a:hover, .nav>li>a:focus {
+	    background-color: #336699;
+	}
+</style>
+<script>
+	UrlParm = function() { // url参数
+		var data, index;
+		(function init() {
+			data = [];
+			index = {};
+			var u = window.location.search.substr(1);
+			if (u != '') {
+				var parms = decodeURIComponent(u).split('&');
+				for (var i = 0, len = parms.length; i < len; i++) {
+					if (parms[i] != '') {
+						var p = parms[i].split("=");
+						if (p.length == 1 || (p.length == 2 && p[1] == '')) {// p | p=
+							data.push([ '' ]);
+							index[p[0]] = data.length - 1;
+						} else if (typeof (p[0]) == 'undefined' || p[0] == '') { // =c | =
+							data[0] = [ p[1] ];
+						} else if (typeof (index[p[0]]) == 'undefined') { // c=aaa
+							data.push([ p[1] ]);
+							index[p[0]] = data.length - 1;
+						} else {// c=aaa
+							data[index[p[0]]].push(p[1]);
+						}
+					}
+				}
+			}
+		})();
+		return {
+			// 获得参数
+			parm : function(o) { // o: 参数名或者参数次序
+				try {
+					return (typeof (o) == 'number' ? data[o][0] : data[index[o]][0]);
+				} catch (e) {
+				}
+			},
+			//获得参数组, 类似request.getParameterValues()
+			parmValues : function(o) { //  o: 参数名或者参数次序
+				try {
+					return (typeof (o) == 'number' ? data[o] : data[index[o]]);
+				} catch (e) {
+				}
+			},
+			//是否含有parmName参数
+			hasParm : function(parmName) {
+				return typeof (parmName) == 'string' ? typeof (index[parmName]) != 'undefined' : false;
+			},
+			// 获得参数Map ,类似request.getParameterMap()
+			parmMap : function() {
+				var map = {};
+				try {
+					for ( var p in index) {
+						map[p] = data[index[p]];
+					}
+				} catch (e) {
+				}
+				return map;
+			}
+		}
+	}();
+
+	function init() {
+		$("#linkstudio").css("background-color","#336699");
+		$("#sub1").attr("class","collapse panel-collapse in");
+		var type = UrlParm.parm("type");
+		//alert(type);
+		document.getElementById("type").value = type;
+		var playImageInput = document.getElementById("playImageInput");
+		if(type=="update"){
+			// 是修改，隐藏图片展示
+			playImageInput.style.display = "none";
+
+			var playId = UrlParm.parm("playId");
+			var playName = UrlParm.parm("playName");
+			var playLength = UrlParm.parm("playLength");
+			var playType = UrlParm.parm("playType");
+			var language = UrlParm.parm("language");
+			var playTicketPrice = UrlParm.parm("playTicketPrice");
+			var playIntroduction = UrlParm.parm("playIntroduction");
+			document.getElementById("playId").value = playId;
+			document.getElementById("playName").value = playName;
+			document.getElementById("playLength").value = playLength;
+			document.getElementById("playType").value = playType;
+			document.getElementById("playLanguage").value = language;
+			document.getElementById("playTicketPrice").value = playTicketPrice;
+			document.getElementById("playIntroduction").value = playIntroduction;
+		} else {
+			// 展示图片显示
+			playImageInput.style.display = "block";
+		}
+	}
+
+	function check() {
+		console.log("check");
+
+		var formData = document.getElementById("myform");
+		if (formData.playName.value == "" ||
+				formData.playLength.value == "" ||
+				formData.playTicketPrice.value == "") {
+			alert("请填写完整信息");
+			return;
+		}
+		if (isNaN(formData.playTicketPrice.value) || isNaN(formData.playLength.value)) {
+			alert("剧目票价或剧目时长不是数字");
+			return;
+		}
+		console.log("演出厅id" + formData.playId.value);
+
+		if (formData.playId.value !== "") {
+			// 发送更新请求
+			url = "../../play/update";
+			var json = JSON.stringify({
+				"playId": formData.playId.value,
+				"playName": formData.playName.value,
+				"playLength": formData.playLength.value,
+				"type": formData.playType.value,
+				"language": formData.playLanguage.value,
+				"playTicketPrice": formData.playTicketPrice.value,
+				"playIntroduction": formData.playIntroduction.value,
+			});
+
+			$.ajax({
+				url: url,
+				type: "POST",
+				contentType: "application/json",
+				data: json,
+				success: function (response) {
+					checkComplete(response);
+				},
+				error: function (error) {
+					console.error(error);
+				}
+			});
+
+
+		} else {
+
+			//构建formData
+			var newFormData = new FormData();
+			console.log("添加剧目");
+			console.log("playName:", formData.playName.value);
+			console.log("playLength:", formData.playLength.value);
+			console.log("playType:", formData.playType.value);
+			console.log("playLanguage:", formData.playLanguage.value);
+			console.log("playTicketPrice:", formData.playTicketPrice.value);
+			console.log("playIntroduction:", formData.playIntroduction.value);
+			console.log("playStatus:", formData.playStatus.value);
+
+			// 添加剧目
+			//文件部分
+			var file = document.getElementById("playImage").files[0];
+			newFormData.append("file", file);
+			//json部分
+			var json = JSON.stringify({
+				"playName": formData.playName.value,
+				"playLength": formData.playLength.value,
+				"type": formData.playType.value,
+				"language": formData.playLanguage.value,
+				"playTicketPrice": formData.playTicketPrice.value,
+				"playIntroduction": formData.playIntroduction.value,
+			});
+			//这里包装 可以直接转换成对象
+			newFormData.append('play', new Blob([json], {type: "application/json"}));
+
+			$.ajax({
+				url: "../../play/add",
+				type: "post",
+				//忽略contentType
+				contentType: false,
+				//取消序列换 formData本来就是序列化好的
+				processData: false,
+				dataType: "json",
+				data: newFormData,
+				success: function (response) {
+					checkComplete(response);
+				},
+				error: function () {
+					console.error(error);
+				}
+			});
+
+		}
+
+		function checkComplete(response) {
+			if (response.state == 200) {
+				alert("操作成功！")
+			} else {
+				alert(response.message);
+			}
+		}
+	}
+</script>
+</head>
+<body onload="init()">
+
+	<!-- 上部banner -->
+	<div id="navbar" class="navbar">
+		<div class="navbar-container ace-save-state" id="navbar-container">
+			<!-- 左边标题 -->
+			<div class="navbar-header pull-left">
+				<a href="../../customer/index.html" class="navbar-brand">
+					<small>
+						<span class="glyphicon glyphicon-film"></span>&nbsp;汉唐剧院管理系统</small>
+				</a>
+			</div>
+			<!-- 右边个人设置 -->
+			<div class="navbar-buttons navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+					<li class="light-blue dropdown-modal">
+						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+							<img class="nav-user-photo" src="../../images/admin.png" alt="admin's Photo" />
+							<span class="user-info">欢迎,<br>管理员</span>
+							<i class="ace-icon fa fa-caret-down"></i>
+						</a>
+						<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+							<li><a href="#"><i class="ace-icon fa fa-cog"></i>设置</a></li>
+							<li><a href="#"><i class="ace-icon fa fa-user"></i>个人信息</a></li>
+							<li class="divider"></li>
+							<li><a href="../../customer/index.html"><i class="ace-icon fa fa-power-off"></i>退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 下部内容 -->
+	<div class="row">
+
+		<!-- 左导航栏 --> 
+		<div class="col-md-2">
+		    <div class="panel-group" id="panelContainer">
+			<!-- 导航栏1 -->
+			<div class="panel panel-default">
+				<!-- 加入data-toggle="collapse"后可点击折叠 -->
+				<div id="header1" class="panel-heading" data-toggle="collapse" data-target="#sub1" data-parent="#panelContainer">
+					<i class="glyphicon glyphicon-leaf"></i>
+					<a href="#">剧院管理</a>
+					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+				</div>
+				<div id="sub1" class="collapse panel-collapse">
+					<div class="panel-body">
+						<ul class="nav">
+							<li>
+								<a id="linkstudio" href="../studio/index.html" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>演出厅管理
+								</a>
+							</li>
+							<li>
+								<a id="linkplay" href="../play/index.html" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>剧目管理
+								</a>
+							</li>
+							<li>
+								<a id="linksched" href="../schedule/index.html" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>演出计划
+								</a>
+							</li>
+							<li>
+								<a id="linkcheck" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>验票管理
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 导航栏2 -->
+			<div class="panel panel-default">
+				<!-- 加入data-toggle="collapse"后可点击折叠 -->
+				<div id="header2" class="panel-heading" data-toggle="collapse" data-target="#sub2" data-parent="#panelContainer">
+					<i class="glyphicon glyphicon-user"></i>
+					<a href="#">用户管理</a>
+					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+				</div>
+				<div id="sub2" class="collapse panel-collapse">
+					<div class="panel-body">
+						<ul class="nav">
+							<li>
+								<a id="linkcustomer" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>观众管理
+								</a>
+							</li>
+							<li>
+								<a id="linkemp" href="#" style="padding-left:30px;background-color:#336699">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>员工管理
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 导航栏3 -->
+			<div class="panel panel-default">
+				<!-- 加入data-toggle="collapse"后可点击折叠 -->
+				<div id="header3" class="panel-heading" data-toggle="collapse" data-target="#sub3" data-parent="#panelContainer">
+					<i class="glyphicon glyphicon-tasks"></i>
+					<a href="#">票务管理</a>
+					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+				</div>
+				<div id="sub3" class="collapse panel-collapse">
+					<div class="panel-body">
+						<ul class="nav">
+							<li>
+								<a id="linksale" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>售票管理
+								</a>
+							</li>
+							<li>
+								<a id="linkrefund" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>退票管理
+								</a>
+							</li>
+							<li>
+								<a id="linkstat" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 导航栏4 -->
+			<div class="panel panel-default">
+				<!-- 加入data-toggle="collapse"后可点击折叠 -->
+				<div id="header4" class="panel-heading" data-toggle="collapse" data-target="#sub4" data-parent="#panelContainer">
+					<i class="glyphicon glyphicon-tasks"></i>
+					<a href="#">财务管理</a>
+					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+				</div>
+				<div id="sub4" class="collapse panel-collapse">
+					<div class="panel-body">
+						<ul class="nav">
+							<li>
+								<a id="linksaleticket" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>票款管理
+								</a>
+							</li>
+							<li>
+								<a id="linksaleachi" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>销售业绩
+								</a>
+							</li>
+							<li>
+								<a id="linksalestat" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 导航栏5 -->
+			<div class="panel panel-default">
+				<!-- 加入data-toggle="collapse"后可点击折叠 -->
+				<div id="header5" class="panel-heading" data-toggle="collapse" data-target="#sub5" data-parent="#panelContainer">
+					<i class="glyphicon glyphicon-tasks"></i>
+					<a href="#">权限管理</a>
+					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+				</div>
+				<div id="sub5" class="collapse panel-collapse">
+					<div class="panel-body">
+						<ul class="nav">
+							<li>
+								<a id="linkresource" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>资源管理
+								</a>
+							</li>
+							<li>
+								<a id="linkrole" href="#" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>角色管理
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			</div>
+		</div>
+
+		<!--右侧内容部分-->
+		<div class="col-md-9" style="margin-left:5px;">
+			<div style="margin:5px 0px 10px 0px;">剧院管理 > 剧目管理</div>
+			<!-- 增加员工信息 -->
+
+			<form id="myform" class="form-horizontal" role="form" action="#" method="post">
+				<input type="hidden" id="type" name="type">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目编号</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playId" id="playId" disabled="disabled">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目名称</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playName" id="playName" placeholder="请输入剧目名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目类型</label>
+					<div class="col-sm-6">
+						<select class="form-control" name="playType" id="playType">
+							<option value="喜剧">喜剧</option>
+							<option value="恐怖">恐怖</option>
+							<option value="科幻">科幻</option>
+							<option value="悬疑">悬疑</option>
+							<option value="都市">都市</option>
+							<option value="爱情">爱情</option>
+							<option value="动作">动作</option>
+							<option value="历史">历史</option>
+							<option value="战争">战争</option>
+							<!-- 根据实际需要添加更多选项 -->
+						</select>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目语言</label>
+					<div class="col-sm-6">
+						<select class="form-control" name="playLanguage" id="playLanguage">
+							<option value="中文">中文</option>
+							<option value="英文">英文</option>
+							<option value="德语">德语</option>
+							<option value="日语">日语</option>
+							<option value="法语">法语</option>
+							<!-- 根据实际需要添加更多选项 -->
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目简介</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playIntroduction" id="playIntroduction" placeholder="请输入剧目简介">
+					</div>
+				</div>
+				<div class="form-group" id="playImageInput">
+					<label class="col-sm-2 control-label">剧目图片</label>
+					<div class="col-sm-6">
+						<input type="file" class="form-control" name="playImage" id="playImage" accept="image/*">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目时长（分钟）</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playLength" id="playLength" placeholder="请输入剧目时长">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">剧目票价（元）</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="playTicketPrice" id="playTicketPrice" placeholder="请输入剧目票价">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-2 control-label" style="color: red; font-weight: bold;"></div>
+					<div class="col-sm-6">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" class="btn btn-primary" onclick="check()">提交</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" class="btn btn-warning" onclick="javascript:window.location='index.html'">返回</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

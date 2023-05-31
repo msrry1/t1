@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsxb.mapper.SaleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zsxb.po.Sale">
+        <id column="sale_id" property="saleId" />
+        <result column="emp_id" property="empId" />
+        <result column="cus_id" property="cusId" />
+        <result column="sale_time" property="saleTime" />
+        <result column="sale_payment" property="salePayment" />
+        <result column="sale_change" property="saleChange" />
+        <result column="sale_type" property="saleType" />
+        <result column="sale_status" property="saleStatus" />
+        <result column="sale_sort" property="saleSort" />
+    </resultMap>
+
+</mapper>
