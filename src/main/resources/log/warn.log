@@ -1,0 +1,4 @@
+00:26:03.155 [http-nio-9091-exec-3] ERROR com.zsxb.common.GlobalExceptionHandler - 未知异常！原因：Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "NaN"
+02:33:02.949 [DataSourceHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m29s767ms607µs400ns).
+05:17:06.625 [DataSourceHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Thread starvation or clock leap detected (housekeeper delta=2h39m33s590ms563µs901ns).
+07:48:59.987 [DataSourceHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Thread starvation or clock leap detected (housekeeper delta=2h26m53s255ms644µs100ns).
