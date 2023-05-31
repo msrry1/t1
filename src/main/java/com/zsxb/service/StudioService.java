@@ -5,6 +5,7 @@ import com.zsxb.po.Studio;
 
 /**
  * 
+ * 演出厅业务层接口
  *
  * @author dz
  * @date 2023-05-09
@@ -14,13 +15,13 @@ public interface StudioService {
     /**
      * 分页查询演出厅
      * @param page  分页
-     * @param studioName    演出厅名称（可以为null）
+     * @param studioName    演出厅名称（可以为null），null表示查询所有演出厅
      */
     void queryPage(Page page, String studioName);
 
     /**
      * 添加演出厅
-     * @param studio
+     * @param studio    演出厅信息
      */
     void add(Studio studio);
 
@@ -32,7 +33,7 @@ public interface StudioService {
 
     /**
      * 修改演出厅
-     * @param studio
+     * @param studio    演出厅信息
      */
     void update(Studio studio);
 }

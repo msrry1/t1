@@ -12,13 +12,15 @@ import org.springframework.stereotype.Service;
 
 /**
  * 
+ * 演出厅业务层
  *
  * @author dz
  * @date 2023-05-09
  */
-@Service
+@Service    // 标识业务层
 public class StudioServiceImpl implements StudioService {
 
+    // 注入演出厅的mapper，可以直接使用
     @Autowired
     private StudioMapper studioMapper;
 
@@ -42,18 +44,21 @@ public class StudioServiceImpl implements StudioService {
     @Override
     public void add(Studio studio) {
 
+        // 演出厅名称
         String studioName = studio.getStudioName();
 
-        // 1. 判断演出厅名称是否重复
+        // 1. 构建查询条件，判断演出厅名称是否重复
         LambdaQueryWrapper<Studio> studioNameQueryWrapper = new LambdaQueryWrapper<>();
+        // 添加条件：演出厅名称必须相同
         studioNameQueryWrapper.eq(Studio::getStudioName, studioName);
+        // 根据查询条件查询演出厅
         Studio queryStudio = studioMapper.selectOne(studioNameQueryWrapper);
         if (queryStudio != null) {
-            // 名称重复
+            // 查询出来的演出厅存在，所以名称重复
             throw new StudioException("演出厅已存在，请重新添加！");
         }
 
-        // 2. 添加演出厅
+        // 2. 添加演出厅，返回影响的行数
         int result = studioMapper.insert(studio);
         if (result <= 0) {
             // 添加演出厅失败，请检查输入是否合法
@@ -70,7 +75,7 @@ public class StudioServiceImpl implements StudioService {
             // 演出厅不存在，抛出异常
             throw new StudioException("删除的演出厅不存在！");
         }
-        // 2. 执行删除演出厅
+        // 2. 根据演出厅id执行删除演出厅，返回受影响的行数
         int result = studioMapper.deleteById(studioId);
         if (result <= 0) {
             // 删除失败
@@ -80,13 +85,17 @@ public class StudioServiceImpl implements StudioService {
 
     @Override
     public void update(Studio studio) {
-        // 1. 查询演出厅是否存在
-        Studio queryStudio = studioMapper.selectById(studio.getStudioId());
+
+        // 演出厅id
+        Integer studioId = studio.getStudioId();
+
+        // 1. 根据演出厅id查询演出厅是否存在
+        Studio queryStudio = studioMapper.selectById(studioId);
         if (queryStudio == null) {
-            // 演出厅不存在，抛出异常
+            // 查询的演出厅不存在，抛出异常
             throw new StudioException("修改的演出厅不存在！");
         }
-        // 2. 修改演出厅
+        // 2. 修改演出厅，返回受影响的行数
         int result = studioMapper.updateById(studio);
         if (result <= 0) {
             throw new StudioException("修改演出厅失败！");

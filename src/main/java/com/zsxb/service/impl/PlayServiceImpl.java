@@ -2,6 +2,7 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zsxb.common.CommonDict;
 import com.zsxb.po.Play;
 import com.zsxb.exception.PlayException;
 import com.zsxb.exception.StudioException;
@@ -34,6 +35,8 @@ public class PlayServiceImpl implements PlayService {
         }
         // 根据剧目id升序
         playLambdaQueryWrapper.orderByAsc(Play::getPlayId);
+        // 查询不包含下线剧目
+        playLambdaQueryWrapper.ne(Play::getPlayStatus, CommonDict.PLAY_STATUS_DOWN);
 
         // 查询演出厅
         playMapper.selectPage(page, playLambdaQueryWrapper);

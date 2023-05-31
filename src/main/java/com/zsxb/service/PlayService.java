@@ -5,6 +5,7 @@ import com.zsxb.po.Play;
 
 /**
  * 
+ * 剧目业务层接口
  *
  * @author dz
  * @date 2023-05-09
@@ -14,7 +15,7 @@ public interface PlayService {
     /**
      * 根据剧目名称查询分页剧目信息
      * @param page
-     * @param playName
+     * @param playName 剧目名称（可以为null）
      */
     void queryPage(Page page, String playName);
 
