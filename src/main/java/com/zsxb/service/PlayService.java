@@ -3,6 +3,8 @@ package com.zsxb.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.po.Play;
 
+import java.util.List;
+
 /**
  * 
  * 剧目业务层接口
@@ -36,4 +38,17 @@ public interface PlayService {
      * @param play_id
      */
     void delete(int play_id);
+
+    /**
+     * 查询所有剧目
+     * @return
+     */
+    List<Play> list();
+
+    /**
+     * 根据剧目id获取剧目
+     * @param playId
+     * @return
+     */
+    Play selectById(Integer playId);
 }

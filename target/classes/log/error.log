@@ -1,1 +1,0 @@
-00:26:03.155 [http-nio-9091-exec-3] ERROR com.zsxb.common.GlobalExceptionHandler - 未知异常！原因：Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "NaN"

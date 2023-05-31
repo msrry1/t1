@@ -12,6 +12,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 
  *
@@ -78,6 +80,24 @@ public class PlayServiceImpl implements PlayService {
             // 删除失败
             throw new StudioException("删除剧目失败！");
         }
+    }
+
+    @Override
+    public List<Play> list() {
+
+        // 查询所有剧目
+        List<Play> playList = playMapper.selectList(null);
+
+        return playList;
+    }
+
+    @Override
+    public Play selectById(Integer playId) {
+
+        // 根据剧目id获取剧目
+        Play play = playMapper.selectById(playId);
+
+        return play;
     }
 
     @Override

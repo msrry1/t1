@@ -26,6 +26,9 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private RootInfo rootInfo;
+
     /**
      * 管理员登录
      * @param loginVO 登录的vo
@@ -34,19 +37,16 @@ public class EmployeeController {
     @PostMapping("/login")
     public JsonResult<EmployeeReturnVO> login(@RequestBody LoginVO loginVO) {
 
-
-        // 如果是root用户，生成root用户的token，直接返回root用户
-        if (RootInfo.isRoot(loginVO.getUsername(), loginVO.getPassword())) {
+//         如果是root用户，生成root用户的token，直接返回root用户
+        if (rootInfo.isRoot(loginVO.getUsername(), loginVO.getPassword())) {
             EmployeeReturnVO root = new EmployeeReturnVO();
             String token = JwtUtil.createJWT("root",
                     CommonDict.TOKEN_EXPIRE_TIME);
             root.setToken(token);
-            root.setEmpName(RootInfo.username);
-            root.setEmpPwd(RootInfo.password);
+            root.setEmpName(rootInfo.getUsername());
+            root.setEmpPwd(rootInfo.getPassword());
             return JsonResult.ok(root);
         }
-
-
 
         // 默认用户名密码登录
         Employee employee = employeeService.login(loginVO.getUsername(),

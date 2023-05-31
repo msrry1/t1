@@ -10,6 +10,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 
  * 演出厅业务层
@@ -100,5 +102,23 @@ public class StudioServiceImpl implements StudioService {
         if (result <= 0) {
             throw new StudioException("修改演出厅失败！");
         }
+    }
+
+    @Override
+    public List<Studio> list() {
+
+        // 查询所有演出厅
+        List<Studio> studioList = studioMapper.selectList(null);
+
+        return studioList;
+    }
+
+    @Override
+    public Studio selectById(Integer studioId) {
+
+        // 根据演出厅id获取演出厅
+        Studio studio = studioMapper.selectById(studioId);
+
+        return studio;
     }
 }

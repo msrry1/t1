@@ -30,6 +30,8 @@ public class CommonDict {
     public static final int SCHEDULE_EXCEPTION = 6001;
     // 票务操作异常状态码
     public static final int TICKET_EXCEPTION = 7001;
+    // token操作异常状态码
+    public static final int TOKEN_EXCEPTION = 8001;
     // 未知异常状态码
     public static final int UNKNOWN_EXCEPTION = 9999;
 

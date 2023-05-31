@@ -1,10 +1,14 @@
 server:
-  port: 9091
+  port: 9090
 spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
   datasource:
     type: com.zaxxer.hikari.HikariDataSource      # 数据源的类型，可以更改为其他的数据源配置，比如druid
     driver-class-name: com.mysql.cj.jdbc.Driver      # mysql/MariaDB 的数据库驱动类名称
-    url: jdbc:mysql://121.37.155.73:7777/zsxb?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    url: jdbc:mysql://121.37.155.73:7777/zsxb?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: ymxkai0.1
     hikari:

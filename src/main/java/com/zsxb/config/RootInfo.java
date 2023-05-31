@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * ClassName: RootInfo
@@ -17,13 +18,14 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "root")
 @Configuration
 @Data
+@PropertySource(value = {"classpath:application.yml"})
 public class RootInfo {
 
     @Value("${username}")
-    public static String username;
+    private String username;
 
     @Value("${password}")
-    public static String password;
+    private String password;
 
     /**
      * 判断当前用户是不是root用户
@@ -31,9 +33,9 @@ public class RootInfo {
      * @param password
      * @return
      */
-    public static boolean isRoot(String username,
-                                 String password) {
-       if (username.equals(RootInfo.username) && password.equals(RootInfo.password)) {
+    public boolean isRoot(String username,
+                          String password) {
+       if (username.equals(this.username) && password.equals(this.password)) {
            return true;
        }
        return false;
