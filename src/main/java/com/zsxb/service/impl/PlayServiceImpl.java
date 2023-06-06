@@ -3,6 +3,7 @@ package com.zsxb.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.common.CommonDict;
+import com.zsxb.po.Employee;
 import com.zsxb.po.Play;
 import com.zsxb.exception.PlayException;
 import com.zsxb.exception.StudioException;
@@ -86,7 +87,8 @@ public class PlayServiceImpl implements PlayService {
     public List<Play> list() {
 
         // 查询所有剧目
-        List<Play> playList = playMapper.selectList(null);
+        LambdaQueryWrapper<Play> playLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        List<Play> playList = playMapper.selectList(playLambdaQueryWrapper);
 
         return playList;
     }
@@ -96,8 +98,21 @@ public class PlayServiceImpl implements PlayService {
 
         // 根据剧目id获取剧目
         Play play = playMapper.selectById(playId);
+        // 如果剧目已经被删除
+        if (play.getPlayStatus() == CommonDict.PLAY_STATUS_DOWN) {
+            play = null;
+        }
 
         return play;
+    }
+
+    @Override
+    public List<Play> selectByPlayName(String playName) {
+        LambdaQueryWrapper<Play> playLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        playLambdaQueryWrapper.like(Play::getPlayName, playName);
+        List<Play> playList = playMapper.selectList(playLambdaQueryWrapper);
+        return playList;
+
     }
 
     @Override

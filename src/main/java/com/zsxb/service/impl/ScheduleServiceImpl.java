@@ -1,19 +1,18 @@
 package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zsxb.common.CommonDict;
 import com.zsxb.exception.PlayException;
-import com.zsxb.po.Play;
-import com.zsxb.po.Schedule;
+import com.zsxb.po.*;
 import com.zsxb.exception.ScheduleException;
 import com.zsxb.mapper.ScheduleMapper;
-import com.zsxb.po.Studio;
-import com.zsxb.service.PlayService;
-import com.zsxb.service.ScheduleService;
-import com.zsxb.service.StudioService;
+import com.zsxb.service.*;
 import com.zsxb.vo.ScheduleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,7 +36,14 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Autowired
     private PlayService playService;
 
+    @Autowired
+    private SeatService seatService;
+
+    @Autowired
+    private TicketService ticketService;
+
     @Override
+    @Transactional
     public void add(Schedule schedule) {
 
         // 添加演出计划时，要判断演出计划演出的时间和演出厅的其他演出计划的时间有没有冲突
@@ -81,34 +87,117 @@ public class ScheduleServiceImpl implements ScheduleService {
             }
         }
         // 此时和演出厅的其他演出计划的演出时间没有冲突，可以尝试添加
-
+        // 修改演出计划票价为剧目票价
+        schedule.setSchedTicketPrice(play.getPlayTicketPrice());
         int result = scheduleMapper.insert(schedule);
         if (result <= 0) {
             throw new ScheduleException("添加演出计划失败！请检查输入参数是否正确！");
         }
+        // 6. 为该演出计划添加对应演出票
+        // 拿到演出厅的id
+        Integer studioId = schedule.getStudioId();
+        // 根据演出厅id构建演出厅座位查询条件
+        LambdaQueryWrapper<Seat> seatLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        seatLambdaQueryWrapper.eq(Seat::getStudioId, studioId);
+        List<Seat> seats = seatService.list(seatLambdaQueryWrapper);
+
+        // 根据演出计划id和演出计划票价和演出厅座位生成演出票
+        List<Ticket> tickets = ticketService.createTickets(schedule, seats);
+
+        // 7. 批量添加演出票
+        ticketService.saveBatch(tickets);
+
+        // 8. 修改剧目的已安排演出状态
+        Integer playStatus = play.getPlayStatus();
+        if (playStatus != CommonDict.PLAY_STATUS_BUSY) {
+            play.setPlayStatus(CommonDict.PLAY_STATUS_BUSY);
+        }
+        playService.update(play);
+
     }
 
     @Override
     public void queryPage(Page page, Integer schedId) {
         List<ScheduleVO> records = null;
 
-        LambdaQueryWrapper<ScheduleVO> schedulePOLambdaQueryWrapper = new LambdaQueryWrapper<>();
-
         if (schedId == null) {
             // 查询所有演出计划
-            records = scheduleMapper.selectpByPage(page.getCurrent() - 1, page.getSize());
+            records = scheduleMapper.selectVOByPage((page.getCurrent() - 1) * page.getSize(), page.getSize(),null);
         } else {
             // 查询单个演出计划
-            ScheduleVO schedulePO = scheduleMapper.selectPOByScheduleId(schedId);
+            ScheduleVO scheduleVO = scheduleMapper.selectVOByScheduleId(schedId);
             records = new ArrayList<>(1);
-            records.add(schedulePO);
+            records.add(scheduleVO);
         }
         // 查询总记录数
-        Long count = scheduleMapper.selectCount(null);
-        // 设置分页的records和count
-        page.setCountId(String.valueOf(count));
-        page.setRecords(records);
 
-        System.out.println(records);
+        Long count = scheduleMapper.selectCount(null);
+        // 设置分页的records和total
+        // 如果是根据id查询演出计划，个数就设置为1
+        if (schedId != null) {
+            count = 1l;
+        }
+        page.setTotal(count);
+        page.setRecords(records);
+    }
+
+    @Override
+    public void delete(Integer schedId) {
+
+        // 判断演出计划是否存在
+        Schedule schedule = scheduleMapper.selectById(schedId);
+        if (schedule == null) {
+            // 删除的演出计划不存在
+            throw new ScheduleException("删除的演出计划不存在！");
+        }
+        // 删除演出计划
+        int result = scheduleMapper.deleteById(schedule);
+        if (result <= 0) {
+            throw new ScheduleException("删除演出计划失败！");
+        }
+    }
+
+    @Override
+    @Transactional
+    public void update(Schedule schedule) {
+        // 1. 先查询演出计划是否存在
+        Schedule querySchedule = scheduleMapper.selectById(schedule.getSchedId());
+        if (querySchedule == null) {
+            throw new ScheduleException("修改的演出计划不存在！");
+        }
+
+        // 2. 修改演出计划的信息
+        int result = scheduleMapper.updateById(schedule);
+        if (result <= 0) {
+            throw new ScheduleException("修改演出计划失败！");
+        }
+        // 3. 修改该演出计划生成的所有票的价格
+        LambdaUpdateWrapper<Ticket> ticketLambdaUpdateWrapper = new LambdaUpdateWrapper<>();
+        ticketLambdaUpdateWrapper.eq(Ticket::getSchedId, schedule.getSchedId());
+        ticketLambdaUpdateWrapper.set(Ticket::getTicketPrice, schedule.getSchedTicketPrice());
+        boolean updateFlag = ticketService.update(ticketLambdaUpdateWrapper);
+        if (!updateFlag) {
+            throw new ScheduleException("修改演出计划生成票信息失败！");
+        }
+    }
+
+    @Override
+    public void queryPageByPlayId(Page page, Integer playId) {
+        List<ScheduleVO> records = null;
+
+        // 查询该剧目所有演出计划
+        records = scheduleMapper.selectVOByPage((page.getCurrent() - 1) * page.getSize(), page.getSize(), playId);
+        // 查询总记录数
+        LambdaQueryWrapper<Schedule> scheduleLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        scheduleLambdaQueryWrapper.eq(Schedule::getPlayId, playId);
+        Long count = scheduleMapper.selectCount(scheduleLambdaQueryWrapper);
+        // 设置分页的records和total
+        page.setTotal(count);
+        page.setRecords(records);
+    }
+
+    @Override
+    public Schedule selectById(Integer schedId) {
+        return scheduleMapper.selectById(schedId);
     }
 }

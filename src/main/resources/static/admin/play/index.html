@@ -92,9 +92,14 @@
 
 	<script type="text/javascript">
 
+		// 用户管理
+		var token = localStorage.getItem("token");
 
+		// 查询页码
 		var currentPage = 1;
+		// 每页显示个数
 		var pageSize = 5;
+
 		/*查找所有演出厅或指定演出厅*/
 		function search() {
 			var playName = $("#playName").val();
@@ -106,13 +111,30 @@
 				url: url,
 				type: "POST",
 				data: { playName: playName },
-				success: function (response) {
-					searchComplete(response);
+				headers: {
+					"token": token
 				},
-				error: function (error) {
-					console.error(error);
+				success: function (response) {
+					handleResponse(response)
+				},
+				error: function (response) {
+					handleResponse(response)
 				},
 			});
+		}
+
+		// 处理响应
+		function handleResponse(response) {
+			if (response.state === 200) {
+				// 处理成功结果
+				searchComplete(response);
+			} else if (response.state === 8001){
+				// 处理错误结果
+				alert(response.message);
+				window.location.href = "../../login.html";
+			} else {
+				alert(response.message);
+			}
 		}
 
 		/*查找完成，执行显示*/
@@ -171,15 +193,17 @@
 			// 显示分页信息
 			var totalPages = Math.ceil(response.data.total / pageSize);
 
-			if (totalPages < currentPage) {
-				currentPage = 1;
-				search();
+			if (totalPages != 0){
+				if (totalPages < currentPage){
+					currentPage = 1;
+					search();
+				}
 			}
 
 			var paginationDiv = $("#pagination");
 			paginationDiv.empty();
 
-// 首页按钮
+			// 首页按钮
 			if (currentPage > 1) {
 				var firstPageButton = $("<button>").addClass("pagination-button first-page-button").text("首页");
 				firstPageButton.on("click", function () {
@@ -189,7 +213,7 @@
 				paginationDiv.append(firstPageButton);
 			}
 
-// 上一页按钮
+			// 上一页按钮
 			if (currentPage > 1) {
 				var prevPageButton = $("<button>").addClass("pagination-button prev-page-button").text("上一页");
 				prevPageButton.on("click", function () {
@@ -243,10 +267,13 @@
 			paginationDiv.append(goButton);
 
 		}
+
+		//修改函数
 		function modify(a,b,c,d,e,f,g){
 			window.location="detail.html?type=update&playId="+a+"&playName="+encodeURIComponent(b)+"&playLength="+c+"&playType="+encodeURIComponent(d)+"&language="+encodeURIComponent(e)+"&playTicketPrice="+f+"&playIntroduction="+encodeURIComponent(g);
 		}
 
+		//删除函数
 		function del(id) {
 			if (confirm("确定删除？")) {
 				var url = "../../play/delete";
@@ -257,30 +284,37 @@
 					data: {
 						playId: id
 					},
+					headers: {
+						"token": token
+					},
 					success: function (response) {
-						console.log(response);
 						delComplete(response);
 					},
-					error: function (error) {
-						console.error(error);
+					error: function (response) {
+						delComplete(response);
 					}
 				});
 			}
 		}
 
+		//删除成功函数
 		function delComplete(response) {
 			if (response.state == 200) {
 				alert("删除成功！");
 				search();
-			} else {
+			} else if (response.state === 8001){
+				alert(response.message);
+				window.location.href = "../../login.html";
+			} else{
 				alert(response.message);
 			}
 		}
 
+		//页面初始化函数
 		function init(){
 			search();
 			//不同页面修改这里默认选中样式
-			$("#linkstudio").css("background-color","#336699");
+			$("#linkplay").css("background-color","#336699");
 			$("#sub1").attr("class","collapse panel-collapse in");
 		}
 	</script>
@@ -295,7 +329,7 @@
 		<div class="navbar-header pull-left">
 			<a href="../../customer/index.html" class="navbar-brand">
 				<small>
-					<span class="glyphicon glyphicon-film"></span>&nbsp;汉唐剧院管理系统</small>
+					<span class="glyphicon glyphicon-film"></span>&nbsp;知识学爆剧院管理系统</small>
 			</a>
 		</div>
 		<!-- 右边个人设置 -->
@@ -330,7 +364,7 @@
 				<!-- 加入data-toggle="collapse"后可点击折叠 -->
 				<div id="header1" class="panel-heading" data-toggle="collapse" data-target="#sub1" data-parent="#panelContainer">
 					<i class="glyphicon glyphicon-leaf"></i>
-					<a href="#">剧院管理</a>
+					<a href="../studio/index.html">剧院管理</a>
 					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
 				</div>
 				<div id="sub1" class="collapse panel-collapse">
@@ -342,18 +376,13 @@
 								</a>
 							</li>
 							<li>
-								<a id="linkplay" href="#" style="padding-left:30px;">
+								<a id="linkplay" href="../play/index.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>剧目管理
 								</a>
 							</li>
 							<li>
-								<a id="linksched" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>演出计划
-								</a>
-							</li>
-							<li>
-								<a id="linkcheck" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>验票管理
+								<a id="linksched" href="../schedule/index.html" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>演出计划管理
 								</a>
 							</li>
 						</ul>
@@ -365,19 +394,19 @@
 				<!-- 加入data-toggle="collapse"后可点击折叠 -->
 				<div id="header2" class="panel-heading" data-toggle="collapse" data-target="#sub2" data-parent="#panelContainer">
 					<i class="glyphicon glyphicon-user"></i>
-					<a href="#">用户管理</a>
+					<a href="../customer/index.html">用户管理</a>
 					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
 				</div>
 				<div id="sub2" class="collapse panel-collapse">
 					<div class="panel-body">
 						<ul class="nav">
 							<li>
-								<a id="linkcustomer" href="#" style="padding-left:30px;">
+								<a id="linkcustomer" href="../customer/index.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>观众管理
 								</a>
 							</li>
 							<li>
-								<a id="linkemp" href="#" style="padding-left:30px;background-color:#336699">
+								<a id="linkemp" href="../employee/index.html" style="padding-left:30px;background-color:#336699">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>员工管理
 								</a>
 							</li>
@@ -390,27 +419,23 @@
 				<!-- 加入data-toggle="collapse"后可点击折叠 -->
 				<div id="header3" class="panel-heading" data-toggle="collapse" data-target="#sub3" data-parent="#panelContainer">
 					<i class="glyphicon glyphicon-tasks"></i>
-					<a href="#">票务管理</a>
+					<a href="../ticket/sellticket.html">票务管理</a>
 					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
 				</div>
 				<div id="sub3" class="collapse panel-collapse">
 					<div class="panel-body">
 						<ul class="nav">
 							<li>
-								<a id="linksale" href="#" style="padding-left:30px;">
+								<a id="linksale" href="../ticket/sellticket.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>售票管理
 								</a>
 							</li>
 							<li>
-								<a id="linkrefund" href="#" style="padding-left:30px;">
+								<a id="linkrefund" href="../ticket/returnticket.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>退票管理
 								</a>
 							</li>
-							<li>
-								<a id="linkstat" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
-								</a>
-							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -420,57 +445,26 @@
 				<!-- 加入data-toggle="collapse"后可点击折叠 -->
 				<div id="header4" class="panel-heading" data-toggle="collapse" data-target="#sub4" data-parent="#panelContainer">
 					<i class="glyphicon glyphicon-tasks"></i>
-					<a href="#">财务管理</a>
+					<a href="../sale/salecount.html">财务管理</a>
 					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
 				</div>
 				<div id="sub4" class="collapse panel-collapse">
 					<div class="panel-body">
 						<ul class="nav">
 							<li>
-								<a id="linksaleticket" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>票款管理
-								</a>
-							</li>
-							<li>
-								<a id="linksaleachi" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>销售业绩
-								</a>
-							</li>
-							<li>
-								<a id="linksalestat" href="#" style="padding-left:30px;">
+								<a id="linkstat" href="../sale/salecount.html" style="padding-left:30px;">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
 								</a>
 							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- 导航栏5 -->
-			<div class="panel panel-default">
-				<!-- 加入data-toggle="collapse"后可点击折叠 -->
-				<div id="header5" class="panel-heading" data-toggle="collapse" data-target="#sub5" data-parent="#panelContainer">
-					<i class="glyphicon glyphicon-tasks"></i>
-					<a href="#">权限管理</a>
-					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
-				</div>
-				<div id="sub5" class="collapse panel-collapse">
-					<div class="panel-body">
-						<ul class="nav">
 							<li>
-								<a id="linkresource" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>资源管理
-								</a>
-							</li>
-							<li>
-								<a id="linkrole" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>角色管理
+								<a id="linksaleachi" href="../sale/salesperformance.html" style="padding-left:30px;">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>销售业绩
 								</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-
 
 		</div>
 	</div>

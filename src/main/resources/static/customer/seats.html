@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>汉唐剧院管理系统-选座订票</title>
+<title>知识学爆剧院管理系统-选座订票</title>
 <link rel="stylesheet" href="../css/font-awesome.min.css" />
 <link rel="stylesheet" href="../css/slick.css" />
 <link rel="stylesheet" href="../css/slicknav.css" />
@@ -160,8 +160,272 @@ span.seatCharts-legendDescription {
 	color: white
 }
 </style>
+
+
+	<script type="text/javascript">
+		//url函数
+		UrlParm = function() { // url参数
+			var data, index;
+			(function init() {
+				data = [];
+				index = {};
+				var u = window.location.search.substr(1);
+				if (u != '') {
+					var parms = decodeURIComponent(u).split('&');
+					for (var i = 0, len = parms.length; i < len; i++) {
+						if (parms[i] != '') {
+							var p = parms[i].split("=");
+							if (p.length == 1 || (p.length == 2 && p[1] == '')) {// p | p=
+								data.push([ '' ]);
+								index[p[0]] = data.length - 1;
+							} else if (typeof (p[0]) == 'undefined' || p[0] == '') { // =c | =
+								data[0] = [ p[1] ];
+							} else if (typeof (index[p[0]]) == 'undefined') { // c=aaa
+								data.push([ p[1] ]);
+								index[p[0]] = data.length - 1;
+							} else {// c=aaa
+								data[index[p[0]]].push(p[1]);
+							}
+						}
+					}
+				}
+			})();
+			return {
+				// 获得参数
+				parm : function(o) { // o: 参数名或者参数次序
+					try {
+						return (typeof (o) == 'number' ? data[o][0] : data[index[o]][0]);
+					} catch (e) {
+					}
+				},
+				//获得参数组, 类似request.getParameterValues()
+				parmValues : function(o) { //  o: 参数名或者参数次序
+					try {
+						return (typeof (o) == 'number' ? data[o] : data[index[o]]);
+					} catch (e) {
+					}
+				},
+				//是否含有parmName参数
+				hasParm : function(parmName) {
+					return typeof (parmName) == 'string' ? typeof (index[parmName]) != 'undefined' : false;
+				},
+				// 获得参数Map ,类似request.getParameterMap()
+				parmMap : function() {
+					var map = {};
+					try {
+						for ( var p in index) {
+							map[p] = data[index[p]];
+						}
+					} catch (e) {
+					}
+					return map;
+				}
+			}
+		}();
+		// 用户管理
+		var token = localStorage.getItem("token");
+
+		// 查询页码
+		var currentPage = 1;
+		// 每页显示个数
+		var pageSize = 5;
+
+		/*查找所有演出厅或指定演出厅*/
+		function search() {
+			var schedId = UrlParm.parm("schedId");
+
+			// 构造分页URL
+			var url = "../../seat/page/" + currentPage + "/" + pageSize;
+
+			$.ajax({
+				url: url,
+				type: "POST",
+				data: { schedId: schedId },
+				headers: {
+					"token": token
+				},
+				success: function (response) {
+					handleResponse(response)
+				},
+				error: function (response) {
+					handleResponse(response)
+				},
+			});
+		}
+
+		// 处理响应
+		function handleResponse(response) {
+			if (response.state === 200) {
+				// 处理成功结果
+				searchComplete(response);
+			} else if (response.state === 8001){
+				// 处理错误结果
+				alert(response.message);
+				window.location.href = "../../login.html";
+			} else {
+				alert(response.message);
+			}
+		}
+
+		/*查找完成，执行显示*/
+		function searchComplete(response) {
+			var theTable = document.getElementById("table");//table的id
+			var num=theTable.rows.length;
+			//清空表格内容
+			while(num>1) {
+				theTable.deleteRow(num-1);
+				num=theTable.rows.length;
+			}
+			var json =  response.data.records;//转换为json对象
+			console.log(json);
+			for(i=0; i<json.length; i++) {
+				var rowCount = theTable.rows.length; //获得当前表格的行数
+				var row = theTable.insertRow(rowCount);//在tale里动态的增加tr
+
+				row.insertCell(0).innerText = json[i].seatId;
+				row.insertCell(1).innerText = json[i].seatRow;
+				row.insertCell(2).innerText = json[i].seatColumn;
+				row.insertCell(3).innerText = json[i].ticketPrice;
+
+				var status = json[i].seatStatus;
+				const statusCell = row.insertCell(4);
+
+				// 根据状态值设置相应的文本和CSS样式
+				if (status === 0) {
+					statusCell.innerHTML = '<input type="button" class="btn btn-xs btn-danger" value="购票" onclick="buy('+json[i].seatId+')"  />';
+				} else if (status === 1) {
+					statusCell.innerText = '已售出';
+					statusCell.style.color = 'red'; // 设置红色字体
+				} else {
+					statusCell.innerText = '未知状态';
+				}
+			}
+			// 显示分页信息
+			var totalPages = Math.ceil(response.data.total / pageSize);
+
+			if (totalPages != 0){
+				if (totalPages < currentPage){
+					currentPage = 1;
+					search();
+				}
+			}
+
+			var paginationDiv = $("#pagination");
+			paginationDiv.empty();
+
+			// 首页按钮
+			if (currentPage > 1) {
+				var firstPageButton = $("<button>").addClass("pagination-button first-page-button").text("首页");
+				firstPageButton.on("click", function () {
+					currentPage = 1;
+					search();
+				});
+				paginationDiv.append(firstPageButton);
+			}
+
+			// 上一页按钮
+			if (currentPage > 1) {
+				var prevPageButton = $("<button>").addClass("pagination-button prev-page-button").text("上一页");
+				prevPageButton.on("click", function () {
+					currentPage--;
+					search();
+				});
+				paginationDiv.append(prevPageButton);
+			}
+
+			// 当前页
+			var currentPageSpan = $("<span>").addClass("current-page").text("当前页: " + currentPage);
+			paginationDiv.append(currentPageSpan);
+
+			// 下一页按钮
+			if (currentPage < totalPages) {
+				var nextPageButton = $("<button>").addClass("pagination-button next-page-button").text("下一页");
+				nextPageButton.on("click", function () {
+					currentPage++;
+					search();
+				});
+				paginationDiv.append(nextPageButton);
+			}
+
+			// 尾页按钮
+			if (currentPage < totalPages) {
+				var lastPageButton = $("<button>").addClass("pagination-button last-page-button").text("尾页");
+				lastPageButton.on("click", function () {
+					currentPage = totalPages;
+					search();
+				});
+				paginationDiv.append(lastPageButton);
+			}
+
+			// 总页数
+			var totalPagesSpan = $("<span>").addClass("total-pages").text("总页数: " + totalPages);
+			paginationDiv.append(totalPagesSpan);
+
+			var goButton = $("<button>").addClass("pagination-button go-button").text("跳转");
+			// 跳转按钮点击事件
+			goButton.on("click", function () {
+				var inputPage = parseInt($(".page-input").val());
+				if (inputPage > totalPages) {
+					alert("输入的页码超过总页数！");
+					return;
+				}
+				currentPage = inputPage;
+				search();
+			});
+			var pageInput = $("<input>").addClass("page-input");
+			paginationDiv.append(pageInput);
+			paginationDiv.append(goButton);
+
+		}
+
+		//买票函数
+		function buy(seatId) {
+			if (confirm("确定购买？")) {
+				var url = "../ticket/buy";
+				var schedId = UrlParm.parm("schedId");
+
+				// 构建JSON对象
+				$.ajax({
+					url: url,
+					type: "POST",
+					data: {
+						schedId: schedId,
+						seatId: seatId
+					},
+					headers: {
+						"token": token
+					},
+					success: function (response) {
+						buyComplete(response);
+					},
+					error: function (response) {
+						buyComplete(response);
+					}
+				});
+			}
+		}
+
+		//购票成功函数
+		function buyComplete(response) {
+			if (response.state == 200) {
+				alert("购买成功！");
+				search();
+			} else if (response.state === 8001){
+				alert(response.message);
+				window.location.href = "../../login.html";
+			} else{
+				alert(response.message);
+			}
+		}
+
+		//页面初始化函数
+		function init(){
+			search();
+		}
+	</script>
+
 </head>
-<body class="contact-template">
+<body class="contact-template" onload="init()">
 	<header id="site-header">
 		<div class="container">
 			<div class="row">
@@ -172,9 +436,8 @@ span.seatCharts-legendDescription {
 					<nav id="site-nav" class="nav navbar-default">
 						<ul class="nav navbar-nav">
 							<li><a href="index.html">主页</a></li>
-							<li><a href="board.html">榜单</a></li>
-							<li><a href="contact.html">联系我们</a></li>
-							<li><a href="../../../../../../../../djw/djw/src/main/resources/static/login.html">登陆</a></li>
+							<li><a href="ticket.html">我的购票</a></li>
+							<li><a href="../login.html">登陆</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -183,117 +446,40 @@ span.seatCharts-legendDescription {
 	</header>
 
 	<div class="main-page clearfix">
-		<div class="container">
+		<div class="container" style="margin-top: 15px;margin-bottom:15px">
 			<div class="row">
-
-				<!--座位布局-->
-				<div id="main">
-					<h2 class="top_title">在线选座订座</h2>
-					<div class="demo">
-						<div id="seat-map">
-							<div class="front">银幕中央</div>
-						</div>
-						<div class="booking-details">
-							<p>剧目：<span id="playname">我和我的祖国</span></p>
-							<p>演出厅：<span id="studioname">VIP厅</span></p>
-							<p>时间：<span id="time">10月14日 10:00</span></p>
-							<p>已选座位：</p>
-							<ul id="selected-seats"></ul>
-							<p>票数：<span id="counter" style="color: red">0</span></p>
-							<p>总计：<b>￥<span id="total" style="color: red">0</span></b></p>
-							<br>
-							<button type="button" class="btn btn-danger" id="submit"  onclick="javascript:window.location='order.html'">确定购买</button>
-						</div>
-						<div style="clear: both"></div>
-					</div>
-					<br />
-				</div>
-
+				<table id="table" class="table table-bordered table-hover" style="text-align: center;margin-top:10px">
+					<tr>
+						<th style="text-align: center;">座位编号</th>
+						<th style="text-align: center;">行号</th>
+						<th style="text-align: center;">列号</th>
+						<th style="text-align: center;">售价</th>
+						<th style="text-align: center;">去购票</th>
+					</tr>
+					<tbody id="table-body"></tbody> <!-- 添加一个<tbody>元素用于显示数据 -->
+				</table>
+			</div>
+			<div id="pagination" class="pagination-container">
+				<button class="pagination-button first-page-button">首页</button>
+				<button class="pagination-button prev-page-button">上一页</button>
+				<span class="current-page">当前页: 1</span>
+				<button class="pagination-button next-page-button">下一页</button>
+				<button class="pagination-button last-page-button">尾页</button>
+				<span class="total-pages">总页数: </span>
+				<input type="text" class="page-input" placeholder="跳转页码">
+				<button class="pagination-button go-button">跳转</button>
 			</div>
 		</div>
 	</div>
+
+
 
 	<a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/jquery-ui.min.js"></script>
 	<script src="../js/jquery.form.min.js"></script>
 	<script src="../js/jquery.validate.min.js"></script>
-	<script src="../js/theme.js"></script>
+<!--	<script src="../js/theme.js"></script>-->
 	<script src="../js/jquery.seat-charts.min.js"></script>
-	<script type="text/javascript">
-    // 此处为示例，具体请自行完成
-	var price = 35; //票价
-	$(document).ready(function() {
-		var $cart = $('#selected-seats'), //座位区
-		$counter = $('#counter'), //票数
-		$total = $('#total'); //总计金额
-	
-		var sc = $('#seat-map').seatCharts({
-			 //座位图
-			map: [
-						'aaaa_aaa',
-						'aaaa_aaa',
-						'aaaa_aaa',
-						'aaaa_aaa',
-						'aaaa_aaa',
-						'aaaa_aaa',
-						'aaaa_aaa',
-						'aaaa_aaa'
-					],
-		naming : {
-			top : false,
-			getLabel : function (character, row, column) {
-				return column;
-			}
-		},
-		legend : { //定义图例
-			node : $('#legend'),
-			items : [
-				[ 'a', 'available',   '可选座' ],
-				[ 'a', 'unavailable', '已售出']
-			]
-		},
-		click: function () { //点击事件
-			if (this.status() == 'available') { //可选座
-				$('<li>'+(this.settings.row+1)+'排'+this.settings.label+'座</li>')
-					.attr('id', 'cart-item-'+this.settings.id)
-					.data('seatId', this.settings.id)
-					.appendTo($cart);
-				$counter.text(sc.find('selected').length+1);
-				$total.text(recalculateTotal(sc)+price);
-				return 'selected';
-			} 
-			else if (this.status() == 'selected') { //已选中
-				//更新数量
-				$counter.text(sc.find('selected').length-1);
-				//更新总计
-				$total.text(recalculateTotal(sc)-price);
-				//删除已预订座位
-				$('#cart-item-'+this.settings.id).remove();
-				//可选座
-					return 'available';
-			} 
-			else if (this.status() == 'unavailable') { //已售出
-				return 'unavailable';
-			} 
-			else {
-				return this.style();
-			}
-		}
-	});
-	//已售出的座位
-	sc.get(['3_1', '3_2', '4_8']).status('unavailable');
-	});
-	
-	//计算总金额
-	function recalculateTotal(sc) {
-		var total = 0;
-		sc.find('selected').each(function () {
-			total += price;
-		});
-		return total;
-	}
-</script>
-
 </body>
 </html>

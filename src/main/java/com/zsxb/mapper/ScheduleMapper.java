@@ -19,14 +19,15 @@ public interface ScheduleMapper extends BaseMapper<Schedule> {
      * 根据演出计划id和分页数据查询演出计划集合
      * @return
      */
-    List<ScheduleVO> selectpByPage(long current,
-                                   long size);
+    List<ScheduleVO> selectVOByPage(long current,
+                                   long size,
+                                    Integer playId);
 
     /**
      * 根据演出计划id查询演出计划
      * @param schedId
      * @return
      */
-    ScheduleVO selectPOByScheduleId(int schedId);
+    ScheduleVO selectVOByScheduleId(int schedId);
 
 }

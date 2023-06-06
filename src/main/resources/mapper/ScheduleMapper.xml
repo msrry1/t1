@@ -3,7 +3,7 @@
 <mapper namespace="com.zsxb.mapper.ScheduleMapper">
 
 
-    <select id="selectpByPage" resultType="com.zsxb.vo.ScheduleVO">
+    <select id="selectVOByPage" resultType="com.zsxb.vo.ScheduleVO">
         select
             sc.sched_id,
             st.studio_name,
@@ -14,12 +14,12 @@
             schedule sc
             left join studio st on sc.studio_id=st.studio_id
             left join play p on sc.play_id=p.play_id
-        where sc.is_delete=0
-        order by sc.sched_id
+        where sc.is_delete=0 <if test="playId != null">and sc.play_id=#{playId}</if>
+        order by sc.sched_time
         limit #{current},#{size}
     </select>
 
-    <select id="selectPOByScheduleId" resultType="com.zsxb.vo.ScheduleVO">
+    <select id="selectVOByScheduleId" resultType="com.zsxb.vo.ScheduleVO">
         select
             sc.sched_id,
             st.studio_name,

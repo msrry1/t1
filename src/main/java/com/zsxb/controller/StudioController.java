@@ -79,7 +79,7 @@ public class StudioController {
      * 查询所有演出厅
      * @return
      */
-    @PostMapping("/list")
+    @GetMapping("/list")
     public JsonResult<List<Studio>> list() {
 
         // 调用list方法，查询所有演出厅

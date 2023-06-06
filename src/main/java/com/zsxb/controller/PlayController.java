@@ -1,6 +1,7 @@
 package com.zsxb.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zsxb.common.CommonDict;
 import com.zsxb.common.JsonResult;
 import com.zsxb.po.Play;
 import com.zsxb.exception.FileException;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -110,11 +112,31 @@ public class PlayController {
      * 查询所有剧目
      * @return
      */
-    @PostMapping("/list")
+    @GetMapping("/list")
     public JsonResult<List<Play>> list() {
 
         // 查询所有剧目
         List<Play> playList = playService.list();
-        return JsonResult.ok(playList);
+        // 剧目必须未下线
+        List<Play> resList = new ArrayList<>();
+        for (Play play : playList) {
+            // 剧目未下线，添加到返回集合
+            if (play.getPlayStatus() != CommonDict.PLAY_STATUS_DOWN) {
+                resList.add(play);
+            }
+        }
+        return JsonResult.ok(resList);
+    }
+
+    /**
+     * 根据剧目id返回剧目信息
+     * @param playId
+     * @return
+     */
+    @GetMapping("/get/{playId}")
+    public JsonResult<Play> get(@PathVariable("playId") Integer playId) {
+
+        Play play = playService.selectById(playId);
+        return JsonResult.ok(play);
     }
 }

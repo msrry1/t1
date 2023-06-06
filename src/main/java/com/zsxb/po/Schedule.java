@@ -39,7 +39,7 @@ public class Schedule implements Serializable {
     private Integer playId;
 
     /** 演出时间 **/
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date schedTime;
 
     /** 票价 **/
@@ -49,5 +49,7 @@ public class Schedule implements Serializable {
     /** 说明：	            0：未删除	            1：删除 **/
     private Integer isDelete;
 
+    // 创建演出计划的管理员id
+    private Integer empId;
 
 }
