@@ -2,17 +2,80 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zsxb.mapper.SaleMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.po.Sale">
-        <id column="sale_id" property="saleId" />
-        <result column="emp_id" property="empId" />
-        <result column="cus_id" property="cusId" />
-        <result column="sale_time" property="saleTime" />
-        <result column="sale_payment" property="salePayment" />
-        <result column="sale_change" property="saleChange" />
-        <result column="sale_type" property="saleType" />
-        <result column="sale_status" property="saleStatus" />
-        <result column="sale_sort" property="saleSort" />
-    </resultMap>
+
+    <select id="selectVOByPage" resultType="com.zsxb.vo.SaleVO">
+        select
+            sa.sale_id,
+            e.emp_uid,
+            c.cus_uid,
+            sa.sale_payment,
+            sa.sale_time,
+            sa.sale_type,
+            sa.sale_sort
+        from
+            sale sa
+            left join employee e on sa.emp_id=e.emp_id
+            left join customer c on c.cus_id=sa.cus_id
+        where
+            sa.sale_type=#{saleType}
+        limit #{current},#{size}
+    </select>
+    <select id="selectVOBySaleId" resultType="com.zsxb.vo.SaleVO">
+        select
+            sa.sale_id,
+            e.emp_uid,
+            c.cus_uid,
+            sa.sale_payment,
+            sa.sale_time,
+            sa.sale_type,
+            sa.sale_sort
+        from
+            sale sa
+                left join employee e on sa.emp_id=e.emp_id
+                left join customer c on c.cus_id=sa.cus_id
+        where
+            sa.sale_id=#{saleId}
+    </select>
+
+
+    <select id="selectPerformanceVOByPage" resultType="com.zsxb.vo.SalePerformance">
+        SELECT
+            e.emp_uid,
+            SUM(IFNULL(IF(sa.sale_type = 1, sa.sale_payment, -sa.sale_payment), 0)) AS saleCount,
+            e.type
+        FROM
+            employee e
+            LEFT JOIN sale sa ON e.emp_id = sa.emp_id
+        WHERE
+            e.is_delete = 0
+            <if test="empUid != null">
+                AND e.emp_uid LIKE CONCAT('%', #{empUid}, '%')
+            </if>
+        GROUP BY
+            e.emp_uid, e.type
+        order by
+            saleCount desc
+        LIMIT #{current}, #{size}
+
+    </select>
+
+    <select id="selectSaleCountVOByPage" resultType="com.zsxb.vo.SaleCount">
+        SELECT
+            p.play_name,
+            p.play_status,
+            SUM(IFNULL(IF(sa.sale_type = 1, sa.sale_payment, -sa.sale_payment), 0)) AS saleCount
+        FROM
+            play p
+        LEFT JOIN sale sa ON p.play_id = sa.play_id
+        <if test="playName != null">
+            where p.play_name LIKE CONCAT('%', #{playName}, '%')
+        </if>
+        GROUP BY
+            p.play_name, p.play_status
+        order by
+            saleCount desc
+        LIMIT #{current}, #{size}
+
+    </select>
 
 </mapper>

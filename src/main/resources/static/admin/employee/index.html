@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>知识学爆剧院管理系统-影厅管理</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/ace.min.css" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .pagination-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .studio-image {
+            max-width: 100px; /* 设置图像的最大宽度 */
+            max-height: 100px; /* 设置图像的最大高度 */
+        }
+
+        .pagination-button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .current-page {
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        .total-pages {
+            margin: 0 5px;
+        }
+
+        .page-input {
+            width: 50px;
+            padding: 2px;
+            margin: 0 5px;
+        }
+
+        .go-button {
+            padding: 4px 8px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        /*设置链接文字颜色，取消下划线*/
+        a, a:hover, a:focus{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        /*设置右部导航条背景色、宽度、高度*/
+        .panel-group {
+            background-color: #438EB9;
+            margin-top:5px;
+        }
+        /*设置导航条二级标题背景色、取消边框*/
+        .panel-group .panel {
+            background-color: #438EB9;
+            border: none;
+        }
+        /*设置导航条一级标题文字颜色、背景色*/
+        .panel-default>.panel-heading {
+            border: none;
+            color: #FFFFFF;
+            background-color: #62A8D1;
+        }
+        /*设置导航条二级标题取消边框、标题间隔为0*/
+        .panel-group .panel-heading+.panel-collapse>.panel-body {
+            border: none;
+        }
+        .panel-body {
+            padding: 0px 0px;
+        }
+        .nav {
+            margin-left: 0px;
+        }
+        /*设置选中二级标题背景色*/
+        .nav>li>a:hover, .nav>li>a:focus {
+            background-color: #336699;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+
+        var token = localStorage.getItem("token");
+        var currentPage = 1;
+        var pageSize = 5;
+        /*查找所有管理员或指定管理员*/
+        function search() {
+
+            var empUid = $("#empUid").val();
+
+            // 构造分页URL
+            var url = "../../employee/page/" + currentPage + "/" + pageSize;
+            console.log("token = " + token);
+            $.ajax({
+                url: url,
+                type: "POST",
+                headers: {
+                    "token": token
+                },
+                data: { empUid: empUid },
+                success: function (response) {
+                    handleResponse(response)
+                },
+                error: function (response) {
+                    handleResponse(response)
+                }
+            });
+        }
+        function handleResponse(response) {
+            if (response.state === 200) {
+                // 处理成功结果
+                searchComplete(response);
+            } else if (response.state === 8001){
+                // 处理错误结果
+                alert(response.message);
+                window.location.href = "../../login.html";
+            } else {
+                alert(response.message);
+            }
+        }
+
+        /*查找完成，执行显示*/
+        function searchComplete(response) {
+            var theTable = document.getElementById("table");//table的id
+            var num=theTable.rows.length;
+            //清空表格内容
+            while(num>1) {
+                theTable.deleteRow(num-1);
+                num=theTable.rows.length;
+            }
+            var json =  response.data.records;//转换为json对象
+            console.log(json);
+            for(i=0; i<json.length; i++) {
+                var rowCount = theTable.rows.length; //获得当前表格的行数
+                var row = theTable.insertRow(rowCount);//在tale里动态的增加tr
+                row.insertCell(0).innerHTML = json[i].empId;
+                row.insertCell(1).innerHTML = json[i].empUid;
+                row.insertCell(2).innerHTML = json[i].empName;
+                var empGender = json[i].empGender;
+                var empGenderCell = row.insertCell(3);
+
+                // 根据状态值设置相应的文本和CSS样式
+                if (empGender === 0) {
+                    empGenderCell.innerText = '女';
+                    empGenderCell.style.color = 'green'; // 设置绿色字体
+                } else if (empGender === 1) {
+                    empGenderCell.innerText = '男';
+                    empGenderCell.style.color = 'red'; // 设置红色字体
+                } else {
+                    empGenderCell.innerText = '未知性别';
+                }
+
+                row.insertCell(4).innerHTML = json[i].empTelnum;
+                row.insertCell(5).innerHTML = json[i].empEmail;
+                var passwordCell = row.insertCell(6);
+                var password = json[i].empPwd;
+
+                // 创建显示/隐藏密码的输入框
+                var passwordInput = document.createElement("input");
+                passwordInput.type = "password";
+                passwordInput.value = password;
+                passwordInput.readOnly = true;
+
+                // 创建显示/隐藏密码的按钮
+                var toggleButton = document.createElement("button");
+                toggleButton.textContent = "显示/隐藏密码";
+                toggleButton.addEventListener("click", createToggleHandler(passwordInput));
+
+                // 将输入框和按钮添加到单元格
+                passwordCell.appendChild(passwordInput);
+                passwordCell.appendChild(toggleButton);
+
+                // 创建事件处理程序的函数工厂
+                function createToggleHandler(inputElement) {
+                    return function() {
+                        if (inputElement.type === "password") {
+                            inputElement.type = "text";
+                            toggleButton.textContent = "显示/隐藏密码";
+                        } else {
+                            inputElement.type = "password";
+                            toggleButton.textContent = "显示/隐藏密码";
+                        }
+                    };
+                }
+
+
+                var empType = json[i].type;
+                var empTypeCell = row.insertCell(7);
+
+                // 根据状态值设置相应的文本和CSS样式
+                if (empType === "conductor") {
+                    empTypeCell.innerText = '售票员';
+                    empTypeCell.style.color = 'green'; // 设置绿色字体
+                } else if (empType === "manager") {
+                    empTypeCell.innerText = '管理员';
+                    empTypeCell.style.color = 'red'; // 设置红色字体
+                } else {
+                    empTypeCell.innerText = '未知类型';
+                }
+                var tmp = json[i].empId + ",\'" +
+                    json[i].empUid + "\',\'" +
+                    json[i].empName + "\'," +
+                    json[i].empGender + ",\'" +
+                    json[i].empTelnum +"\',\'" +
+                    json[i].empEmail +"\',\'" +
+                    json[i].empPwd +"\',\'" +
+                    json[i].type + "\'";
+                row.insertCell(8).innerHTML = '<input type="button" class="btn btn-xs btn-primary" value="修改" onclick="modify('+ tmp +')" />&nbsp;&nbsp;<input type="button" class="btn btn-xs btn-danger" value="删除" onclick="del('+json[i].empId+')" />';
+            }
+            // 显示分页信息
+            var totalPages = Math.ceil(response.data.total / pageSize);
+
+            if (totalPages != 0){
+                if (totalPages < currentPage){
+                    currentPage = 1;
+                    search();
+                }
+            }
+
+            var paginationDiv = $("#pagination");
+            paginationDiv.empty();
+
+// 首页按钮
+            if (currentPage > 1) {
+                var firstPageButton = $("<button>").addClass("pagination-button first-page-button").text("首页");
+                firstPageButton.on("click", function () {
+                    currentPage = 1;
+                    search();
+                });
+                paginationDiv.append(firstPageButton);
+            }
+
+// 上一页按钮
+            if (currentPage > 1) {
+                var prevPageButton = $("<button>").addClass("pagination-button prev-page-button").text("上一页");
+                prevPageButton.on("click", function () {
+                    currentPage--;
+                    search();
+                });
+                paginationDiv.append(prevPageButton);
+            }
+
+            // 当前页
+            var currentPageSpan = $("<span>").addClass("current-page").text("当前页: " + currentPage);
+            paginationDiv.append(currentPageSpan);
+
+            // 下一页按钮
+            if (currentPage < totalPages) {
+                var nextPageButton = $("<button>").addClass("pagination-button next-page-button").text("下一页");
+                nextPageButton.on("click", function () {
+                    currentPage++;
+                    search();
+                });
+                paginationDiv.append(nextPageButton);
+            }
+
+            // 尾页按钮
+            if (currentPage < totalPages) {
+                var lastPageButton = $("<button>").addClass("pagination-button last-page-button").text("尾页");
+                lastPageButton.on("click", function () {
+                    currentPage = totalPages;
+                    search();
+                });
+                paginationDiv.append(lastPageButton);
+            }
+
+            // 总页数
+            var totalPagesSpan = $("<span>").addClass("total-pages").text("总页数: " + totalPages);
+            paginationDiv.append(totalPagesSpan);
+
+            var goButton = $("<button>").addClass("pagination-button go-button").text("跳转");
+            // 跳转按钮点击事件
+            goButton.on("click", function () {
+                var inputPage = parseInt($(".page-input").val());
+                if (inputPage > totalPages) {
+                    alert("输入的页码超过总页数！");
+                    return;
+                }
+                currentPage = inputPage;
+                search();
+            });
+            var pageInput = $("<input>").addClass("page-input");
+            paginationDiv.append(pageInput);
+            paginationDiv.append(goButton);
+
+        }
+        function modify(a,b,c,d,e,f,g,h){
+            window.location="detail.html?type=update&empId="+a+
+                "&empUid="+encodeURIComponent(b)+
+                "&empName="+encodeURIComponent(c)+
+                "&empGender="+d+
+                "&empTelnum="+encodeURIComponent(e)+
+                "&empEmail="+encodeURIComponent(f)+
+                "&empPwd="+encodeURIComponent(g)+
+                "&empType="+encodeURIComponent(h);
+        }
+
+        function del(id) {
+            if (confirm("确定删除？")) {
+                var url = "../../employee/delete";
+                // 构建JSON对象
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: {
+                        empId: id
+                    },
+                    headers: {
+                        "token": token
+                    },
+                    success: function (response) {
+                        delComplete(response);
+                    },
+                    error: function (response) {
+                        delComplete(response);
+                    }
+                });
+            }
+        }
+
+        function delComplete(response) {
+            if (response.state == 200) {
+                alert("删除成功！");
+                search();
+            } else if (response.state === 8001){
+                alert(response.message);
+                window.location.href = "../../login.html";
+            } else{
+                alert(response.message);
+            }
+        }
+
+        function init(){
+            search();
+            //不同页面修改这里默认选中样式
+            $("#linkemp").css("background-color","#336699");
+            $("#sub2").attr("class","collapse panel-collapse in");
+        }
+    </script>
+</head>
+
+<body onload="init()">
+
+<!-- 上部banner -->
+<div id="navbar" class="navbar">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <!-- 左边标题 -->
+        <div class="navbar-header pull-left">
+            <a href="../../customer/index.html" class="navbar-brand">
+                <small>
+                    <span class="glyphicon glyphicon-film"></span>&nbsp;知识学爆剧院管理系统</small>
+            </a>
+        </div>
+        <!-- 右边个人设置 -->
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li class="light-blue dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="../../images/admin.png" alt="admin's Photo" />
+                        <span class="user-info" >欢迎,<br>
+				  管理员
+			  </span>
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li><a href="#"><i class="ace-icon fa fa-cog"></i>设置</a></li>
+                        <li><a href="#"><i class="ace-icon fa fa-user"></i>个人信息</a></li>
+                        <li class="divider"></li>
+                        <li><a href="../../customer/index.html"><i class="ace-icon fa fa-power-off"></i>退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 下部内容 -->
+<div class="row">
+
+    <!-- 左导航栏 -->
+    <div class="col-md-2">
+        <div class="panel-group" id="panelContainer">
+            <!-- 导航栏1 -->
+            <div class="panel panel-default">
+                <!-- 加入data-toggle="collapse"后可点击折叠 -->
+                <div id="header1" class="panel-heading" data-toggle="collapse" data-target="#sub1" data-parent="#panelContainer">
+                    <i class="glyphicon glyphicon-leaf"></i>
+                    <a href="../studio/index.html">剧院管理</a>
+                    <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+                </div>
+                <div id="sub1" class="collapse panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav">
+                            <li>
+                                <a id="linkstudio" href="../studio/index.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>演出厅管理
+                                </a>
+                            </li>
+                            <li>
+                                <a id="linkplay" href="../play/index.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>剧目管理
+                                </a>
+                            </li>
+                            <li>
+                                <a id="linksched" href="../schedule/index.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>演出计划管理
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 导航栏2 -->
+            <div class="panel panel-default">
+                <!-- 加入data-toggle="collapse"后可点击折叠 -->
+                <div id="header2" class="panel-heading" data-toggle="collapse" data-target="#sub2" data-parent="#panelContainer">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <a href="../customer/index.html">用户管理</a>
+                    <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+                </div>
+                <div id="sub2" class="collapse panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav">
+                            <li>
+                                <a id="linkcustomer" href="../customer/index.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>观众管理
+                                </a>
+                            </li>
+                            <li>
+                                <a id="linkemp" href="../employee/index.html" style="padding-left:30px;background-color:#336699">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>员工管理
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 导航栏3 -->
+            <div class="panel panel-default">
+                <!-- 加入data-toggle="collapse"后可点击折叠 -->
+                <div id="header3" class="panel-heading" data-toggle="collapse" data-target="#sub3" data-parent="#panelContainer">
+                    <i class="glyphicon glyphicon-tasks"></i>
+                    <a href="../ticket/sellticket.html">票务管理</a>
+                    <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+                </div>
+                <div id="sub3" class="collapse panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav">
+                            <li>
+                                <a id="linksale" href="../ticket/sellticket.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>售票管理
+                                </a>
+                            </li>
+                            <li>
+                                <a id="linkrefund" href="../ticket/returnticket.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>退票管理
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 导航栏4 -->
+            <div class="panel panel-default">
+                <!-- 加入data-toggle="collapse"后可点击折叠 -->
+                <div id="header4" class="panel-heading" data-toggle="collapse" data-target="#sub4" data-parent="#panelContainer">
+                    <i class="glyphicon glyphicon-tasks"></i>
+                    <a href="../sale/salecount.html">财务管理</a>
+                    <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+                </div>
+                <div id="sub4" class="collapse panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav">
+                            <li>
+                                <a id="linkstat" href="../sale/salecount.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
+                                </a>
+                            </li>
+                            <li>
+                                <a id="linksaleachi" href="../sale/salesperformance.html" style="padding-left:30px;">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>销售业绩
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--右侧主体部分-->
+    <div class="col-md-9" style="margin-left:5px;">
+        <div style="margin:5px 0px 10px 0px;">用户管理 > 员工管理</div>
+        <hr>
+        <!-- 查询块 -->
+        <div class="search">
+            <form class="form-inline" name="myForm" action="#" method="post">
+                管理员用户名:
+                <input type="text" class="form-control" id="empUid" name="empUid"/>&nbsp;&nbsp;
+                <input type="button" class="btn btn-primary" value="查   询" onclick="search()" />&nbsp;&nbsp;
+                <input type="button" class="btn btn-danger"  value="增   加" onclick="javascript:window.location='detail.html?type=add'" />
+            </form>
+        </div>
+
+        <!-- 员工信息显示-->
+        <div>
+            <table id="table" class="table table-bordered table-hover" style="text-align: center;margin-top:10px">
+                <tr>
+                    <th style="text-align: center;">员工编号</th>
+                    <th style="text-align: center;">用户名</th>
+                    <th style="text-align: center;">姓名</th>
+                    <th style="text-align: center;">性别</th>
+                    <th style="text-align: center;">手机号</th>
+                    <th style="text-align: center;">邮箱</th>
+                    <th style="text-align: center;">密码</th>
+                    <th style="text-align: center;">类型</th>
+                    <th style="text-align: center;">操作</th>
+                </tr>
+                <tbody id="table-body"></tbody> <!-- 添加一个<tbody>元素用于显示数据 -->
+            </table>
+            <div id="pagination" class="pagination-container">
+                <button class="pagination-button first-page-button">首页</button>
+                <button class="pagination-button prev-page-button">上一页</button>
+                <span class="current-page">当前页: 1</span>
+                <button class="pagination-button next-page-button">下一页</button>
+                <button class="pagination-button last-page-button">尾页</button>
+                <span class="total-pages">总页数: </span>
+                <input type="text" class="page-input" placeholder="跳转页码">
+                <button class="pagination-button go-button">跳转</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

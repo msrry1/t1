@@ -22,15 +22,20 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor())
                 .addPathPatterns(Arrays.asList(
-                        "/studio/**",
-                        "/employee/**",
-                        "/schedule/**"
+                        "/**"
                 ))
                 .excludePathPatterns(Arrays.asList(
-                        "/play/page/**",
+                        "/css/**",
+                        "/fonts/**",
+                        "/images/**",
+                        "/js/**",
+                        "/**/*.html",
                         "/**/login",
                         "/**/register",
-                        "/**/login.html"
-                ));
+                        "/error/**",
+                        "/**/*.ico",
+                        "/**/*.png",
+                        "/**/*.jpg",
+                        "/static/images/**"));
     }
 }

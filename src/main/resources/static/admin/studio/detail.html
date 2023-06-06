@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>汉唐剧院管理系统-影厅管理</title>
+<title>知识学爆剧院管理系统-影厅管理</title>
 <link rel="stylesheet" href="../../css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 <link rel="stylesheet" href="../../css/font-awesome.min.css" />
@@ -45,7 +45,13 @@
 	    background-color: #336699;
 	}
 </style>
+
 <script>
+
+	//用户管理
+	var token = localStorage.getItem("token");
+
+	//url函数
 	UrlParm = function() { // url参数
 		var data, index;
 		(function init() {
@@ -105,11 +111,12 @@
 		}
 	}();
 
+	//页面初始化函数
 	function init() {
 		$("#linkstudio").css("background-color","#336699");
 		$("#sub1").attr("class","collapse panel-collapse in");
+		//获取url参数传过来的type参数
 		var type = UrlParm.parm("type");
-		//alert(type);
 		document.getElementById("type").value = type;
 		if(type=="update"){
 			var studioid = UrlParm.parm("id");
@@ -122,17 +129,18 @@
 			document.getElementById("rowcount").value = rowcount;
 			document.getElementById("colcount").value = colcount;
 			document.getElementById("intro").value = intro;
+			var rowcountinput = document.getElementById("rowcount");
+			rowcountinput.setAttribute('disabled', 'disabled');
+			var colcountinput = document.getElementById("colcount");
+			colcountinput.setAttribute('disabled', 'disabled');
 		}
 	}
 
+	//准备发送添加或修改请求
 	function check() {
-		console.log("hhh");
+
 		var form = document.getElementById("myform");
-		console.log(form.studioid.value);
-		console.log(form.studioname.value);
-		console.log(form.rowcount.value);
-		console.log(form.colcount.value);
-		console.log(form.intro.value);
+
 		if (form.studioname.value == "" || form.rowcount.value == "" || form.colcount.value == "" || form.intro.value == "") {
 			alert("请填写完整信息");
 			return;
@@ -169,18 +177,26 @@
 			type: "POST",
 			contentType: "application/json",
 			data: JSON.stringify(data),
+			headers: {
+				"token": token
+			},
 			success: function(response) {
 				checkComplete(response);
 			},
 			error: function(error) {
-				console.error(error);
+				checkComplete(response);
 			}
 		});
 	}
+
+	//响应处理函数
 	function checkComplete(response) {
 		if (response.state == 200) {
 			alert("操作成功！")
-		} else {
+		} else if (response.state === 8001){
+			window.location.href = "../../login.html";
+			alert(response.message);
+		} else{
 			alert(response.message);
 		}
 	}
@@ -195,7 +211,7 @@
 			<div class="navbar-header pull-left">
 				<a href="../../customer/index.html" class="navbar-brand">
 					<small>
-						<span class="glyphicon glyphicon-film"></span>&nbsp;汉唐剧院管理系统</small>
+						<span class="glyphicon glyphicon-film"></span>&nbsp;知识学爆剧院管理系统</small>
 				</a>
 			</div>
 			<!-- 右边个人设置 -->
@@ -222,157 +238,119 @@
 	<!-- 下部内容 -->
 	<div class="row">
 
-		<!-- 左导航栏 --> 
+		<!-- 左导航栏 -->
 		<div class="col-md-2">
-		    <div class="panel-group" id="panelContainer">
-			<!-- 导航栏1 -->
-			<div class="panel panel-default">
-				<!-- 加入data-toggle="collapse"后可点击折叠 -->
-				<div id="header1" class="panel-heading" data-toggle="collapse" data-target="#sub1" data-parent="#panelContainer">
-					<i class="glyphicon glyphicon-leaf"></i>
-					<a href="#">剧院管理</a>
-					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
-				</div>
-				<div id="sub1" class="collapse panel-collapse">
-					<div class="panel-body">
-						<ul class="nav">
-							<li>
-								<a id="linkstudio" href="index.html" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>演出厅管理
-								</a>
-							</li>
-							<li>
-								<a id="linkplay" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>剧目管理
-								</a>
-							</li>
-							<li>
-								<a id="linksched" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>演出计划
-								</a>
-							</li>
-							<li>
-								<a id="linkcheck" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>验票管理
-								</a>
-							</li>
-						</ul>
+			<div class="panel-group" id="panelContainer">
+				<!-- 导航栏1 -->
+				<div class="panel panel-default">
+					<!-- 加入data-toggle="collapse"后可点击折叠 -->
+					<div id="header1" class="panel-heading" data-toggle="collapse" data-target="#sub1" data-parent="#panelContainer">
+						<i class="glyphicon glyphicon-leaf"></i>
+						<a href="../studio/index.html">剧院管理</a>
+						<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+					</div>
+					<div id="sub1" class="collapse panel-collapse">
+						<div class="panel-body">
+							<ul class="nav">
+								<li>
+									<a id="linkstudio" href="../studio/index.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>演出厅管理
+									</a>
+								</li>
+								<li>
+									<a id="linkplay" href="../play/index.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>剧目管理
+									</a>
+								</li>
+								<li>
+									<a id="linksched" href="../schedule/index.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>演出计划管理
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- 导航栏2 -->
-			<div class="panel panel-default">
-				<!-- 加入data-toggle="collapse"后可点击折叠 -->
-				<div id="header2" class="panel-heading" data-toggle="collapse" data-target="#sub2" data-parent="#panelContainer">
-					<i class="glyphicon glyphicon-user"></i>
-					<a href="#">用户管理</a>
-					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
-				</div>
-				<div id="sub2" class="collapse panel-collapse">
-					<div class="panel-body">
-						<ul class="nav">
-							<li>
-								<a id="linkcustomer" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>观众管理
-								</a>
-							</li>
-							<li>
-								<a id="linkemp" href="#" style="padding-left:30px;background-color:#336699">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>员工管理
-								</a>
-							</li>
-						</ul>
+				<!-- 导航栏2 -->
+				<div class="panel panel-default">
+					<!-- 加入data-toggle="collapse"后可点击折叠 -->
+					<div id="header2" class="panel-heading" data-toggle="collapse" data-target="#sub2" data-parent="#panelContainer">
+						<i class="glyphicon glyphicon-user"></i>
+						<a href="../customer/index.html">用户管理</a>
+						<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+					</div>
+					<div id="sub2" class="collapse panel-collapse">
+						<div class="panel-body">
+							<ul class="nav">
+								<li>
+									<a id="linkcustomer" href="../customer/index.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>观众管理
+									</a>
+								</li>
+								<li>
+									<a id="linkemp" href="../employee/index.html" style="padding-left:30px;background-color:#336699">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>员工管理
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- 导航栏3 -->
-			<div class="panel panel-default">
-				<!-- 加入data-toggle="collapse"后可点击折叠 -->
-				<div id="header3" class="panel-heading" data-toggle="collapse" data-target="#sub3" data-parent="#panelContainer">
-					<i class="glyphicon glyphicon-tasks"></i>
-					<a href="#">票务管理</a>
-					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
-				</div>
-				<div id="sub3" class="collapse panel-collapse">
-					<div class="panel-body">
-						<ul class="nav">
-							<li>
-								<a id="linksale" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>售票管理
-								</a>
-							</li>
-							<li>
-								<a id="linkrefund" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>退票管理
-								</a>
-							</li>
-							<li>
-								<a id="linkstat" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
-								</a>
-							</li>
-						</ul>
+				<!-- 导航栏3 -->
+				<div class="panel panel-default">
+					<!-- 加入data-toggle="collapse"后可点击折叠 -->
+					<div id="header3" class="panel-heading" data-toggle="collapse" data-target="#sub3" data-parent="#panelContainer">
+						<i class="glyphicon glyphicon-tasks"></i>
+						<a href="../ticket/sellticket.html">票务管理</a>
+						<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+					</div>
+					<div id="sub3" class="collapse panel-collapse">
+						<div class="panel-body">
+							<ul class="nav">
+								<li>
+									<a id="linksale" href="../ticket/sellticket.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>售票管理
+									</a>
+								</li>
+								<li>
+									<a id="linkrefund" href="../ticket/returnticket.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>退票管理
+									</a>
+								</li>
+
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- 导航栏4 -->
-			<div class="panel panel-default">
-				<!-- 加入data-toggle="collapse"后可点击折叠 -->
-				<div id="header4" class="panel-heading" data-toggle="collapse" data-target="#sub4" data-parent="#panelContainer">
-					<i class="glyphicon glyphicon-tasks"></i>
-					<a href="#">财务管理</a>
-					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
-				</div>
-				<div id="sub4" class="collapse panel-collapse">
-					<div class="panel-body">
-						<ul class="nav">
-							<li>
-								<a id="linksaleticket" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>票款管理
-								</a>
-							</li>
-							<li>
-								<a id="linksaleachi" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>销售业绩
-								</a>
-							</li>
-							<li>
-								<a id="linksalestat" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
-								</a>
-							</li>
-						</ul>
+				<!-- 导航栏4 -->
+				<div class="panel panel-default">
+					<!-- 加入data-toggle="collapse"后可点击折叠 -->
+					<div id="header4" class="panel-heading" data-toggle="collapse" data-target="#sub4" data-parent="#panelContainer">
+						<i class="glyphicon glyphicon-tasks"></i>
+						<a href="../sale/salecount.html">财务管理</a>
+						<span class="glyphicon glyphicon-triangle-right pull-right"></span>
+					</div>
+					<div id="sub4" class="collapse panel-collapse">
+						<div class="panel-body">
+							<ul class="nav">
+								<li>
+									<a id="linkstat" href="../sale/salecount.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>销售统计
+									</a>
+								</li>
+								<li>
+									<a id="linksaleachi" href="../sale/salesperformance.html" style="padding-left:30px;">
+										<i class="fa fa-angle-right" aria-hidden="true"></i>销售业绩
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- 导航栏5 -->
-			<div class="panel panel-default">
-				<!-- 加入data-toggle="collapse"后可点击折叠 -->
-				<div id="header5" class="panel-heading" data-toggle="collapse" data-target="#sub5" data-parent="#panelContainer">
-					<i class="glyphicon glyphicon-tasks"></i>
-					<a href="#">权限管理</a>
-					<span class="glyphicon glyphicon-triangle-right pull-right"></span>
-				</div>
-				<div id="sub5" class="collapse panel-collapse">
-					<div class="panel-body">
-						<ul class="nav">
-							<li>
-								<a id="linkresource" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>资源管理
-								</a>
-							</li>
-							<li>
-								<a id="linkrole" href="#" style="padding-left:30px;">
-									<i class="fa fa-angle-right" aria-hidden="true"></i>角色管理
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
 
 			</div>
 		</div>
+
 
 		<!--右侧内容部分-->
 		<div class="col-md-9" style="margin-left:5px;">

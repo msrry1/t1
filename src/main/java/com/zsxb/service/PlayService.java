@@ -51,4 +51,12 @@ public interface PlayService {
      * @return
      */
     Play selectById(Integer playId);
+
+    /**
+     * 根据剧目名字模糊查询剧目
+     * @param playName
+     * @return
+     */
+    List<Play> selectByPlayName(String playName);
+
 }

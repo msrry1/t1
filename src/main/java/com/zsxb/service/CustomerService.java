@@ -36,4 +36,24 @@ public interface CustomerService {
      */
     void update(Customer customer);
 
+    /**
+     * 根据顾客id查询顾客
+     * @param cusId
+     * @return
+     */
+    Customer getByCusId(Integer cusId);
+
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @return
+     */
+    Customer login(String username, String password);
+
+    /**
+     * 注册顾客
+     */
+    void register(String username,
+                  String password);
 }

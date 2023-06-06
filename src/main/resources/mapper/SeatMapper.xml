@@ -2,13 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zsxb.mapper.SeatMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zsxb.po.Seat">
-        <id column="seat_id" property="seatId" />
-        <result column="studio_id" property="studioId" />
-        <result column="seat_row" property="seatRow" />
-        <result column="seat_column" property="seatColumn" />
-        <result column="seat_status" property="seatStatus" />
-    </resultMap>
+    <select id="selectVOPageBySchedId" resultType="com.zsxb.vo.SeatVO">
+        select
+            se.seat_id,
+            se.seat_row,
+            se.seat_column,
+            t.ticket_price,
+            if (t.ticket_status=0,0,1) as seatStatus
+        from
+            seat se
+            left join ticket t on t.seat_id=se.seat_id
+        where t.sched_id=#{schedId}
+        order by
+            se.seat_row, se.seat_column
+        limit #{current},#{size}
 
+    </select>
 </mapper>

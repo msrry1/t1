@@ -2,14 +2,19 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zsxb.common.CommonDict;
+import com.zsxb.po.Seat;
 import com.zsxb.po.Studio;
 import com.zsxb.exception.StudioException;
 import com.zsxb.mapper.StudioMapper;
+import com.zsxb.service.SeatService;
 import com.zsxb.service.StudioService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,9 +27,13 @@ import java.util.List;
 @Service    // 标识业务层
 public class StudioServiceImpl implements StudioService {
 
-    // 注入演出厅的mapper，可以直接使用
+    // 注入演出厅的mapper
     @Autowired
     private StudioMapper studioMapper;
+
+    // 注入座位的service
+    @Autowired
+    private SeatService seatService;
 
     @Override
     public void queryPage(Page page, String studioName) {
@@ -44,6 +53,7 @@ public class StudioServiceImpl implements StudioService {
     }
 
     @Override
+    @Transactional
     public void add(Studio studio) {
 
         // 演出厅名称
@@ -66,8 +76,11 @@ public class StudioServiceImpl implements StudioService {
             // 添加演出厅失败，请检查输入是否合法
             throw new StudioException("添加演出厅失败，请检查输入是否合法！");
         }
-
+        List<Seat> seats = seatService.createSeats(studio.getStudioId(), studio.getStudioRowCount(), studio.getStudioColCount());
+        seatService.saveBatch(seats);
     }
+
+
 
     @Override
     public void delete(int studioId) {

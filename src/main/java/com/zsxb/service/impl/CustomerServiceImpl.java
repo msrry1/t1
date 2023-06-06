@@ -2,11 +2,15 @@ package com.zsxb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zsxb.common.CommonDict;
+import com.zsxb.exception.EmployeeException;
 import com.zsxb.po.Customer;
 import com.zsxb.exception.CustomerException;
 import com.zsxb.exception.StudioException;
 import com.zsxb.mapper.CustomerMapper;
+import com.zsxb.po.Employee;
 import com.zsxb.service.CustomerService;
+import com.zsxb.util.RedisCache;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +26,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     private CustomerMapper customerMapper;
+
+    @Autowired
+    private RedisCache redisCache;
 
     @Override
     public void queryPage(Page<Customer> page, String cusUid) {
@@ -90,6 +97,58 @@ public class CustomerServiceImpl implements CustomerService {
         int result = customerMapper.updateById(customer);
         if (result <= 0) {
             throw new StudioException("修改顾客失败！");
+        }
+    }
+
+    @Override
+    public Customer getByCusId(Integer cusId) {
+        return customerMapper.selectById(cusId);
+    }
+
+    @Override
+    public Customer login(String username, String password) {
+        // 1. 根据用户名去数据库查询顾客
+        LambdaQueryWrapper<Customer> query = new LambdaQueryWrapper<>();
+        query.eq(Customer::getCusUid, username);
+        Customer customer = customerMapper.selectOne(query);
+
+        // 2. 判断用户合法性
+        // 2.1 判断顾客是否为空
+        if (customer == null) {
+            // 管理员为空，抛出异常
+            throw new CustomerException("顾客不存在！");
+        }
+
+        // 2.2 判断密码是否正确
+        if (!password.equals(customer.getCusPwd())) {
+            // 密码不匹配，抛出异常
+            throw new CustomerException("顾客密码不正确！");
+        }
+
+        // 3. 此时管理员合法，将管理员信息存入redis，以便于管理员后续的其他请求，键为用户id
+        String redisKey = CommonDict.CUSTOMER_TOKENKEY + customer.getCusId();
+        redisCache.setCacheObject(redisKey, customer, CommonDict.REDIS_EXPIRE_TIME, CommonDict.REDIS_EXPIRE_UNIT);
+
+        return customer;
+    }
+
+    @Override
+    public void register(String username, String password) {
+        // 1. 查询顾客用户名是否重复
+        LambdaQueryWrapper<Customer> customerLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        customerLambdaQueryWrapper.eq(Customer::getCusUid, username);
+        Customer queryCustomer = customerMapper.selectOne(customerLambdaQueryWrapper);
+        if (queryCustomer != null) {
+            // 顾客用户名重复
+            throw new CustomerException("顾客用户名重复！");
+        }
+        // 2. 添加顾客
+        Customer customer = new Customer();
+        customer.setCusUid(username);
+        customer.setCusPwd(password);
+        int result = customerMapper.insert(customer);
+        if (result <= 0) {
+            throw new CustomerException("顾客添加失败");
         }
     }
 }

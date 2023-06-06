@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zsxb.common.JsonResult;
 import com.zsxb.service.TicketService;
 import io.swagger.annotations.Api;
+import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,20 +25,42 @@ public class TicketController {
 
 
     /**
-     * 分页查询票务信息
+     * 分页查询当前顾客的演出票（买了没退）
      * @param current  当前页
      * @param size  每页展示数量
-     * @param ticketStatus   查询票的状态（0待销售 9卖出）
      * @return
      */
     @PostMapping("/page/{current}/{size}")
     public JsonResult<Page> page(@PathVariable int current,
-                                 @PathVariable int size,
-                                 @RequestParam(required = true) Integer ticketStatus) {
+                                 @PathVariable int size) {
 
         Page page = new Page(current - 1, size);
-        ticketService.queryPage(page, ticketStatus);
+        ticketService.queryPage(page);
         return JsonResult.ok(page);
     }
 
+    /**
+     * 买票
+     * @param schedId   演出计划id
+     * @param seatId    座位id
+     * @return
+     */
+    @PostMapping("/buy")
+    public JsonResult<Void> buy(@RequestParam Integer schedId,
+                                @RequestParam Integer seatId) {
+        ticketService.buy(schedId, seatId);
+        return JsonResult.ok();
+    }
+
+    /**
+     * 退票
+     * @param ticketId
+     * @return
+     */
+    @PostMapping("/returnTicket")
+    public JsonResult<Void> returnTicket(@RequestParam Integer ticketId) {
+        ticketService.returnTicket(ticketId);
+
+        return JsonResult.ok();
+    }
 }
