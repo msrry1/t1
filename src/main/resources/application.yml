@@ -8,7 +8,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource      # 数据源的类型，可以更改为其他的数据源配置，比如druid
     driver-class-name: com.mysql.cj.jdbc.Driver      # mysql/MariaDB 的数据库驱动类名称
-    url: jdbc:mysql://121.37.155.73:7777/zsxb?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://121.37.155.73:7777/zsxb?serverTimezone=GMT%2B8&characterEncoding=utf8&useUnicode=true&useSSL=false
     username: root
     password: ymxkai0.1
     hikari:

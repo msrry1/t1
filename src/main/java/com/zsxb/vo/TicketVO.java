@@ -35,7 +35,7 @@ public class TicketVO extends Ticket {
     // 剧目名称
     private String playName;
     /** 演出时间 **/
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" ,timezone="GMT+8")
     private Date schedTime;
     private Integer count;
 }
