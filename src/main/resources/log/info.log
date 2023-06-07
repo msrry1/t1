@@ -892,3 +892,730 @@
 02:07:13.490 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 经理 lyh 已经登录
 02:07:21.199 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
 02:07:21.202 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+02:16:31.811 [main] INFO  com.zsxb.config.RootInfoTest - Starting RootInfoTest using Java 1.8.0_351 on zhan66 with PID 1620 (started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+02:16:31.824 [main] INFO  com.zsxb.config.RootInfoTest - No active profile set, falling back to default profiles: default
+02:16:41.752 [main] INFO  com.zsxb.config.RootInfoTest - Started RootInfoTest in 10.369 seconds (JVM running for 11.904)
+02:16:42.112 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+02:16:42.568 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+02:16:46.068 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+02:16:46.079 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+02:47:51.904 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication v0.0.1-SNAPSHOT using Java 1.8.0_351 on zhan66 with PID 17932 (C:\Users\shang\Desktop\ttms\t1\t1\target\zsxb-0.0.1-SNAPSHOT.jar started by shang in C:\Users\shang\Desktop\ttms\t1\t1\target)
+02:47:51.914 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+02:47:54.209 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+02:47:54.211 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+02:47:54.211 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+02:47:54.272 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+02:47:54.468 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+02:49:48.519 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 17744 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+02:49:48.556 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+02:49:49.929 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+02:49:49.930 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+02:49:49.930 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+02:49:50.023 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+02:49:54.051 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+02:49:54.427 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.43 seconds (JVM running for 8.588)
+02:53:07.334 [main] INFO  com.zsxb.config.RootInfoTest - Starting RootInfoTest using Java 1.8.0_351 on zhan66 with PID 15380 (started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+02:53:07.345 [main] INFO  com.zsxb.config.RootInfoTest - No active profile set, falling back to default profiles: default
+02:53:17.544 [main] INFO  com.zsxb.config.RootInfoTest - Started RootInfoTest in 10.564 seconds (JVM running for 11.879)
+02:53:18.058 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+02:53:18.589 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+02:53:19.028 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+02:53:19.164 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+02:55:04.874 [main] INFO  com.zsxb.config.RootInfoTest - Starting RootInfoTest using Java 1.8.0_351 on zhan66 with PID 29392 (started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+02:55:04.887 [main] INFO  com.zsxb.config.RootInfoTest - No active profile set, falling back to default profiles: default
+02:55:14.463 [main] INFO  com.zsxb.config.RootInfoTest - Started RootInfoTest in 10.026 seconds (JVM running for 11.46)
+02:55:14.805 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+02:55:15.237 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+02:55:15.575 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+02:55:15.790 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+02:56:30.442 [main] INFO  com.zsxb.config.RootInfoTest - Starting RootInfoTest using Java 1.8.0_351 on zhan66 with PID 1904 (started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+02:56:30.453 [main] INFO  com.zsxb.config.RootInfoTest - No active profile set, falling back to default profiles: default
+02:56:39.889 [main] INFO  com.zsxb.config.RootInfoTest - Started RootInfoTest in 9.902 seconds (JVM running for 11.792)
+02:56:40.247 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+02:56:40.717 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+02:56:41.040 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+02:56:41.051 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+02:58:40.658 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication v0.0.1-SNAPSHOT using Java 1.8.0_351 on zhan66 with PID 28484 (C:\Users\shang\Desktop\ttms\t1\t1\target\zsxb-0.0.1-SNAPSHOT.jar started by shang in C:\Users\shang\Desktop\ttms\t1\t1\target)
+02:58:40.668 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+02:58:42.837 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+02:58:42.838 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+02:58:42.838 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+02:58:42.898 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+02:58:43.075 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+03:01:36.041 [main] INFO  com.zsxb.config.RootInfoTest - Starting RootInfoTest using Java 1.8.0_351 on zhan66 with PID 11952 (started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+03:01:36.052 [main] INFO  com.zsxb.config.RootInfoTest - No active profile set, falling back to default profiles: default
+03:01:45.670 [main] INFO  com.zsxb.config.RootInfoTest - Started RootInfoTest in 10.033 seconds (JVM running for 11.399)
+03:01:46.014 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+03:01:46.468 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+03:01:46.843 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+03:01:47.057 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+03:02:02.442 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication v0.0.1-SNAPSHOT using Java 1.8.0_351 on zhan66 with PID 27900 (C:\Users\shang\Desktop\ttms\t1\t1\target\zsxb-0.0.1-SNAPSHOT.jar started by shang in C:\Users\shang\Desktop\ttms\t1\t1\target)
+03:02:02.451 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+03:02:04.805 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+03:02:04.805 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+03:02:04.805 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+03:02:04.863 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03:02:05.059 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+03:02:29.394 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication v0.0.1-SNAPSHOT using Java 1.8.0_351 on zhan66 with PID 11280 (C:\Users\shang\Desktop\ttms\t1\t1\target\zsxb-0.0.1-SNAPSHOT.jar started by shang in C:\Users\shang\Desktop\ttms\t1\t1\target)
+03:02:29.403 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+03:02:31.687 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+03:02:31.687 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+03:02:31.687 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+03:02:31.743 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03:02:31.929 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+03:03:12.387 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication v0.0.1-SNAPSHOT using Java 1.8.0_351 on zhan66 with PID 10352 (C:\Users\shang\Desktop\ttms\t1\t1\target\zsxb-0.0.1-SNAPSHOT.jar started by shang in C:\Users\shang\Desktop\ttms\t1\t1\target)
+03:03:12.396 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+03:03:14.642 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+03:03:14.643 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+03:03:14.643 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+03:03:14.701 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03:03:14.868 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+03:05:28.316 [main] INFO  com.zsxb.config.RootInfoTest - Starting RootInfoTest using Java 1.8.0_351 on zhan66 with PID 1904 (started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+03:05:28.328 [main] INFO  com.zsxb.config.RootInfoTest - No active profile set, falling back to default profiles: default
+03:05:38.398 [main] INFO  com.zsxb.config.RootInfoTest - Started RootInfoTest in 10.593 seconds (JVM running for 12.154)
+03:05:38.732 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+03:05:39.165 [main] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+03:05:39.473 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+03:05:39.481 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+03:06:05.953 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication v0.0.1-SNAPSHOT using Java 1.8.0_351 on zhan66 with PID 17988 (C:\Users\shang\Desktop\ttms\t1\t1\target\zsxb-0.0.1-SNAPSHOT.jar started by shang in C:\Users\shang\Desktop\ttms\t1\t1\target)
+03:06:05.963 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+03:06:08.255 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+03:06:08.256 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+03:06:08.256 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+03:06:08.311 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03:06:13.228 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+03:06:13.843 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 8.363 seconds (JVM running for 9.134)
+08:44:04.018 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 11604 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+08:44:04.028 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+08:44:05.619 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+08:44:05.620 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:44:05.620 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+08:44:05.714 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:44:09.850 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+08:44:10.245 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.876 seconds (JVM running for 9.06)
+08:44:30.933 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:44:38.171 [http-nio-9090-exec-8] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/page/1/5
+08:44:38.411 [http-nio-9090-exec-8] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+08:44:39.155 [http-nio-9090-exec-8] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+08:44:40.905 [http-nio-9090-exec-10] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/page/1/5
+08:44:45.130 [http-nio-9090-exec-3] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:45:46.723 [http-nio-9090-exec-8] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+08:45:46.723 [http-nio-9090-exec-7] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+08:45:52.829 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+08:46:00.023 [http-nio-9090-exec-10] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:46:44.660 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:49:21.306 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+08:49:21.311 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+08:49:27.319 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 11848 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+08:49:27.329 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+08:49:28.823 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+08:49:28.823 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:49:28.823 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+08:49:28.910 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:49:32.880 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+08:49:33.251 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.445 seconds (JVM running for 8.148)
+08:49:41.174 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:49:42.614 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:49:42.677 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+08:49:44.522 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+08:49:59.183 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+08:49:59.185 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+08:50:11.674 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+08:50:31.051 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:50:51.217 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+08:50:51.217 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+08:51:01.780 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+08:51:09.515 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:54:11.649 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+08:54:11.654 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+08:54:17.802 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 3496 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+08:54:17.814 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+08:54:19.119 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+08:54:19.120 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:54:19.120 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+08:54:19.207 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:54:23.540 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+08:54:24.024 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.769 seconds (JVM running for 8.588)
+08:54:28.085 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:54:29.440 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:54:29.499 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+08:54:30.399 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+08:55:22.725 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+08:55:22.731 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+08:55:26.740 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 16084 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+08:55:26.769 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+08:55:27.966 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+08:55:27.967 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:55:27.967 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+08:55:28.088 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:55:31.924 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+08:55:32.277 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 5.971 seconds (JVM running for 7.669)
+08:55:50.229 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:55:51.427 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:55:51.496 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+08:55:52.042 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+08:56:14.491 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+08:56:16.468 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:56:18.042 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+08:56:19.170 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:57:13.336 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+08:57:13.338 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+08:57:17.160 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 12084 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+08:57:17.169 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+08:57:18.409 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+08:57:18.411 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:57:18.411 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+08:57:18.492 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:57:22.340 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+08:57:22.702 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 5.986 seconds (JVM running for 7.612)
+08:57:38.381 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:57:39.780 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:57:39.842 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+08:57:41.089 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+08:58:40.176 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+08:58:40.182 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+08:58:47.098 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 26296 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+08:58:47.110 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+08:58:48.620 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+08:58:48.621 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:58:48.621 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+08:58:48.708 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:58:53.863 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+08:58:54.422 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 7.919 seconds (JVM running for 10.237)
+08:59:11.407 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:59:12.944 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:59:13.013 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+08:59:14.776 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+08:59:25.104 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+08:59:28.815 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+08:59:37.235 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+08:59:37.235 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+08:59:46.615 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:00:33.337 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:00:35.984 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:03:42.781 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:03:42.788 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:03:46.463 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 21600 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:03:46.472 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:03:47.934 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:03:47.936 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:03:47.936 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:03:48.024 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:03:52.621 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:03:53.045 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 7.168 seconds (JVM running for 9.122)
+09:04:07.673 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:04:09.531 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:04:09.585 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:04:10.174 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:04:14.397 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:04:16.157 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:04:17.009 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:04:17.009 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:04:26.213 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:04:33.034 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:04:35.301 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:07:17.649 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:07:17.653 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:07:21.813 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 16752 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:07:21.820 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:07:23.473 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:07:23.474 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:07:23.474 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:07:23.574 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:07:28.408 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:07:28.832 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 7.539 seconds (JVM running for 9.611)
+09:07:44.008 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:07:46.094 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:07:46.158 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:07:52.237 [http-nio-9090-exec-9] ERROR com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:?]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159) [spring-jdbc-5.3.12.jar:5.3.12]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117) [spring-jdbc-5.3.12.jar:5.3.12]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) [spring-jdbc-5.3.12.jar:5.3.12]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) [mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) [mybatis-spring-2.0.6.jar:2.0.6]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.5.9.jar:3.5.9]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) [mybatis-plus-extension-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) [mybatis-3.5.9.jar:3.5.9]
+	at com.sun.proxy.$Proxy123.query(Unknown Source) [?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) [mybatis-3.5.9.jar:3.5.9]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_351]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_351]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_351]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_351]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) [mybatis-spring-2.0.6.jar:2.0.6]
+	at com.sun.proxy.$Proxy91.selectList(Unknown Source) [?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) [mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy100.selectVOByPage(Unknown Source) [?:?]
+	at com.zsxb.service.impl.ScheduleServiceImpl.queryPage(ScheduleServiceImpl.java:125) [classes/:?]
+	at com.zsxb.service.impl.ScheduleServiceImpl$$FastClassBySpringCGLIB$$5acbe987.invoke(<generated>) [classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.3.12.jar:5.3.12]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) [spring-aop-5.3.12.jar:5.3.12]
+	at com.zsxb.service.impl.ScheduleServiceImpl$$EnhancerBySpringCGLIB$$eeb39899.queryPage(<generated>) [classes/:?]
+	at com.zsxb.controller.ScheduleController.page(ScheduleController.java:59) [classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_351]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_351]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_351]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_351]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.12.jar:5.3.12]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.54.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.12.jar:5.3.12]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.54.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_351]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_351]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_351]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_351]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_351]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:520) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:475) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:362) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1367) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 99 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:514) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:475) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:362) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1367) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 99 more
+09:07:52.247 [http-nio-9090-exec-9] ERROR com.zsxb.common.GlobalExceptionHandler - 未知异常！原因：nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in file [C:\Users\shang\Desktop\ttms\t1\t1\target\classes\mapper\ScheduleMapper.xml]
+### The error may involve com.zsxb.mapper.ScheduleMapper.selectVOByPage
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+09:08:07.789 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:08:07.789 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:08:07.849 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:08:08.704 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:08:22.987 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:08:39.516 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:08:41.163 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:09:40.944 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:09:40.947 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:09:45.097 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 21856 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:09:45.134 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:09:46.570 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:09:46.570 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:09:46.570 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:09:46.698 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:09:50.624 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:09:50.979 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.374 seconds (JVM running for 8.07)
+09:10:10.033 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:10:10.185 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:10:10.185 [http-nio-9090-exec-10] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:10:10.301 [http-nio-9090-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:10:12.586 [http-nio-9090-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:10:25.078 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:10:41.839 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:10:43.822 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:11:16.179 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:11:16.184 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:11:24.083 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 6256 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:11:24.092 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:11:25.473 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:11:25.474 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:11:25.474 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:11:25.555 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:11:29.866 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:11:30.283 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.726 seconds (JVM running for 8.404)
+09:11:34.827 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:11:34.958 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:11:34.958 [http-nio-9090-exec-10] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:11:35.068 [http-nio-9090-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:11:41.271 [http-nio-9090-exec-10] ERROR com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:?]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159) [spring-jdbc-5.3.12.jar:5.3.12]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117) [spring-jdbc-5.3.12.jar:5.3.12]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) [spring-jdbc-5.3.12.jar:5.3.12]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) [mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) [mybatis-spring-2.0.6.jar:2.0.6]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.5.9.jar:3.5.9]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) [mybatis-plus-extension-3.5.1.jar:3.5.1]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) [mybatis-3.5.9.jar:3.5.9]
+	at com.sun.proxy.$Proxy125.query(Unknown Source) [?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) [mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) [mybatis-3.5.9.jar:3.5.9]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_351]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_351]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_351]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_351]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) [mybatis-spring-2.0.6.jar:2.0.6]
+	at com.sun.proxy.$Proxy91.selectList(Unknown Source) [?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) [mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) [mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy101.selectList(Unknown Source) [?:?]
+	at com.zsxb.service.impl.StudioServiceImpl.list(StudioServiceImpl.java:124) [classes/:?]
+	at com.zsxb.service.impl.StudioServiceImpl$$FastClassBySpringCGLIB$$290e9b28.invoke(<generated>) [classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.3.12.jar:5.3.12]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) [spring-aop-5.3.12.jar:5.3.12]
+	at com.zsxb.service.impl.StudioServiceImpl$$EnhancerBySpringCGLIB$$87636966.list(<generated>) [classes/:?]
+	at com.zsxb.controller.StudioController.list(StudioController.java:86) [classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_351]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_351]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_351]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_351]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.12.jar:5.3.12]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.54.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.12.jar:5.3.12]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.54.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_351]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_351]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_351]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_351]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_351]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:520) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:475) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:362) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1367) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 99 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:514) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:475) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:362) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1367) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 99 more
+09:11:41.277 [http-nio-9090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:11:41.279 [http-nio-9090-exec-10] ERROR com.zsxb.common.GlobalExceptionHandler - 未知异常！原因：nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in com/zsxb/mapper/StudioMapper.java (best guess)
+### The error may involve com.zsxb.mapper.StudioMapper.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+09:11:41.847 [http-nio-9090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:11:45.867 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:11:45.867 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:12:01.664 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:12:17.083 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:12:18.665 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:15:46.669 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:15:46.671 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:15:56.587 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 8448 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:15:56.621 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:15:57.759 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:15:57.759 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:15:57.759 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:15:57.871 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:16:01.586 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:16:01.944 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 5.826 seconds (JVM running for 7.743)
+09:16:12.323 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:16:14.915 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:16:14.979 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:16:15.711 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:16:17.295 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:16:23.094 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/3/5
+09:16:26.149 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:16:26.149 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:16:44.438 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:17:00.603 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:17:01.927 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:17:02.775 [http-nio-9090-exec-7] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/3/5
+09:17:04.239 [http-nio-9090-exec-6] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:21:49.212 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:21:50.762 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:21:50.762 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:22:00.422 [http-nio-9090-exec-6] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:22:14.129 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:26:47.518 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:26:47.520 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:26:53.231 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 29432 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:26:53.240 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:26:54.565 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:26:54.565 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:26:54.565 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:26:54.643 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:26:58.533 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:26:58.902 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.166 seconds (JVM running for 7.84)
+09:27:13.799 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:27:14.741 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:27:14.800 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:27:15.718 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:27:37.865 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:27:37.865 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:27:47.062 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:28:35.432 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:30:51.762 [http-nio-9090-exec-8] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:32:51.000 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:32:51.004 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:32:56.549 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 29276 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:32:56.557 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:32:57.808 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:32:57.808 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:32:57.808 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:32:57.885 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:33:01.635 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:33:01.990 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 5.915 seconds (JVM running for 7.572)
+09:33:06.961 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:33:07.938 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:33:07.985 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:33:08.976 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:33:13.131 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:33:13.131 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:33:26.493 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:34:01.932 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:34:22.728 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:34:22.733 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:34:27.366 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 26004 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:34:27.377 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:34:28.770 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:34:28.770 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:34:28.770 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:34:28.852 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:34:33.396 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:34:33.981 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 7.106 seconds (JVM running for 9.722)
+09:35:18.425 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:35:19.457 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:35:19.522 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:35:20.481 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:35:35.117 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:35:35.117 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:35:41.343 [http-nio-9090-exec-5] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:36:25.823 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:37:22.612 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:38:49.224 [DataSourceHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m28s36ms327µs500ns).
+09:45:50.799 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:45:50.801 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:46:00.540 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 17204 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:46:00.549 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:46:01.812 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:46:01.812 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:46:01.812 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:46:01.896 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:46:05.705 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:46:06.075 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.02 seconds (JVM running for 7.941)
+09:46:15.433 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:46:16.719 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:46:20.722 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:46:21.514 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:46:34.008 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:46:34.008 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:46:45.807 [http-nio-9090-exec-6] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:47:21.674 [DataSourceHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - DataSourceHikariCP - Thread starvation or clock leap detected (housekeeper delta=1m58ms95µs500ns).
+09:47:32.007 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:49:11.841 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:49:11.845 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:49:19.021 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 20180 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:49:19.029 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:49:20.215 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:49:20.215 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:49:20.215 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:49:20.293 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:49:24.031 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:49:24.371 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 5.766 seconds (JVM running for 7.422)
+09:49:49.107 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:49:50.166 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:49:50.216 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:49:50.843 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:53:23.933 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:53:23.938 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
+09:53:29.697 [main] INFO  com.zsxb.ZsxbMainApplication - Starting ZsxbMainApplication using Java 1.8.0_351 on zhan66 with PID 10916 (C:\Users\shang\Desktop\ttms\t1\t1\target\classes started by shang in C:\Users\shang\Desktop\ttms\t1\t1)
+09:53:29.737 [main] INFO  com.zsxb.ZsxbMainApplication - No active profile set, falling back to default profiles: default
+09:53:31.044 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+09:53:31.045 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:53:31.045 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:53:31.165 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:53:35.643 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+09:53:36.019 [main] INFO  com.zsxb.ZsxbMainApplication - Started ZsxbMainApplication in 6.79 seconds (JVM running for 8.635)
+09:53:51.736 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:53:52.704 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:53:52.767 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Starting...
+09:53:53.722 [http-nio-9090-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Start completed.
+09:53:58.743 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/list
+09:53:58.743 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /studio/list
+09:54:12.105 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/add
+09:54:20.029 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:54:21.138 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/2/5
+09:54:53.325 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /sale/page/1/5
+09:54:58.813 [http-nio-9090-exec-1] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /customer/page/1/5
+09:55:18.158 [http-nio-9090-exec-9] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/page/1/8
+09:55:21.381 [http-nio-9090-exec-4] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /play/get/19
+09:55:21.447 [http-nio-9090-exec-6] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /schedule/page/1/5
+09:55:23.725 [http-nio-9090-exec-3] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /seat/page/1/5
+09:55:26.870 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /ticket/buy
+09:55:27.066 [http-nio-9090-exec-2] INFO  com.zsxb.interceptor.JWTInterceptor - 顾客 cus001 已经认证，下一步进行鉴权
+09:55:29.189 [http-nio-9090-exec-8] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /seat/page/1/5
+09:55:30.723 [http-nio-9090-exec-7] INFO  com.zsxb.interceptor.JWTInterceptor - 访问资源 /ticket/page/1/5
+09:55:31.182 [http-nio-9090-exec-7] INFO  com.zsxb.interceptor.JWTInterceptor - 顾客 cus001 已经认证，下一步进行鉴权
+09:56:20.865 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown initiated...
+09:56:20.870 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - DataSourceHikariCP - Shutdown completed.
