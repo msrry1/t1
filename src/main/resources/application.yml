@@ -8,9 +8,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource      # 数据源的类型，可以更改为其他的数据源配置，比如druid
     driver-class-name: com.mysql.cj.jdbc.Driver      # mysql/MariaDB 的数据库驱动类名称
-    url: jdbc:mysql://121.37.155.73:7777/zsxb?serverTimezone=GMT%2B8&characterEncoding=utf8&useUnicode=true&useSSL=false
-    username: root
-    password: ymxkai0.1
+    url: jdbc:mysql://ip:port/zsxb?serverTimezone=GMT%2B8&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: 
+    password: 
     hikari:
       connection-timeout: 30000               # 等待连接池分配连接的最大时间（毫秒），超过这个时长还没有可用的连接，则会抛出SQLException
       minimum-idle: 5                         # 最小连接数
@@ -22,10 +22,10 @@ spring:
       connection-test-query: SELECT 1
 
   redis:
-    host: 121.37.155.73
-    port: 6379
+    host: 
+    port: 
     database: 15
-    password: redis123
+    password: 
 
 root:
   username: root
