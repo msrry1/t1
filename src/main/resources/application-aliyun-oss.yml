@@ -1,14 +1,14 @@
 # 地域节点
 aliyun:
-  endPoint: oss-cn-shanghai.aliyuncs.com
+  endPoint:
   # Bucket 域名
-  urlPrefix: lyh-test-xupt.oss-cn-shanghai.aliyuncs.com
+  urlPrefix: 
   # accessKey Id
-  accessKeyId: LTAI5tJKuFS5hP4mtpas4uyy
+  accessKeyId: 
   # accessKey Secret
-  accessKeySecret: cXW87wLue0bvEH1on8L3jsLD01ZzhU
+  accessKeySecret: 
   # 你的Bucket名称
-  bucketName: zsxb-ttms
+  bucketName: 
   # 目标文件夹
-  fileHost: play
+  fileHost: 
 
