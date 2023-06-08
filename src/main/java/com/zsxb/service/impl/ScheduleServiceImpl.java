@@ -54,7 +54,12 @@ public class ScheduleServiceImpl implements ScheduleService {
         Studio studio = studioService.selectById(schedule.getStudioId());
         // 2. 获取剧目信息
         Play play = playService.selectById(schedule.getPlayId());
-
+        Date schedTime = schedule.getSchedTime();
+        Calendar c = Calendar.getInstance();
+        c.setTime(schedTime);
+        c.add(Calendar.HOUR_OF_DAY, 8);
+        Date newDate = c.getTime();
+        schedule.setSchedTime(newDate);
         // 3. 获取演出开始时间结束时间
         Date startTime = schedule.getSchedTime();
         long playLength = play.getPlayLength() * 60 * 1000;
@@ -90,12 +95,7 @@ public class ScheduleServiceImpl implements ScheduleService {
         // 此时和演出厅的其他演出计划的演出时间没有冲突，可以尝试添加
         // 修改演出计划票价为剧目票价
         schedule.setSchedTicketPrice(play.getPlayTicketPrice());
-        Date schedTime = schedule.getSchedTime();
-        Calendar c = Calendar.getInstance();
-        c.setTime(schedTime);
-        c.add(Calendar.HOUR_OF_DAY, 8);
-        Date newDate = c.getTime();
-        schedule.setSchedTime(newDate);
+
         int result = scheduleMapper.insert(schedule);
         if (result <= 0) {
             throw new ScheduleException("添加演出计划失败！请检查输入参数是否正确！");
